@@ -1,0 +1,115 @@
+.circular-nav {
+    height: 100vh;
+    width: 100vh;
+    opacity: 0.75;
+    border-radius: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: -27%;
+}
+
+.inner-circle {
+    width: calc(100vh/2);
+    height: calc(100vh/2);
+    border-radius: calc(100vh/2);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.semi-circle-item {
+    width: 90%;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    transform-origin: 50% 50%;
+}
+
+.semi-circle-item:nth-child(1) {
+    transform: translateX(-50%) translateY(50%) rotate(-60deg) !important;
+}
+
+.semi-circle-item:nth-child(2) {
+    transform: translateX(-50%) translateY(50%) rotate(-40deg);
+}
+
+.semi-circle-item:nth-child(3) {
+    transform: translateX(-50%) translateY(50%) rotate(-20deg);
+}
+
+.semi-circle-item:nth-child(4) {
+    transform: translateX(-50%) translateY(50%) rotate(0);
+}
+
+.semi-circle-item:nth-child(5) {
+    transform: translateX(-50%) translateY(50%) rotate(20deg);
+}
+
+.semi-circle-item:nth-child(6) {
+    transform: translateX(-50%) translateY(50%) rotate(40deg);
+}
+
+.semi-circle-item:nth-child(7) {
+    transform: translateX(-50%) translateY(50%) rotate(60deg);
+}
+
+.nav-item {
+    width: 175px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform-origin: 50% 50%;
+}
+
+.nav-item-1 {
+    transform: rotate(60deg);
+}
+
+.nav-item-2 {
+    transform: rotate(40deg);
+}
+
+.nav-item-3 {
+    transform: rotate(20deg);
+}
+
+.nav-item-4 {
+    transform: rotate(0deg);
+}
+
+.nav-item-5 {
+    transform: rotate(-20deg);
+}
+
+.nav-item-6 {
+    transform: rotate(-40deg);
+}
+
+.nav-item-7 {
+    transform: rotate(-60deg);
+}
+
+.inner-text {
+    color: yellow;
+}
+
+@media (min-width: 1900px) {
+    .circular-nav {
+        height: 100vh;
+        width: 50%;
+        opacity: 0.75;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: -25%;
+    }
+}
