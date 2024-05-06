@@ -13,11 +13,11 @@
 
                 <div class="flex gap-2">
                     <button data-modal-target="create-gallery-story-modal" data-modal-toggle="create-gallery-story-modal" class="block text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                        Add Story To Gallery
+                        Add Gallery Item
                     </button>
 
                     <button data-modal-target="create-gallery-modal" data-modal-toggle="create-gallery-modal" class="block text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                        New Gallery
+                        New Gallery Page
                     </button>
                 </div>
 
@@ -29,7 +29,7 @@
                             <!-- Modal header -->
                             <div class="flex items-center justify-between p-2 md:p-3 border-b rounded-t dark:border-gray-600">
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    Add Story To Gallery
+                                    Add Gallery Item
                                 </h3>
                                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-sm text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="create-gallery-story-modal">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -45,8 +45,17 @@
 
                                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                         <div class="sm:col-span-2">
-                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gallery</label>
+                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Main Story Line</label>
                                             <select name="headline_id" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                                @foreach ($headlines as $headline)
+                                                    <option value="{{ $headline->id }}" class="capitalize">{{ $headline->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="sm:col-span-2">
+                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gallery Page</label>
+                                            <select name="gallery_id" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                                 @foreach ($galleries as $gallery)
                                                     <option value="{{ $gallery->id }}" class="capitalize">{{ $gallery->title }}</option>
                                                 @endforeach
@@ -109,7 +118,7 @@
                                     
                                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                         <div class="sm:col-span-2">
-                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Headline</label>
+                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Main Story Line</label>
                                             <select name="headline_id" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                                 @foreach ($headlines as $headline)
                                                     <option value="{{ $headline->id }}" class="capitalize">{{ $headline->title }}</option>
@@ -150,17 +159,18 @@
                     </thead>
 
                     <tbody>
-                       <tr>
+                      
                         @foreach ($galleries as $gallery)
-                            <td class="text-center">{{ $gallery->position}}</td>
-                            <td class="text-center">{{ $gallery->title }}</td>
-                            <td class="text-center">{{ $gallery->headline->title}}</td>
-                            <td class="text-center">
-                                <a href="http://">edit</a>
-                                <a href="http://">delete</a>
-                            </td>
+                            <tr>
+                                <td class="text-center">{{ $gallery->position}}</td>
+                                <td class="text-center">{{ $gallery->title }}</td>
+                                <td class="text-center">{{ $gallery->headline->title}}</td>
+                                <td class="text-center">
+                                    <a href="{{ route('galleries.edit', ['id' => $gallery->id]) }}">edit</a>
+                                    <a href="http://">delete</a>
+                                </td>
+                        </tr>
                         @endforeach
-                       </tr>
                     </tbody>
                 </table>
             </div>

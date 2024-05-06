@@ -11,7 +11,6 @@ use App\Models\Gallery;
 use App\Models\Story;
 use App\Models\Headline;
 
-
 class GalleryController extends Controller
 {
     public function index(Request $request): View {
@@ -44,11 +43,13 @@ class GalleryController extends Controller
            return redirect()->route('galleries.index');
         }
     }
-
+    
     public function edit(Request $request): View {
+        $galleries = Gallery::all();
         $gallery = Gallery::find($request->id);
+        $stories = $gallery->stories;
 
-        return view('galleries.edit')->with(['gallery' => $gallery]);;
+        return view('galleries.edit')->with(['gallery' => $gallery, 'galleries' => $galleries,  'stories' => $stories]);;
     }
 
     public function update(Request $request): RedirectResponse {

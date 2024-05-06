@@ -1,6 +1,6 @@
 <!-- Modal toggle -->
 <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="block text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-  New Headline
+    Add Main Story Line
 </button>
 
 <!-- Main modal -->

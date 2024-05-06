@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->integer('position');
             $table->longText('description');
-            $table->longText('file_path');
+            $table->longText('file_path')->nullable();
             $table->foreignId('headline_id')->constrianed();
             $table->foreignId('gallery_id')->constrianed()->nullable();
+            $table->foreignId('timeline_id')->constrianed()->nullable();
             $table->timestamps();
         });
     }

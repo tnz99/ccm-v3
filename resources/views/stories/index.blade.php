@@ -12,7 +12,7 @@
 
                 <!-- Modal toggle -->
                 <button data-modal-target="create-story-modal" data-modal-toggle="create-story-modal" class="block text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                    New Story
+                    Add Story Page
                 </button>
 
                 <!-- Main modal -->
@@ -39,18 +39,8 @@
 
                                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                                         <div class="sm:col-span-2">
-                                            <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                                            <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Story Title" required="">
-                                        </div>
-
-                                        <div class="sm:col-span-2">
-                                            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                                            <textarea name="description" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your description here...."></textarea>
-                                        </div>
-
-                                        <div class="sm:col-span-2">
-                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Headline</label>
-                                            <select name="headline_id" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Main Story Line</label>
+                                            <select name="headline_id" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                                 @foreach ($headlines as $headline)
                                                 <option value="{{ $headline->id }}" class="capitalize">{{ $headline->title }}</option>
                                                     
@@ -59,13 +49,25 @@
                                         </div>
 
                                         <div class="sm:col-span-2">
-                                            <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Page Position</label>
-                                            <input type="number" name="position" id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="" min=1 max=15 required=""> 
+                                            <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Story Title</label>
+                                            <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Story Title" required="">
                                         </div>
 
                                         <div class="sm:col-span-2">
-                                            <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
-                                            <input type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="" min=1 max=15 required=""> 
+                                            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Story Description</label>
+                                            <textarea name="description" id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your description here...."></textarea>
+                                        </div>
+ 
+                                        <div class="sm:col-span-2 flex gap-1  w-full">
+                                            <div class="w-full">
+                                                <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Story Page Position in Main Story Line</label>
+                                                <input type="number" name="position" id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="" min=1 max=15 required=""> 
+                                            </div>
+                                            
+                                            <div class="w-full">
+                                                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
+                                                <input type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="" min=1 max=15 required=""> 
+                                            </div>
                                         </div>
                                     </div>
 
@@ -90,15 +92,15 @@
 
                     <tbody>
                         @foreach ($stories as $story )
-                        <tr>
-                            <td class="text-center">{{ $story->position }}</td>
-                            <td class="text-center">{{ $story->title }}</td>
-                            <td class="text-center">{{ $story->headline->title }}</td>
-                            <td class="text-center">
-                                <a href="{{ route('stories.edit', ['id' => $story->id ]) }}">Edit</a>
-                                <a href="">Delete</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td class="text-center">{{ $story->position }}</td>
+                                <td class="text-center">{{ $story->title }}</td>
+                                <td class="text-center">{{ $story->headline->title }}</td>
+                                <td class="text-center">
+                                    <a href="{{ route('stories.edit', ['id' => $story->id ]) }}">Edit</a>
+                                    <a href="">Delete</a>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

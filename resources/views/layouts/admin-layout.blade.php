@@ -19,9 +19,10 @@
 
 
     </head>
-    <body class="bg-gray-200 bg-cover w-screen">
-        <div class="flex items-start sm:items-start h-screen">
-            <div class="w-3/12 bg-green-950 px-2 flex justify-start items-start h-full flex-col">
+    <body class="bg-gray-200 bg-cover h-screen relative">
+        <div class="flex items-start sm:items-end justify-end h-full">
+            <!-- Sidebar Start -->
+            <div class="w-2/12 bg-green-950 px-2 flex flex-col justify-start items-start h-full fixed top-0 left-0">
                 <!-- Logo Start -->
                 <div class="flex items-center">
                     <svg  class="w-20 h-20 p-0 m-0" viewBox="0 0 85 58" xmlns="http://www.w3.org/2000/svg">
@@ -45,24 +46,27 @@
                 </div>
                 <!-- Logo End -->
 
-                <div class="">
-                    <ul>
-                        <li><a href="{{ route('pages.index') }}" class="text-white text-sm p-2">Pages</a></li>
-                        <li><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Headlines</a></li>
-                        <li><a href="{{ route('stories.index') }}" class="text-white text-sm p-2">Main Stories</a></li>
-                        <li><a href="{{ route('galleries.index') }}" class="text-white text-sm p-2">Galleries</a></li>
-                        <li><a href="" class="text-white text-sm p-2">Timeline</a></li>
-                        <li><a href="" class="text-white text-sm p-2">User</a></li>
-                        <li><a href="" class="text-white text-sm p-2">Donation</a></li>
+                <div class="w-full">
+                    <ul class="flex flex-col gap-3">
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('pages.index') }}" class="text-white text-sm p-2">Pages</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Main Story Line</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('stories.index') }}" class="text-white text-sm p-2">Story Page</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('galleries.index') }}" class="text-white text-sm p-2">Gallery Page</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">Timeline Page</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">User</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">Donation</a></li>
                     </ul>
                 </div>
             </div>
+            <!-- Sidebar End -->
+
         
-            <div class="flex flex-col items-center justify-start mt-4 w-[98%]">
+            <div class="flex flex-col items-center justify-start mt-4 w-10/12 h-full p-4">
                 <div class="bg-green-950 flex justify-between rounded-sm">
+
                 </div>
 
-                <div class="w-[98%] bg-white grow">
+                <div class="bg-white grow w-full">
                     {{ $slot }}
                 </div>
             <div>
