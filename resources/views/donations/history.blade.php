@@ -1,4 +1,4 @@
-<x-page-layout backgroundImageName="home.png">
+<x-page-layout backgroundImageName="home.png" :darkMode='false'>
     <h2 class="text-3xl font-extrabold mt-4">Donation History</h2>
 
     <table class="mt-10 w-8/12">
