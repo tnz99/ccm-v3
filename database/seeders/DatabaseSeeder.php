@@ -6,6 +6,7 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,7 +19,12 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             HeadlineSeeder::class,
             KingdomPageSeeder::class,
-            FloraPageSeeder::class
+            FloraPageSeeder::class,
+            FaunaPageSeeder::class,
+            ClimatePageSeeder::class,
+            ChangePageSeeder::class,
+            PeoplePageSeeder::class,
+            LawPageSeeder::class
         ]);
     }
 }
