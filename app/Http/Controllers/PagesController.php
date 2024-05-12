@@ -66,6 +66,7 @@ class PagesController extends Controller
         $headline = $gallery->headline;
 
         $gallery_items = $gallery->stories;
+        $gallery_items = $gallery->stories;
 
         $main_stories =  $headline->stories->where('gallery_id',null)->where('timeline_id', null);
         $galleries = $headline->galleries;
