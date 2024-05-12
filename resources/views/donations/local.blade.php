@@ -1,4 +1,4 @@
-<x-page-layout backgroundImageName="home.png" :darkMode='false'>
+<x-page-layout backgroundImageName="/images/upload/spring.png" :darkMode='false'>
     <div class="flex flex-col mt-8 w-full">
         <div class="flex flex-col">
             <h2 class="text-2xl font-extrabold">Donate to a cleaner</h2>
