@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
 class Headline extends Model
 {
     use HasFactory;
@@ -29,5 +28,10 @@ class Headline extends Model
     public function galleries(): HasMany
     {
         return $this->hasMany(Gallery::class);
+    }
+
+    public function timelines(): HasMany
+    {
+        return $this->hasMany(Timeline::class);
     }
 }

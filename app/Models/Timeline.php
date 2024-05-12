@@ -16,4 +16,9 @@ class Timeline extends Model
     {
         return $this->belongsTo(Headline::class);
     }
+
+    public function story(): HasOne
+    {
+        return $this->hasOne(Story::class);
+    }
 }

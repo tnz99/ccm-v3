@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('headlines', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('position')->unsigned();
             $table->timestamps();
         });
     }

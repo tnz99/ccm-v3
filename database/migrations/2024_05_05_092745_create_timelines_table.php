@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('year')->nullable();
             $table->foreignId('headline_id')->constrianed();
+            $table->timestamps();
         });
     }
 

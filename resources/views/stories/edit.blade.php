@@ -8,7 +8,7 @@
             <div class="flex flex-col w-full gap-4">
                 <div class="sm:col-span-2">
                     <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                    <input value="{{ $story->title }}" type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Story Title" required="">
+                    <input value="{{ $story->title }}" type="text" name="title" id="title" class="capitalize bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Story Title" required="">
                 </div>
 
                 <div class="sm:col-span-2">
@@ -20,7 +20,7 @@
 
                     <div class="w-full">
                         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Headline</label>
-                        <select name="headline_id" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                        <select name="headline_id" class="capitalize bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             @foreach ($headlines as $headline)
                                 <option value="{{ $headline->id }}" class="capitalize">{{ $headline->title }}</option>
                             @endforeach

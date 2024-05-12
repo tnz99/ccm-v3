@@ -99,6 +99,17 @@
     color: yellow;
 }
 
+.cnav-link:hover {
+    color: yellow;
+
+}
+
+.cnav-icon {
+    display: none;
+    margin-left: 10px;
+}
+
+
 @media (min-width: 1900px) {
     .circular-nav {
         height: 100vh;

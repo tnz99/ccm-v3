@@ -9,14 +9,13 @@
                 </form>
             </div>
 
-            <x-headlines.create />
         </div>
 
         <div class="mt-4 flex justify-center w-full">
             <table class="w-full">
                 <thead class="bg-green-950">
                     <th class="text-white text-left p-1">Title</th>
-                    <th class="text-white text-left p-1">Position</th>
+                    <!-- <th class="text-white text-left p-1">Position</th> -->
                     <th class="text-white text-left p-1">Actions</th>
                 </thead>
 
@@ -24,10 +23,10 @@
                     @foreach($headlines as $headline)
                     <tr class="border-1 border-solid border-inherit">
                         <td class="p-1 text-left capitalize">{{ $headline->title }}</td>
-                        <td class="p-1 text-left capitalize">{{ $headline->position }}</td>
+                        <!-- <td class="p-1 text-left capitalize">{{ $headline->position }}</td> -->
                         <td class="p-1 text-left">
                             <a href="{{ route('headlines.edit', [ 'id' => $headline->id ]) }}">EDIT</a>
-                            <a href="{{ route('headlines.create') }}">Delete</a>
+                           
                         </td>
                     </tr>
                     @endforeach

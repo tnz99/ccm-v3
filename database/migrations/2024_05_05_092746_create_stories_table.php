@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('position');
+            $table->integer('position')->nullable();
             $table->longText('description');
             $table->longText('file_path')->nullable();
             $table->foreignId('headline_id')->constrianed();
             $table->foreignId('gallery_id')->constrianed()->nullable();
             $table->foreignId('timeline_id')->constrianed()->nullable();
+            $table->boolean('dark_mode')->nullable()->default(false);
             $table->timestamps();
         });
     }

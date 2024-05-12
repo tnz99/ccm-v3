@@ -48,8 +48,18 @@ class GalleryController extends Controller
         $galleries = Gallery::all();
         $gallery = Gallery::find($request->id);
         $stories = $gallery->stories;
+        $headlines = Headline::all();
 
-        return view('galleries.edit')->with(['gallery' => $gallery, 'galleries' => $galleries,  'stories' => $stories]);;
+        return view('galleries.edit')->with(['gallery' => $gallery, 'galleries' => $galleries,  'stories' => $stories, 'headlines' => $headlines]);
+    }
+
+    public function show(Request $request): View {
+        $galleries = Gallery::all();
+        $gallery = Gallery::find($request->id);
+        $stories = $gallery->stories;
+        $headlines = Headline::all();
+
+        return view('galleries.show')->with(['gallery' => $gallery, 'galleries' => $galleries,  'stories' => $stories, 'headlines' => $headlines]);
     }
 
     public function update(Request $request): RedirectResponse {

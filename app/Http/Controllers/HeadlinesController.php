@@ -11,7 +11,7 @@ use App\Models\Headline;
 class HeadlinesController extends Controller
 {
     public function index(Request $request): View {
-        $headlines = Headline::orderBy('position', 'asc')->get();
+        $headlines = Headline::orderBy('id', 'asc')->get();
 
         return view('headlines.index')->with([ "headlines" => $headlines ]);
     }
@@ -33,19 +33,19 @@ class HeadlinesController extends Controller
         $headline = Headline::find($request->id);
 
         $headline->title = $request->title;
-        $headline->position = $request->position;
+        // $headline->position = $request->position;
 
         $headline->save();
 
         return redirect()->route('headlines.index');
     }
 
-    public function create(Request $request): RedirectResponse {
-        Headline::insert([
-            'title' => $request->title,
-            'position' => $request->position
-        ]);
+    // public function create(Request $request): RedirectResponse {
+    //     Headline::insert([
+    //         'title' => $request->title,
+    //         'position' => $request->position
+    //     ]);
 
-        return redirect()->route('headlines.index');
-    }
+    //     return redirect()->route('headlines.index');
+    // }
 }

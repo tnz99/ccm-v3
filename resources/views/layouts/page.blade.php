@@ -13,17 +13,19 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <link rel="stylesheet" type="text/css" href="{{ asset('/css/circular-nav.css') }}">
-        <script src="{{ asset('/js/circular-nav.js') }}"></script>
-
-
     </head>
+
     <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col bg-center items-center sm:bg-no-repeat sm:bg-cover sm:bg-left-top">
-    <div class="h-full w-10/12 items-center flex flex-col sm:w-10/12 sm:items-start">
-            <x-header />
-            {{ $slot }}
-            <!-- <x-circular-nav /> -->
+        <div class="w-10/12 justify-start flex flex-col sm:w-10/12 sm:items-start h-screen">
+            <x-header :darkMode="$darkMode"/>
+            
+            <div class="flex w-full grow flex-col sm:flex-row sm:items-center">
+                <div class="flex flex-col grow-0 sm:grow items-center justify-start gap-8 sm:mt-0 sm:justify-start sm:items-start sm:w-10/12 sm:h-full">
+                    {{ $slot }}
+                </div>
+
+                <x-circular-nav />
+            </div>
         </div>
     </body>
 </html>

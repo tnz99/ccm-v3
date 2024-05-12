@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 use App\Models\User;
 use App\Models\Role;
@@ -18,8 +19,8 @@ class AdminSeeder extends Seeder
     {
         $user = User::firstOrNew(['email' => env('DEFAULT_ADMIN_EMAIL')]);
         $user->name = 'Super Admin';
-        $user->password = Hash::make(env('DEFAULT_ADMIN_PASSWORD'));
-        $user->role_id = Role::where('name', 'super_admin')->first()->value('id');
+        $user->password =  Hash::make(env('DEFAULT_ADMIN_PASSWORD'));
+        $user->role_id = Role::where('name', 'super_admin')->first()->id;
         $user->save();
     }
 }

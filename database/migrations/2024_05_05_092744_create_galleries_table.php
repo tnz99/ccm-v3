@@ -16,6 +16,9 @@ return new class extends Migration
             $table->integer('position');
             $table->foreignId('headline_id')->constrianed();
             $table->string('title');
+            $table->boolean('dark_mode')->nullable()->default(false);
+            $table->string('color')->nullable();
+            $table->string('file_path')->nullable();
             $table->timestamps();
         });
     }

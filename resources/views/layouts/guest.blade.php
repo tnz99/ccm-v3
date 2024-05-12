@@ -15,9 +15,17 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body style="background-image: url('/images/home.png')" class="w-full h-full flex flex-col bg-center items-center sm:bg-no-repeat sm:bg-cover sm:bg-left-top">
-        <div class="h-full w-11/12 sm:w-4/5 flex flex-col items-center sm:items-start">
-            <x-header />
-            {{ $slot }}
+        <div class="h-screen w-11/12 sm:w-4/5 flex flex-col items-center sm:items-start">
+            <x-header :darkMode='false' />
+
+            <div class="flex w-full grow flex-col sm:flex-row sm:items-center">
+                <div class="flex flex-col grow items-center justify-start gap-8 mt-44 sm:mt-0 sm:justify-start sm:items-start sm:w-10/12 sm:h-full">
+                    {{ $slot }}
+                </div>
+
+                <x-circular-nav />
+            </div>
+    
         </div>
     </body>
 </html>

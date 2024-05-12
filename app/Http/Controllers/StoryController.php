@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 use App\Models\Story;
 use App\Models\Headline;
@@ -13,12 +14,12 @@ use App\Models\Headline;
 class StoryController extends Controller
 {
     public function index(Request $request): View {
-        $stories = Story::all();
+        $stories = Story::whereNull('gallery_id')->get();
         $headlines = Headline::all();
 
         return view('stories.index')->with(['stories' => $stories, 'headlines' => $headlines ]);
     }
-
+    
     public function create(Request $request): RedirectResponse {
         $story = new Story();
 
@@ -30,8 +31,10 @@ class StoryController extends Controller
         if($request->gallery_id) { $story->gallery_id = $request->gallery_id; }
 
         if($request->hasFile('image')) {
-           $file_path = $request->file('image')->store('public');
-           $story->file_path =  $file_path;
+
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/upload'), $imageName);
+            $story->file_path = 'images/upload/'.$imageName;
         }
 
         $story->save();
@@ -57,5 +60,16 @@ class StoryController extends Controller
         $story->save();
 
         return redirect()->route('stories.edit', ['id' => $story->id]);
+    }
+
+    public function delete(Request $request) {
+        $story = Story::find($request->id);
+        $imagePath = public_path($story->file_path);
+        if (File::exists($imagePath)) {
+            File::delete($imagePath);
+        }
+        $story->delete();
+
+        return redirect()->back();
     }
 }

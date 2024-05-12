@@ -85,20 +85,25 @@
                 <table class="w-full">
                     <thead class="bg-green-900">
                         <th class="text-white text-center">Position</th>
-                        <th class="text-white text-center">Title</th>
-                        <th class="text-white text-center">Headline</th>
-                        <th class="text-white text-center">Actions</th>
+                        <th class="text-white text-left">Title</th>
+                        <th class="text-white text-left">Headline</th>
+                        <th class="text-white text-left">Actions</th>
                     </thead>
 
                     <tbody>
                         @foreach ($stories as $story )
                             <tr>
                                 <td class="text-center">{{ $story->position }}</td>
-                                <td class="text-center">{{ $story->title }}</td>
-                                <td class="text-center">{{ $story->headline->title }}</td>
-                                <td class="text-center">
+                                <td class="text-left capitalize">{{ $story->title }}</td>
+                                <td class="text-left capitalize">{{ $story->headline->title }}</td>
+                                <td class="text-left flex gap-2">
                                     <a href="{{ route('stories.edit', ['id' => $story->id ]) }}">Edit</a>
-                                    <a href="">Delete</a>
+                                    <form action="{{ route('stories.delete') }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="id" value="{{ $story->id }}">
+                                        <button type="submit">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
