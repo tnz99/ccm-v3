@@ -21,7 +21,7 @@
     <button id="open_circular_nav_btn" class="bg-yellow-200 h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
 </div>
 
-<nav id="circular_nav" class="animate__animated animate__zoomIn animate__faster bg-gray-800 bg-gradient-to-t fixed hidden sm:h-wvh sm:w-wvh rounded-full md:left-[76%] 2xl:left-[80%] top-0">
+<nav id="circular_nav" class="animate__animated animate__zoomIn animate__faster bg-gradient-to-t fixed hidden sm:h-wvh sm:w-wvh rounded-full md:left-[76%] 2xl:left-[80%] top-0" style="background: {{ $cnavBackground }};">
     <div class="flex justify-center items-center">
         <a class="hover:bg-gradient-to-l from-black to-white flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left rounded-xl font-medium absolute top-[15%] left-[22%]"   href="{{ route('pages.story', '1') }}">The Kingdom<x-logos.story-nav /></a>
         <a class="hover:bg-gradient-to-l from-black to-white flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left rounded-xl font-medium absolute top-[24%] left-[13%]"  href="{{ route('pages.story', '2') }}">The Flora<x-logos.story-nav /></a>
@@ -32,7 +32,7 @@
         <a class="hover:bg-gradient-to-l from-black to-white flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left rounded-xl font-medium absolute top-[80%] left-[20%]" href="{{ route('pages.story', '7') }}">The People<x-logos.story-nav /></a>
     </div>
 
-    <button id="inner_button" class="hidden bg-yellow-500 w-hwvh h-hwvh rounded-full text-xl text-left pl-10 font-extrabold absolute top-[25%] md:left-[29%] 2xl:left-[30%]">
+    <button id="inner_button" class="hidden w-hwvh h-hwvh rounded-full text-xl text-left pl-10 font-extrabold absolute top-[25%] md:left-[29%] 2xl:left-[30%]">
         Our Story
     </button>
 </nav>

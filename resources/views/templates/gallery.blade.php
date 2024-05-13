@@ -17,7 +17,7 @@
 </script>
 
 <x-page-layout backgroundImageName="{{ $gallery->file_path }}" :darkMode="$gallery->dark_mode" :cnavBackground="$gallery->cnav_background">
-    <div class="flex flex-col lg:gap-4 lg:mt-16 md:mt-28">
+    <div class="flex flex-col lg:gap-4">
         <div class="options flex gap-2 w-12/12 rounded-md">
             @foreach($gallery_items as $gallery_item)
                 <div class="option" style="background-color: {{ $gallery->color }}" class="xl:h-96">
@@ -41,7 +41,7 @@
             {{ $gallery->title }}
         </div>
 
-        <div class="flex justify-between items-center w-12/12 mt-16 sm:mt-0">
+        <div class="flex justify-between items-center w-[100vw] lg:mt-[5%] fixed bottom-10 ">
             <div class="flex justify-between gap-4">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (get_class($nav_link) == 'App\Models\Story')

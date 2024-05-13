@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
     .active.description {
         font-size: 0.75rem
         /* 12px */

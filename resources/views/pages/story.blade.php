@@ -1,4 +1,4 @@
-<x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode">
+<x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
     <div class="flex flex-col sm:gap-44 pt-12">
         <div class="flex flex-col gap-2">
             <h1 class="text-6xl font-extrabold {{ $story->dark_mode ? 'text-white' : 'text-black'}}">{{ $story->title }}</h1>
