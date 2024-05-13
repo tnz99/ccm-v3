@@ -21,6 +21,7 @@ class PeoplePageSeeder extends Seeder
         $story->position = 1;
         $story->headline_id = 7; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/people.png';
+        $story->cnav_background = "inear-gradient(270deg, #346D6C 42.11%, rgba(135, 176, 175, 0.47) 101.31%)";
         $story->dark_mode = true;
         $story->save();
 
@@ -31,6 +32,7 @@ class PeoplePageSeeder extends Seeder
         $people_gallery->color = "#0E4A47;";
         $people_gallery->file_path = '/images/upload/people.png';
         $people_gallery->dark_mode = true;
+        $people_gallery->cnav_background = "inear-gradient(270deg, #346D6C 42.11%, rgba(135, 176, 175, 0.47) 101.31%)";
         $people_gallery->save();
 
         $galleries = array(

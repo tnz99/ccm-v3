@@ -16,11 +16,11 @@
     });
 </script>
 
-<x-page-layout backgroundImageName="{{ $gallery->file_path }}" :darkMode="$gallery->dark_mode">
-    <div class="flex flex-col sm:gap-4">
+<x-page-layout backgroundImageName="{{ $gallery->file_path }}" :darkMode="$gallery->dark_mode" :cnavBackground="$gallery->cnav_background">
+    <div class="flex flex-col lg:gap-4 lg:mt-16 md:mt-28">
         <div class="options flex gap-2 w-12/12 rounded-md">
             @foreach($gallery_items as $gallery_item)
-                <div class="option" style="background-color: {{ $gallery->color }}">
+                <div class="option" style="background-color: {{ $gallery->color }}" class="xl:h-96">
                     <div class="flex">
                         <div style="background-image: url('/{{ $gallery_item->file_path }}');" class="image" >
                             <div class="label">

@@ -22,6 +22,7 @@ class FloraPageSeeder extends Seeder
         $story->position = 1;
         $story->headline_id = 2; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/flora.png';
+        $story->cnav_background = "linear-gradient(270deg, #1347AF 42.11%, rgba(238, 242, 245, 0.27) 101.31%)";
         $story->dark_mode = false;
         $story->save();   
     
@@ -31,6 +32,7 @@ class FloraPageSeeder extends Seeder
         $flora_gallery_1->title = 'the BLUE POPPY';
         $flora_gallery_1->file_path = '/images/upload/flora.png';
         $flora_gallery_1->color = "#524266";
+        $flora_gallery_1->cnav_background = "linear-gradient(270deg, #1347AF 42.11%, rgba(238, 242, 245, 0.27) 101.31%)";
         $flora_gallery_1->dark_mode = false;
         $flora_gallery_1->save();
 
@@ -107,6 +109,7 @@ class FloraPageSeeder extends Seeder
         $flora_gallery_2->title = 'the RODODENDRONS';
         $flora_gallery_2->color = "#524266";
         $flora_gallery_2->file_path = '/images/upload/flora.png';
+        $flora_gallery_2->cnav_background = "linear-gradient(270deg, #1347AF 42.11%, rgba(238, 242, 245, 0.27) 101.31%)";
         $flora_gallery_2->dark_mode = false;
         $flora_gallery_2->save();
 
@@ -182,6 +185,8 @@ class FloraPageSeeder extends Seeder
         $flora_gallery_3->dark_mode = false;
         $flora_gallery_3->color = "#524266";
         $flora_gallery_3->file_path = '/images/upload/flora.png';
+        $flora_gallery_3->cnav_background = "linear-gradient(270deg, #1347AF 42.11%, rgba(238, 242, 245, 0.27) 101.31%)";
+
         $flora_gallery_3->save();
 
         $galleries_3 = array(
@@ -247,6 +252,8 @@ class FloraPageSeeder extends Seeder
         $flora_gallery_4->file_path = '/images/upload/flora.png';
         $flora_gallery_4->color = "#524266";
         $flora_gallery_4->dark_mode = false;
+        $flora_gallery_4->cnav_background = "linear-gradient(270deg, #1347AF 42.11%, rgba(238, 242, 245, 0.27) 101.31%)";
+
         $flora_gallery_4->save();
 
         $galleries_4 = array(

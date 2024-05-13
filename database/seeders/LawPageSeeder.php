@@ -21,6 +21,7 @@ class LawPageSeeder extends Seeder
         $story->position = 1;
         $story->headline_id = 6; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/law.png';
+        $story->cnav_background = "linear-gradient(270deg, #7C745C 42.11%, rgba(255, 234, 172, 0.55) 101.31%)";
         $story->dark_mode = true;
         $story->save();
     }

@@ -22,6 +22,7 @@ class FaunaPageSeeder extends Seeder
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/fauna.png';
         $story->dark_mode = false;
+        $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->save();   
 
         $story = new Story();
@@ -31,6 +32,7 @@ class FaunaPageSeeder extends Seeder
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/mammal.png';
         $story->dark_mode = false;
+        $story->cnav_background = "linear-gradient(270deg, #eab676 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";
         $story->save(); 
 
         $mammal_gallery = new Gallery();
@@ -39,7 +41,8 @@ class FaunaPageSeeder extends Seeder
         $mammal_gallery->title = 'the mammals';
         $mammal_gallery->file_path = '/images/upload/mammal.png';
         $mammal_gallery->color = "#eab676";
-        $mammal_gallery->dark_mode = false;
+        $mammal_gallery->dark_mode = true;
+        $mammal_gallery->cnav_background = "linear-gradient(270deg, #eab676 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";
         $mammal_gallery->save();
 
         $mammals_gallery =[
@@ -93,6 +96,7 @@ class FaunaPageSeeder extends Seeder
         $story->position = 4;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/winter.png';
+        $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->dark_mode = false;
         $story->save();   
 
@@ -102,6 +106,7 @@ class FaunaPageSeeder extends Seeder
         $bird_gallery->title = 'the birds';
         $bird_gallery->file_path = '/images/upload/winter.png';
         $bird_gallery->color = "#ffffff";
+        $bird_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $bird_gallery->dark_mode = false;
         $bird_gallery->save();
         
@@ -177,6 +182,7 @@ class FaunaPageSeeder extends Seeder
         $butterfly_gallery->file_path = '/images/upload/mammal.png';
         $butterfly_gallery->color = "#ffffff";
         $butterfly_gallery->dark_mode = false;
+        $butterfly_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $butterfly_gallery->save();
 
         $butterflies_gallery = [
@@ -247,6 +253,7 @@ class FaunaPageSeeder extends Seeder
         $park_gallery->file_path = '/images/upload/mammal.png';
         $park_gallery->color = "#ffffff";
         $park_gallery->dark_mode = false;
+        $park_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $park_gallery->save();
 
         $parks_gallery = [

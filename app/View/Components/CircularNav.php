@@ -6,15 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class PageLayout extends Component
+class CircularNav extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $backgroundImageName,
-        public bool $darkMode,
-        public string $cnavBackground
+        public string $cnavBackground,
+        public bool $darkMode
     )
     {}
 
@@ -23,6 +22,6 @@ class PageLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.page');
+        return view('components.circular-nav');
     }
 }
