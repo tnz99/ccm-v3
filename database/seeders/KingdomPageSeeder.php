@@ -83,7 +83,7 @@ class KingdomPageSeeder extends Seeder
         $kingdom_gallery_1->title = 'The Kingdom';
         $kingdom_gallery_1->color = "#F1D651";
         $kingdom_gallery_1->file_path = '/images/upload/kingdom.png';
-        $story->cnav_background = "linear-gradient(270deg, #555050 42.11%, rgba(159, 159, 159, 0.00) 101.31%);";
+        $kingdom_gallery_1->cnav_background = "linear-gradient(270deg, #555050 42.11%, rgba(159, 159, 159, 0.00) 101.31%);";
         $kingdom_gallery_1->dark_mode = true;
         $kingdom_gallery_1->save();
 
