@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('gallery_id')->constrianed()->nullable();
             $table->foreignId('timeline_id')->constrianed()->nullable();
             $table->boolean('dark_mode')->nullable()->default(false);
+            $table->string('cnav_background')->nullable();
             $table->timestamps();
         });
     }

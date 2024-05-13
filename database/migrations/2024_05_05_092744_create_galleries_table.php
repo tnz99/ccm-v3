@@ -19,6 +19,7 @@ return new class extends Migration
             $table->boolean('dark_mode')->nullable()->default(false);
             $table->string('color')->nullable();
             $table->string('file_path')->nullable();
+            $table->string('cnav_background')->nullable();
             $table->timestamps();
         });
     }
