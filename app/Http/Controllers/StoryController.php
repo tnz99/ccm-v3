@@ -56,6 +56,16 @@ class StoryController extends Controller
         $story->description =$request->description;
         $story->position = $request->position;
         $story->headline_id = $request->headline_id;
+
+        if($request->hasFile('image')) {
+            // if(File::exists(public_path($story->file_path))) {
+            //     File::delete(public_path($story->file_path));
+            // }
+
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/upload'), $imageName);
+            $story->file_path = 'images/upload/'.$imageName;
+        }
         
         $story->save();
 

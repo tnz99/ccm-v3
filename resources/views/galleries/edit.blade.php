@@ -11,8 +11,10 @@
         <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
             <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                 <div class="p-4">
-                    <form action="{{ route('stories.create') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('galleries.update') }}" method="post" enctype="multipart/form-data">
                         @csrf
+
+                        <input type="hidden" name="id" value="{{ $gallery->id }}">
 
                         <div class="flex gap-2">
                             <div class="w-full">
@@ -35,11 +37,22 @@
                                 </select>
                             </div>
 
+                           
+                        </div>
+
+                        <div class="flex gap-2">
                             <div class="w-full">
                                 <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Page Position</label>
                                 <input value="{{ $gallery->position }}" type="number" name="position" id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 p-2" required="" min=1 max=15 required=""> 
                             </div>
+
+                            <div class="w-full">
+                                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
+                                <input value="test" type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" min=1 max=15> 
+                            </div>
                         </div>
+
+                        
 
                         <button type="submit" class="inline-flex items-center px-3 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-950 rounded-sm focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
                             Save Changes

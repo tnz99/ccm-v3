@@ -9,6 +9,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/galleries', [GalleryController::class, 'create'])->name('galleries.create');
     Route::get('/galleries/edit/{id}', [GalleryController::class, 'edit'])->name('galleries.edit');
     Route::get('/galleries/show/{id}', [GalleryController::class, 'show'])->name('galleries.show');
-    Route::post('/galleries/update', [GalleryController::class, 'update'])->name('galleries.update');
+    Route::post('/galleries/update/', [GalleryController::class, 'update'])->name('galleries.update');
     Route::post('/galleries/search', [GalleryController::class, 'search'])->name('galleries.search');
 });

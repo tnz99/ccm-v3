@@ -38,6 +38,16 @@ class GalleryController extends Controller
            $gallery->position = $request->position;
            $gallery->headline_id = $request->headline_id;
 
+           if($request->hasFile('image')) {
+            // if(File::exists(public_path($gallery->file_path))) {
+            //     File::delete(public_path($gallery->file_path));
+            // }
+
+                $imageName = time().'.'.$request->image->extension();
+                $request->image->move(public_path('images/upload'), $imageName);
+                $gallery->file_path = 'images/upload/'.$imageName;
+            }
+
            $gallery->save();
 
            return redirect()->route('galleries.index');
@@ -66,17 +76,20 @@ class GalleryController extends Controller
         $gallery = Gallery::find($request->id);
 
         $gallery->title = $request->title;
+        $gallery->position = $request->position;
+        $gallery->headline_id = $request->headline_id;
+
+        if($request->hasFile('image')) {
+            // if(File::exists(public_path($gallery->file_path))) {
+            //     File::delete(public_path($gallery->file_path));
+            // }
+
+                $imageName = time().'.'.$request->image->extension();
+                $request->image->move(public_path('images/upload'), $imageName);
+                $gallery->file_path = 'images/upload/'.$imageName;
+        }
+
         $gallery->save();
-
-        $story = new Story();
-
-        $story->gallery_id = $gallery->id;
-        $story->title = $request->title;
-        $story->description =$request->description;
-        $story->position = $request->position;
-        $story->headline_id = $request->headline_id;
-
-        $story->save();
 
         return redirect()->route('galleries.edit', ['id' => $gallery->id]);
     }

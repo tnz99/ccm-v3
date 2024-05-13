@@ -23,7 +23,7 @@
                     {{ $slot }}
                 </div>
 
-                <x-circular-nav />
+                <x-circular-nav cnavBackground="linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)" :darkMode="false"/>
             </div>
     
         </div>
