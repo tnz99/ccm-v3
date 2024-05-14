@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="flex gap-2">
-                    <button data-modal-target="create-gallery-modal" data-modal-toggle="create-gallery-modal" class="block text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                    <button data-modal-target="create-gallery-modal" data-modal-toggle="create-gallery-modal" class="block text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-1 text-center" type="button">
                         New Gallery Page
                     </button>
                 </div>
@@ -77,25 +77,30 @@
             </div>
 
             <div class="mt-4 flex justify-center w-full">
-                <table class="w-full">
-                    <thead class="bg-green-900">
-                        <th class="text-white text-center">Position</th>
-                        <th class="text-white text-left">Gallery Name</th>
-                        <th class="text-white text-left">Main Story Line</th>
-                        <th class="text-white text-left">Actions</th>
+                <table class="w-full table border">
+                    <thead class="bg-gray-100 table-header-group">
+                        <th class="text-black table-cell text-center">Position</th>
+                        <th class="text-black table-cell text-left">Gallery Name</th>
+                        <th class="text-black table-cell text-left">Main Story Line</th>
+                        <th class="text-black table-cell text-left">Actions</th>
                     </thead>
 
                     <tbody>
-                      
                         @foreach ($galleries as $gallery)
-                            <tr>
-                                <td class="text-center capitalize">{{ $gallery->position}}</td>
-                                <td class="text-left capitalize">{{ $gallery->title }}</td>
-                                <td class="text-left capitalize">{{ $gallery->headline->title}}</td>
-                                <td class="text-left capitalize">
-                                    <a href="{{ route('galleries.show', ['id' => $gallery->id]) }}">view</a>
-                                    <a href="{{ route('galleries.edit', ['id' => $gallery->id]) }}">edit</a>
-                                    <a href="http://">delete</a>
+                            <tr class="hover:bg-gray-100">
+                                <td class="text-center capitalize text-sm table-cell">{{ $gallery->position}}</td>
+                                <td class="text-left capitalize text-sm table-cell">{{ $gallery->title }}</td>
+                                <td class="text-left capitalize text-sm table-cell">{{ $gallery->headline->title}}</td>
+                                <td class="text-left capitalize text-sm gap-3 flex ">
+                                    <a class="text-green-300 hover:text-green-600" href="{{ route('galleries.show', ['id' => $gallery->id]) }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </a>
+                                    <a class="text-yellow-300 hover:text-yellow-600" href="{{ route('galleries.edit', ['id' => $gallery->id]) }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-pen-line"><path d="m18 5-3-3H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2"/><path d="M8 18h1"/><path d="M18.4 9.6a2 2 0 1 1 3 3L17 17l-4 1 1-4Z"/></svg>
+                                    </a>
+                                    <a class="text-red-500 hover:text-red-700" href="http://">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+                                    </a>
                                 </td>
                         </tr>
                         @endforeach

@@ -28,7 +28,7 @@
 
         @guest
             <li>
-                <a  class="uppercase text-sm font-thin hover:bg-yellow-300 p-2 px-5" href="{{ route('login') }}">
+                <a  class="uppercase text-sm font-thin hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}" href="{{ route('login') }}">
                     {{ __('Login') }}
                 </a>
             </li>

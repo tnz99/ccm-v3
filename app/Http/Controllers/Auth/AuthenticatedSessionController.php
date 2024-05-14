@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
         $current_user = auth()->user();
 
         if($current_user->isAdmin()) { # Admin
-            return redirect()->intended(route('dashboard', absolute: false));
+            return redirect()->intended(route('headlines.index', absolute: false));
         } elseif($current_user->isSuperAdmin()) { # SuperAdmin
             return redirect()->intended(route('headlines.index')); 
         } elseif($current_user->isDonar()) { # Donar

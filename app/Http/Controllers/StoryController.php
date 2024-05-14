@@ -75,9 +75,9 @@ class StoryController extends Controller
     public function delete(Request $request) {
         $story = Story::find($request->id);
         $imagePath = public_path($story->file_path);
-        if (File::exists($imagePath)) {
-            File::delete($imagePath);
-        }
+        // if (File::exists($imagePath)) {
+        //     File::delete($imagePath);
+        // }
         $story->delete();
 
         return redirect()->back();

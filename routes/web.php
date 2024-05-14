@@ -10,3 +10,5 @@ require __DIR__.'/headlines.php';
 require __DIR__.'/stories.php';
 require __DIR__.'/galleries.php';
 require __DIR__.'/timelines.php';
+require __DIR__.'/users.php';
+

@@ -14,10 +14,10 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-gray-200 bg-cover h-screen relative">
+    <body class="bg-gray-100 bg-cover h-screen relative">
         <div class="flex items-start sm:items-end justify-end h-full">
             <!-- Sidebar Start -->
-            <div class="w-2/12 bg-green-950 px-2 flex flex-col justify-start items-start h-full fixed top-0 left-0">
+            <div class="w-2/12 bg-green-800 px-2 flex flex-col justify-start items-start h-full fixed top-0 left-0">
                 <!-- Logo Start -->
                 <div class="flex items-center">
                     <svg  class="w-20 h-20 p-0 m-0" viewBox="0 0 85 58" xmlns="http://www.w3.org/2000/svg">
@@ -42,10 +42,8 @@
                 <!-- Logo End -->
 
                 <div class="w-full">
-                    <ul class="flex flex-col gap-3">
+                    <ul class="flex flex-col gap-2">
                     @auth
-                        
-                    <!-- <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('pages.index') }}" class="text-white text-sm p-2">Pages</a></li> -->
                         @if (auth()->user()->isAdmin() || auth()->user()->isSuperAdmin())
                         <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Main Story Line</a></li>
                         <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('stories.index') }}" class="text-white text-sm p-2">Story Page</a></li>
@@ -54,7 +52,7 @@
                         @endif
 
                         @if (auth()->user()->isSuperAdmin())
-                        <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">User</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('users.index') }}" class="text-white text-sm p-2">User</a></li>
                         <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">Donation</a></li>
                         @endif
                     @endauth
@@ -64,12 +62,22 @@
             <!-- Sidebar End -->
 
         
-            <div class="flex flex-col items-center justify-start mt-4 w-10/12 h-full p-4">
-                <div class="bg-green-950 flex justify-between rounded-sm">
+            <div class="flex flex-col items-center justify-start mt-4 w-10/12 h-full p-4 gap-3">
+                <div class="flex justify-between rounded-md w-full p-2 text-black bg-white">
+                    <div class="text-sm pl-6">{{ Auth::user()->name }}</div>
+                    <form method="POST" action="{{ route('logout') }}" class="cursor-default pr-6">
+                            @csrf
 
+                        <a :href="route('logout')"
+                            onclick="event.preventDefault(); this.closest('form').submit();"
+                            class="text-sm hover:text-green-950"
+                        >
+                            {{ __('Log Out') }}
+                        </a>
+                    </form>
                 </div>
 
-                <div class="bg-white grow w-full">
+                <div class="bg-white w-full rounded-md">
                     {{ $slot }}
                 </div>
             <div>

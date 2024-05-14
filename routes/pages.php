@@ -19,7 +19,7 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/pages', [PagesController::class, 'index'])->name('pages.index');
 });
 
-// Users Routes
-Route::middleware(['auth', 'verified'])->group(function(){
-    Route::get('/dashboard', [UsersController::class, 'dashboard'])->name('dashboard');
-});
+// // Users Routes
+// Route::middleware(['auth', 'verified'])->group(function(){
+//     Route::get('/dashboard', [UsersController::class, 'dashboard'])->name('dashboard');
+// });
