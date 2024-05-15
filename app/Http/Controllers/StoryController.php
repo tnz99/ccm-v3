@@ -13,6 +13,14 @@ use App\Models\Headline;
 
 class StoryController extends Controller
 {
+    public function search(Request $request) {
+        $query = $request->search_string;
+        $stories = Story::where('title', 'LIKE', "%$query%")->get();
+        $headlines = Headline::all();
+
+        return view('stories.index')->with(['stories' => $stories, 'headlines' => $headlines ]);
+    }
+
     public function index(Request $request): View {
         $stories = Story::whereNull('gallery_id')->get();
         $headlines = Headline::all();

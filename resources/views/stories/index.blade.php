@@ -3,7 +3,7 @@
         <div class="bg-white flex flex-col rounded-md p-8">
             <div class="flex flex-row justify-between">
                 <div class="flex items-center">
-                    <form action="{{ route('headlines.search') }}" method="post" class="flex w-full">
+                    <form action="{{ route('stories.search') }}" method="post" class="flex w-full">
                         @csrf
                         <input type="text" name="search_string" placeholder="search" class="border-inherit rounded-sm h-1/2 w-full placeholder:text-xs">
                         <input type="submit" value="Search" class="font-bold ml-6">

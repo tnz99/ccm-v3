@@ -20,6 +20,14 @@ class UsersController extends Controller
         return view('users.index')->with(['users' => $users, 'roles' => $roles]);
     }
 
+    public function search(Request $request) {
+        $query = $request->search_string;
+        $users = User::where('name', 'LIKE', "%$query%")->orWhere('email', 'LIKE', "%$query%")->get();
+        $roles = Role::all();
+
+        return view('users.index')->with(['users' => $users, 'roles' => $roles]);
+    }
+
     public function create(Request $request) {
         $user = User::create([
             'name' => $request->name,
@@ -42,10 +50,6 @@ class UsersController extends Controller
     }
 
     public function delete(Request $request) {
-
-    }
-
-    public function search(Request $request) {
 
     }
 }

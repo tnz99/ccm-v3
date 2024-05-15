@@ -23,8 +23,9 @@ class GalleryController extends Controller
     public function search(Request $request): View {
         $query = $request->search_string;
         $galleries = Gallery::where('title', 'LIKE', "%$query%")->get();
+        $headlines = Headline::all();
 
-        return view('galleries.index')->with([ "galleries" => $galleries ]);
+        return view('galleries.index')->with(['galleries' => $galleries, 'headlines' => $headlines]);
     }
 
 
