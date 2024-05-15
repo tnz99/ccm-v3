@@ -39,6 +39,14 @@ class StoryController extends Controller
 
         $story->save();
 
+        if($request->gallery_id) {
+            $story->cnav_background = $story->headline->galleries->first()->cnav_background;
+            $story->save();
+        } else {
+            $story->cnav_background = $story->headline->stories->first()->cnav_background;
+            $story->save();
+        }
+
         return redirect()->route('stories.index');
     }
 
@@ -69,15 +77,13 @@ class StoryController extends Controller
         
         $story->save();
 
-        return redirect()->route('stories.edit', ['id' => $story->id]);
+        return redirect()->back();
     }
 
     public function delete(Request $request) {
         $story = Story::find($request->id);
         $imagePath = public_path($story->file_path);
-        // if (File::exists($imagePath)) {
-        //     File::delete($imagePath);
-        // }
+        if (File::exists($imagePath)) { File::delete($imagePath); }
         $story->delete();
 
         return redirect()->back();

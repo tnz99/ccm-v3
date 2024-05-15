@@ -252,7 +252,7 @@ class FaunaPageSeeder extends Seeder
         $park_gallery->title = 'the Park';
         $park_gallery->file_path = '/images/upload/mammal.png';
         $park_gallery->color = "#ffffff";
-        $park_gallery->dark_mode = false;
+        $park_gallery->dark_mode = true;
         $park_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $park_gallery->save();
 

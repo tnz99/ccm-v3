@@ -1,11 +1,11 @@
 <x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
-    <div class="flex flex-col sm:gap-44 pt-12">
+    <div class="flex flex-col pt-12 w-full h-full justify-between">
         <div class="flex flex-col gap-2">
             <h1 class="text-6xl font-extrabold {{ $story->dark_mode ? 'text-white' : 'text-black'}}">{{ $story->title }}</h1>
             <p class="w-8/12 {{ $story->dark_mode ? 'text-white' : 'text-black'}}">{{ $story->description }}</p>
         </div>
         
-        <div class="flex justify-between items-center w-8/12 mt-16 sm:mt-0">
+        <div class="flex justify-between items-end w-full pb-16">
             <div class="flex justify-between gap-4">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (get_class($nav_link) == 'App\Models\Story')

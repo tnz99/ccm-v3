@@ -17,32 +17,32 @@
 </script>
 
 <x-page-layout backgroundImageName="{{ asset($gallery->file_path) }}" :darkMode="$gallery->dark_mode" :cnavBackground="$gallery->cnav_background">
-    <div class="flex flex-col xl:gap-4">
+    <div class="flex flex-col xl:gap-4 w-full h-full justify-between">
         <div class="options flex gap-2 w-12/12 rounded-md mt-24">
-            @foreach($gallery_items as $gallery_item)
-                <div class="option" style="background-color: {{ $gallery->color }}">
+            @foreach($gallery_items as $index => $gallery_item)
+                <div class="option {{ $index == 0 ? 'active' : '' }}" style="background-color: {{ $gallery->color }}">
                     <div class="flex">
-                        <div style="background-image: url('/{{ $gallery_item->file_path }}');" class="image" >
+                        <div style="background-image: url('/{{ $gallery_item->file_path }}');" class="image {{ $index == 0 ? 'active' : '' }}" >
                             <div class="label">
                                 <div class="info">
-                                    <p>{{ $gallery_item->title }}<p>
+                                    <p><span class="{{ $gallery->dark_mode ? 'text-white' : 'text-black' }}">{{ $gallery_item->title }}</span><p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="description">
-                        <p class="">{{ $gallery_item->description }}</p>
+                    <div class="description {{ $index == 0 ? 'active' : '' }}">
+                        <p class="{{ $gallery->dark_mode ? 'text-white' : 'text-black' }}">{{ $gallery_item->description }}</p>
                     </div>
                 </div>
             @endforeach
         </div>
 
-        <div class="text-4xl font-extrabold {{ $gallery->dark_mode ? 'text-white' : 'text-black'}}">
+        <div class="text-4xl font-extrabold capitalize {{ $gallery->dark_mode ? 'text-white' : 'text-black'}}">
             {{ $gallery->title }}
         </div>
 
-        <div class="flex justify-between items-center w-12/12 mt-16 xl:mt-0">
-            <div class="flex justify-between gap-4">
+        <div class="flex justify-between items-center w-full mt-16 xl:mt-0 pb-16">
+            <div class="flex justify-start gap-5 w-full">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (get_class($nav_link) == 'App\Models\Story')
                         <a href="{{ route('pages.main-story', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
