@@ -2,7 +2,7 @@
     <div id="accordion-collapse" data-accordion="collapse">
         <h2 id="accordion-collapse-heading-1">
             <button type="button" class="flex items-center justify-between w-full p-3 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
-            <span class="text-2xl font-extrabold">Edit Gallery</span>
+            <span class="text-xl font-extrabold">Edit Gallery</span>
             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
             </svg>
@@ -42,11 +42,6 @@
 
                         <div class="flex gap-2">
                             <div class="w-full">
-                                <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Page Position</label>
-                                <input value="{{ $gallery->position }}" type="number" name="position" id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 p-2" required="" min=1 max=15 required=""> 
-                            </div>
-
-                            <div class="w-full">
                                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
                                 <input value="test" type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" min=1 max=15> 
                             </div>
@@ -63,7 +58,7 @@
         </div>
         <h2 id="accordion-collapse-heading-2">
             <button type="button" class="flex items-center justify-between w-full p-2 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
-            <span class="text-2xl font-extrabold">Gallery Items</span>
+            <span class="text-xl font-extrabold">Gallery Items</span>
             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
             </svg>
@@ -79,16 +74,16 @@
                 </div>
                 <table class="w-full">
                     <thead class="bg-green-900">
-                        <th class="text-white text-center">Position</th>
+                        <th class="text-white text-center">SL.No</th>
                         <th class="text-white text-left">Title</th>
                         <th class="text-white text-left">Headline</th>
                         <th class="text-white text-left">Actions</th>
                     </thead>
 
                     <tbody>
-                        @foreach ($stories as $story )
+                        @foreach ($stories as $index => $story )
                         <tr>
-                            <td class="text-center capitalize">{{ $story->position }}</td>
+                            <td class="text-center capitalize">{{ $index + 1 }}</td>
                             <td class="text-left capitalize">{{ $story->title }}</td>
                             <td class="text-left capitalize">{{ $story->headline->title }}</td>
                             <td class="text-left capitalize">

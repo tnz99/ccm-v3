@@ -25,13 +25,7 @@
                                 <option value="{{ $headline->id }}" class="capitalize">{{ $headline->title }}</option>
                             @endforeach
                         </select>
-                    </div>
-                    
-                    <div class="w-full">
-                        <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Page Position</label>
-                        <input value="{{ $story->position }}" type="number" name="position" id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" > 
-                    </div>
-                    
+                    </div>                    
                 </div>
                 <div class="sm:col-span-2">
                     <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>

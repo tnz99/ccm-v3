@@ -33,7 +33,7 @@ class StoryController extends Controller
 
         $story->title = $request->title;
         $story->description =$request->description;
-        $story->position = $request->position;
+        $story->position = 1;
         $story->headline_id = $request->headline_id;
 
         if($request->gallery_id) { $story->gallery_id = $request->gallery_id; }
@@ -70,13 +70,13 @@ class StoryController extends Controller
 
         $story->title = $request->title;
         $story->description =$request->description;
-        $story->position = $request->position;
+        $story->position = 1;
         $story->headline_id = $request->headline_id;
 
         if($request->hasFile('image')) {
-            // if(File::exists(public_path($story->file_path))) {
-            //     File::delete(public_path($story->file_path));
-            // }
+            if(File::exists(public_path($story->file_path))) {
+                File::delete(public_path($story->file_path));
+            }
 
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('images/upload'), $imageName);

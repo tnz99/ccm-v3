@@ -53,12 +53,6 @@
                                             <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Story Title" required="">
                                         </div>
 
-                                      
-                                        <div class="sm:col-span-2">
-                                            <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Page Position</label>
-                                            <input type="number" name="position" id="position" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="" min=1 max=15 required=""> 
-                                        </div>
-
                                         <div class="sm:col-span-2">
                                             <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
                                             <input type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="" min=1 max=15 required=""> 
@@ -79,16 +73,16 @@
             <div class="mt-4 flex justify-center w-full">
                 <table class="w-full table border">
                     <thead class="bg-gray-100 table-header-group">
-                        <th class="text-black table-cell text-center">Position</th>
+                        <th class="text-black table-cell text-center">SL.No</th>
                         <th class="text-black table-cell text-left">Gallery Name</th>
                         <th class="text-black table-cell text-left">Main Story Line</th>
                         <th class="text-black table-cell text-left">Actions</th>
                     </thead>
 
                     <tbody>
-                        @foreach ($galleries as $gallery)
+                        @foreach ($galleries as $index => $gallery)
                             <tr class="hover:bg-gray-100">
-                                <td class="text-center capitalize text-sm table-cell">{{ $gallery->position}}</td>
+                                <td class="text-center capitalize text-sm table-cell">{{ $index + 1 }}</td>
                                 <td class="text-left capitalize text-sm table-cell">{{ $gallery->title }}</td>
                                 <td class="text-left capitalize text-sm table-cell">{{ $gallery->headline->title}}</td>
                                 <td class="text-left capitalize text-sm gap-3 flex ">
