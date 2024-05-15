@@ -21,7 +21,7 @@ class FaunaPageSeeder extends Seeder
         $story->position = 1;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/fauna.png';
-        $story->dark_mode = false;
+        $story->dark_mode = true;
         $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->save();   
 
@@ -31,7 +31,7 @@ class FaunaPageSeeder extends Seeder
         $story->position = 1;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/mammal.png';
-        $story->dark_mode = false;
+        $story->dark_mode = true;
         $story->cnav_background = "linear-gradient(270deg, #eab676 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";
         $story->save(); 
 
@@ -181,7 +181,7 @@ class FaunaPageSeeder extends Seeder
         $butterfly_gallery->title = 'the Butterfiles';
         $butterfly_gallery->file_path = '/images/upload/mammal.png';
         $butterfly_gallery->color = "#ffffff";
-        $butterfly_gallery->dark_mode = false;
+        $butterfly_gallery->dark_mode = true;
         $butterfly_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $butterfly_gallery->save();
 
@@ -251,7 +251,7 @@ class FaunaPageSeeder extends Seeder
         $park_gallery->position = 7;
         $park_gallery->title = 'the Park';
         $park_gallery->file_path = '/images/upload/mammal.png';
-        $park_gallery->color = "#ffffff";
+        $park_gallery->color = "#000000";
         $park_gallery->dark_mode = true;
         $park_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $park_gallery->save();
