@@ -1,7 +1,7 @@
 <x-admin-layout>
     <div id="accordion-collapse" data-accordion="collapse">
         <h2 id="accordion-collapse-heading-1">
-            <button type="button" class="flex items-center justify-between w-full p-3 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+            <button type="button" class="flex items-center justify-between w-full p-3 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
             <span class="text-xl font-extrabold">Edit Gallery</span>
             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
@@ -9,7 +9,7 @@
             </button>
         </h2>
         <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
-            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+            <div class="p-5 border border-b-0 border-gray-200">
                 <div class="p-4">
                     <form action="{{ route('galleries.update') }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -18,15 +18,15 @@
 
                         <div class="flex gap-2">
                             <div class="w-full">
-                                <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gallery Name</label>
-                                <input value="{{ $gallery->title }}"type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type Story Title" required="">
+                                <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Gallery Name</label>
+                                <input value="{{ $gallery->title }}"type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Type Story Title" required="">
                             </div>
 
                             <div class="w-full">
-                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Main Story Line</label>
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Main Story Line</label>
                                 <select
                                     name="headline_id"
-                                    class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                    class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2">
                                     @foreach ($headlines as $headline_item)
                                         @if ($headline_item->id == $gallery->headline->id)
                                             <option selected value="{{ $headline_item->id }}" class="capitalize">{{ $headline_item->title }}</option>
@@ -42,14 +42,12 @@
 
                         <div class="flex gap-2">
                             <div class="w-full">
-                                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
-                                <input value="test" type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" min=1 max=15> 
+                                <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Image</label>
+                                <input value="test" type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 :bg-gray-700"> 
                             </div>
                         </div>
 
-                        
-
-                        <button type="submit" class="inline-flex items-center px-3 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-950 rounded-sm focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                        <button type="submit" class="text-xs uppercase inline-flex items-center px-3 py-2 mt-4 mt-6font-medium text-center text-white bg-green-800 rounded-sm focus:ring-4 focus:ring-primary-200 hover:bg-white hover:text-green-800 hover:border hover:border-solid hover:border-green-800">
                             Save Changes
                         </button>
                     </form>
@@ -57,7 +55,7 @@
             </div>
         </div>
         <h2 id="accordion-collapse-heading-2">
-            <button type="button" class="flex items-center justify-between w-full p-2 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+            <button type="button" class="flex items-center justify-between w-full p-2 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
             <span class="text-xl font-extrabold">Gallery Items</span>
             <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
@@ -65,30 +63,40 @@
             </button>
         </h2>
         <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+            <div class="p-5 border border-b-0 border-gray-200">
             <div class="flex flex-col gap-3">
                 <div class="flex justify-end w-full">
-                    <button data-modal-target="create-gallery-story-modal" data-modal-toggle="create-gallery-story-modal" class="block text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                        Add Gallery Item
+                    <button data-modal-target="create-gallery-story-modal" data-modal-toggle="create-gallery-story-modal" class="flex gap-2 uppercase text-xs items-center text-white bg-green-950 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm px-2 py-2 text-center" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>    
+                    Gallery Item
                     </button>
                 </div>
-                <table class="w-full">
-                    <thead class="bg-green-900">
-                        <th class="text-white text-center">SL.No</th>
-                        <th class="text-white text-left">Title</th>
-                        <th class="text-white text-left">Headline</th>
-                        <th class="text-white text-left">Actions</th>
+                <table class="w-full border">
+                    <thead class="bg-gray-100 text-black">
+                        <th class="text-center">SL.No</th>
+                        <th class="text-left">Title</th>
+                        <th class="text-left">Headline</th>
+                        <th class="text-center">Actions</th>
                     </thead>
 
                     <tbody>
                         @foreach ($stories as $index => $story )
-                        <tr>
-                            <td class="text-center capitalize">{{ $index + 1 }}</td>
-                            <td class="text-left capitalize">{{ $story->title }}</td>
-                            <td class="text-left capitalize">{{ $story->headline->title }}</td>
-                            <td class="text-left capitalize">
-                                <a href="{{ route('stories.edit', ['id' => $story->id ]) }}">Edit</a>
-                                <a href="">Delete</a>
+                        <tr class="hover:bg-gray-100">
+                            <td class="text-center capitalize text-sm">{{ $index + 1 }}</td>
+                            <td class="text-left capitalize text-sm">{{ $story->title }}</td>
+                            <td class="text-left capitalize text-sm">{{ $story->headline->title }}</td>
+                            <td class="text-left flex justify-center gap-2">
+                                <a href="{{ route('stories.edit', ['id' => $story->id ]) }}" class="text-yellow-300 hover:text-yellow-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-pen-line"><path d="m18 5-3-3H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2"/><path d="M8 18h1"/><path d="M18.4 9.6a2 2 0 1 1 3 3L17 17l-4 1 1-4Z"/></svg>
+                                </a>
+                                <form action="{{ route('stories.delete') }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="id" value="{{ $story->id }}">
+                                    <button type="submit" class="text-red-600 hover:text-red-900">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -103,10 +111,10 @@
     <div id="create-gallery-story-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
-            <div class="relative bg-white rounded-sm shadow dark:bg-gray-700">
+            <div class="relative bg-white rounded-sm shadow">
                 <!-- Modal header -->
-                <div class="flex items-center justify-between p-2 md:p-3 border-b rounded-t dark:border-gray-600">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <div class="flex items-center justify-between p-2 md:p-3 border-b rounded-t ">
+                    <h3 class="text-lg font-semibold text-gray-900 ">
                         Add Gallery Item
                     </h3>
                     <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-sm text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="create-gallery-story-modal">

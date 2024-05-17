@@ -11,4 +11,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/galleries/show/{id}', [GalleryController::class, 'show'])->name('galleries.show');
     Route::post('/galleries/update/', [GalleryController::class, 'update'])->name('galleries.update');
     Route::post('/galleries/search', [GalleryController::class, 'search'])->name('galleries.search');
+    Route::delete('/stories', [GalleryController::class, 'delete'])->name('galleries.delete');
 });

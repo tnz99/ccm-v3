@@ -113,14 +113,14 @@ class PagesController extends Controller
         $galleries = $headline->galleries;
         $timelines = $headline->timelines;
 
-        $data = [
-            'story' => $story,
-            'headline' => $headline,
-            'stories' => $stories,
-            'galleries' => $galleries,
-            'timelines' => $timelines
-        ];
+        // $data = [
+        //     'story' => $story,
+        //     'headline' => $headline,
+        //     'stories' => $stories,
+        //     'galleries' => $galleries,
+        //     'timelines' => $timelines
+        // ];
 
-        return view('templates.timeline')->with($data);
+        return view('templates.timeline');
     }
  }

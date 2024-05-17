@@ -11,8 +11,9 @@
                 </div>
 
                 <!-- Modal toggle -->
-                <button data-modal-target="create-story-modal" data-modal-toggle="create-story-modal" class="block text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-xs px-5 text-center" type="button">
-                    Add Story Page
+                <button data-modal-target="create-story-modal" data-modal-toggle="create-story-modal" class="text-white bg-green-800 hover:bg-white hover:text-green-800 hover:border hover:border-solid hover:border-green-800 rounded-md focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xs px-2 text-center flex items-center gap-2 uppercase" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                    Story Page
                 </button>
 
                 <!-- Main modal -->

@@ -42,4 +42,11 @@ class TimelineController extends Controller
     public function update(Request $request): View {
         return view('timelines.update');
     }
+
+    public function delete(Request $request) {
+        $timeline = Timeline::find($request->id);
+        $timeline->delete();
+
+        return redirect()->back();
+    }
 }

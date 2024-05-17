@@ -52,7 +52,8 @@
                         @endif
 
                         @if (auth()->user()->isSuperAdmin())
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('users.index') }}" class="text-white text-sm p-2">User</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('donars.index') }}" class="text-white text-sm p-2">Donar</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('admins.index') }}" class="text-white text-sm p-2">Admins</a></li>
                         <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">Donation</a></li>
                         @endif
                     @endauth
@@ -63,18 +64,8 @@
 
         
             <div class="flex flex-col items-center justify-start mt-4 w-10/12 h-full p-4 gap-3">
-                <div class="flex justify-between rounded-md w-full p-2 text-black bg-white">
-                    <div class="text-sm pl-6">{{ Auth::user()->name }}</div>
-                    <form method="POST" action="{{ route('logout') }}" class="cursor-default pr-6">
-                            @csrf
-
-                        <a :href="route('logout')"
-                            onclick="event.preventDefault(); this.closest('form').submit();"
-                            class="text-sm hover:text-green-950"
-                        >
-                            {{ __('Log Out') }}
-                        </a>
-                    </form>
+                <div class="flex justify-end rounded-md w-full p-2 text-black bg-white">
+                    @include('layouts.navigation')
                 </div>
 
                 <div class="bg-white w-full rounded-md">

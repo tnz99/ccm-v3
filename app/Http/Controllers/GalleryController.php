@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
-
+use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 
 use App\Models\Gallery;
@@ -36,19 +36,22 @@ class GalleryController extends Controller
            $gallery = new Gallery();
 
            $gallery->title = $request->title;
-           $gallery->position = $request->position;
+           $gallery->position = 1;
            $gallery->headline_id = $request->headline_id;
 
            if($request->hasFile('image')) {
-            // if(File::exists(public_path($gallery->file_path))) {
-            //     File::delete(public_path($gallery->file_path));
-            // }
+            if(File::exists(public_path($gallery->file_path))) {
+                File::delete(public_path($gallery->file_path));
+            }
 
                 $imageName = time().'.'.$request->image->extension();
                 $request->image->move(public_path('images/upload'), $imageName);
                 $gallery->file_path = 'images/upload/'.$imageName;
             }
 
+           $gallery->save();
+
+           $gallery->cnav_background = $gallery->headline->stories->first()->cnav_background;
            $gallery->save();
 
            return redirect()->route('galleries.index');
@@ -93,5 +96,14 @@ class GalleryController extends Controller
         $gallery->save();
 
         return redirect()->route('galleries.edit', ['id' => $gallery->id]);
+    }
+
+    public function delete(Request $request) {
+        $gallery = Gallery::find($request->id);
+        $imagePath = public_path($gallery->file_path);
+        if (File::exists($imagePath)) { File::delete($imagePath); }
+        $gallery->delete();
+
+        return redirect()->back();
     }
 }

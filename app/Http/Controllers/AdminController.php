@@ -11,13 +11,15 @@ use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 use App\Models\Role;
 
-class UsersController extends Controller
+class AdminController extends Controller
 {
     public function index(Request $request) {
-        $users = User::all();
+        $roleIds = Role::where('name', '!=', 'donar')->pluck('id');
+        $users = User::whereIn('role_id', $roleIds)->get();
+
         $roles = Role::all();
 
-        return view('users.index')->with(['users' => $users, 'roles' => $roles]);
+        return view('admins.index')->with(['users' => $users, 'roles' => $roles]);
     }
 
     public function search(Request $request) {
@@ -25,7 +27,7 @@ class UsersController extends Controller
         $users = User::where('name', 'LIKE', "%$query%")->orWhere('email', 'LIKE', "%$query%")->get();
         $roles = Role::all();
 
-        return view('users.index')->with(['users' => $users, 'roles' => $roles]);
+        return view('admins.index')->with(['users' => $users, 'roles' => $roles]);
     }
 
     public function create(Request $request) {
@@ -39,6 +41,12 @@ class UsersController extends Controller
         event(new Registered($user));
 
         return redirect()->back()->with(['success' => 'User Added Successfully']);
+    }
+
+    public function profile(Request $request) {
+        return view('admins.profile',  [
+            'user' => $request->user(),
+        ]);
     }
 
     public function edit(Request $request) {

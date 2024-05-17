@@ -9,5 +9,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/stories/edit/{id}', [StoryController::class, 'edit'])->name('stories.edit');
     Route::post('/stories/update', [StoryController::class, 'update'])->name('stories.update');
     Route::post('/stories/search', [StoryController::class, 'search'])->name('stories.search');
-    Route::delete('/stories', [StoryController::class, 'delete'])->name('stories.delete');
+    Route::delete('/stories/delete', [StoryController::class, 'delete'])->name('stories.delete');
 });
