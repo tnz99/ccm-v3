@@ -1,5 +1,5 @@
 <x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
-    <div class="flex flex-col pt-12 w-full h-full justify-between">
+    <div class="flex flex-col pt-48 w-full h-full justify-between">
         <div class="flex flex-col gap-2">
             <h1 class="text-6xl font-extrabold {{ $story->dark_mode ? 'text-white' : 'text-black'}}">{{ $story->title }}</h1>
             <p class="w-8/12 {{ $story->dark_mode ? 'text-white' : 'text-black'}}">{{ $story->description }}</p>
