@@ -42,6 +42,7 @@ class ClimatePageSeeder extends Seeder
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/winter.png';
         $story->dark_mode = true;
+        $story->animation = 'snow';
         $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
         $story->save();
 
@@ -52,6 +53,7 @@ class ClimatePageSeeder extends Seeder
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/spring.png';
         $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
+        $story->animation = 'sakura';
         $story->dark_mode = true;
         $story->save();
 
@@ -62,6 +64,7 @@ class ClimatePageSeeder extends Seeder
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/autumn.png';
         $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
+        $story->animation = 'fall';
         $story->dark_mode = true;
         $story->save();
 
