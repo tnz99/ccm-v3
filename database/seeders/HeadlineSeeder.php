@@ -15,13 +15,13 @@ class HeadlineSeeder extends Seeder
     public function run(): void
     {
         $headlines = array(
-            array('id' => 1, 'title' => 'The Kingdom'),
-            array('id' => 2, 'title' => 'The Flora'),
-            array('id' => 3, 'title' => 'The Fauna'),
-            array('id' => 4, 'title' => 'The Climate'),
-            array('id' => 5, 'title' => 'The Change'),
-            array('id' => 6, 'title' => 'The Laws'),
-            array('id' => 7, 'title' => 'The People'),
+            array('id' => 1, 'title' => 'Kingdom'),
+            array('id' => 2, 'title' => 'Flora'),
+            array('id' => 3, 'title' => 'Fauna'),
+            array('id' => 4, 'title' => 'Climate'),
+            array('id' => 5, 'title' => 'Change'),
+            array('id' => 6, 'title' => 'Laws'),
+            array('id' => 7, 'title' => 'People'),
         );   
 
         foreach($headlines as $headline) {

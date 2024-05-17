@@ -45,10 +45,10 @@
                     <ul class="flex flex-col gap-2">
                     @auth
                         @if (auth()->user()->isAdmin() || auth()->user()->isSuperAdmin())
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Main Story Line</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('stories.index') }}" class="text-white text-sm p-2">Story Page</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('galleries.index') }}" class="text-white text-sm p-2">Gallery Page</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('timelines.index') }}" class="text-white text-sm p-2">Timeline Page</a></li>
+                        <!-- <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Main Story Line</a></li> -->
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('stories.index') }}" class="text-white text-sm p-2">Stories</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('galleries.index') }}" class="text-white text-sm p-2">Galleries</a></li>
+                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('timelines.index') }}" class="text-white text-sm p-2">Timelines</a></li>
                         @endif
 
                         @if (auth()->user()->isSuperAdmin())
