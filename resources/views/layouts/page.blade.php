@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col bg-center items-center lg:bg-no-repeat lg:bg-cover lg:bg-left-top">
+    <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col bg-center items-center lg:bg-no-repeat lg:bg-cover lg:bg-left-top overflow-hidden">
         <div class="w-10/12 justify-start flex flex-col lg:w-10/12 lg:items-start h-screen">
             <x-header :darkMode="$darkMode"/>
             
