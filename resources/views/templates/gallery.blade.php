@@ -254,7 +254,7 @@
 </script>
 @endif
 
-@if ($story->animation == 'fall')
+@if ($gallery->animation == 'fall')
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
