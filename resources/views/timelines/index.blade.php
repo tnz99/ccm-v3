@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- Modal toggle -->
-                <button data-modal-target="create-timeline-modal" data-modal-toggle="create-timeline-modal" class="flex gap-2 text-xs text-white bg-green-800 hover:bg-white hover:border hover:border-green-800 hover:borde-solid hover:text-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm  uppercase items-center px-3 py-2 text-center" type="button">
+                <button data-modal-target="create-timeline-modal" data-modal-toggle="create-timeline-modal" class="flex gap-2 text-xs text-white bg-green-800 hover:bg-white hover:border hover:border-green-800 hover:borde-solid hover:text-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-sm  uppercase items-center px-3 py-1 text-center" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
                     Timeline Page
                 </button>

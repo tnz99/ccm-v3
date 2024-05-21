@@ -250,7 +250,7 @@
             gradientColorDegree: 120,
         },
     ]
-    });
+});
 </script>
 @endif
 
