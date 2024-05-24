@@ -35,7 +35,7 @@
                             </div>
                             <!-- Modal body -->
                             <div class="p-4 md:p-5 space-y-4">
-                                <form action="{{ route('timelines.create') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('timelines.create') }}" method="post" enctype="multipart/form-data" class="flex flex-col">
                                     @csrf
 
                                     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
@@ -71,8 +71,8 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-950 rounded-sm focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                                        Save Changes
+                                    <button type="submit" class="self-end inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-white bg-green-950 rounded-sm focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                                        <span class="text-[10px] uppercase font-thin">Save and Continue to add timelines</span> 
                                     </button>
                                 </form>
                             </div>

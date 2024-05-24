@@ -40,7 +40,7 @@ class AdminController extends Controller
 
         event(new Registered($user));
 
-        return redirect()->back()->with(['success' => 'User Added Successfully']);
+        return redirect()->route('admins.index')->with('success', 'User Added Successfully');
     }
 
     public function profile(Request $request) {
@@ -58,6 +58,9 @@ class AdminController extends Controller
     }
 
     public function delete(Request $request) {
+        $user = User::find($request->id);
+        $user->delete;
 
+        return redirect()->back()->with('success', 'User Deleted Successfully');
     }
 }

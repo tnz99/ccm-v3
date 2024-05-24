@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonationsController;
 
 require __DIR__.'/auth.php';
 require __DIR__.'/profile.php';
@@ -13,4 +14,7 @@ require __DIR__.'/timelines.php';
 require __DIR__.'/donars.php';
 require __DIR__.'/admins.php';
 
+// Route::post('donations', [DonationsController::class, 'international'])->name('donations.international');
+Route::get('donations/success', [DonationsController::class, 'success'])->name('donations.success');
+Route::get('donations/cancel', [DonationsController::class, 'cancel'])->name('donations.cancel');
 

@@ -32,14 +32,13 @@ class StoryController extends Controller
         $story = new Story();
 
         $story->title = $request->title;
-        $story->description =$request->description;
+        $story->description = $request->description;
         $story->position = 1;
         $story->headline_id = $request->headline_id;
 
         if($request->gallery_id) { $story->gallery_id = $request->gallery_id; }
 
         if($request->hasFile('image')) {
-
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('images/upload'), $imageName);
             $story->file_path = 'images/upload/'.$imageName;
@@ -47,15 +46,19 @@ class StoryController extends Controller
 
         $story->save();
 
+        $success = '';
+
         if($request->gallery_id) {
             $story->cnav_background = $story->headline->galleries->first()->cnav_background;
             $story->save();
+            $success = 'Gallery Item Added Successfully.';
         } else {
             $story->cnav_background = $story->headline->stories->first()->cnav_background;
             $story->save();
+            $success = 'Story Added Successfully.';
         }
 
-        return redirect()->route('stories.index');
+        return redirect()->back()->with('success', $success);
     }
 
     public function edit(Request $request): View {
@@ -85,7 +88,7 @@ class StoryController extends Controller
         
         $story->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Updated Successfully');
     }
 
     public function delete(Request $request) {
@@ -94,6 +97,6 @@ class StoryController extends Controller
         if (File::exists($imagePath)) { File::delete($imagePath); }
         $story->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Deleted Successfully');
     }
 }

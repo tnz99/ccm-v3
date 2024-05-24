@@ -28,7 +28,6 @@ class GalleryController extends Controller
         return view('galleries.index')->with(['galleries' => $galleries, 'headlines' => $headlines]);
     }
 
-
     public function create(Request $request): View | RedirectResponse {
         if($request->isMethod('get')) {
             return view('galleries.create');
@@ -49,12 +48,16 @@ class GalleryController extends Controller
                 $gallery->file_path = 'images/upload/'.$imageName;
             }
 
-           $gallery->save();
+            $gallery->save();
 
-           $gallery->cnav_background = $gallery->headline->stories->first()->cnav_background;
-           $gallery->save();
+            $gallery->cnav_background = $gallery->headline->stories->first()->cnav_background;
+            $gallery->save();
 
-           return redirect()->route('galleries.index');
+            $galleries = Gallery::all();
+            $stories = $gallery->stories;
+            $headlines = Headline::all();
+
+            return view('galleries.edit')->with(['success' => 'Gallery Page Added Successfully, Please add gallery items.', 'gallery' => $gallery, 'galleries' => $galleries,  'stories' => $stories, 'headlines' => $headlines]);
         }
     }
     
@@ -80,8 +83,10 @@ class GalleryController extends Controller
         $gallery = Gallery::find($request->id);
 
         $gallery->title = $request->title;
-        $gallery->position = $request->position;
+        $gallery->position = $gallery->position;
         $gallery->headline_id = $request->headline_id;
+        $gallery->color = $request->background_color; # gallery item background color
+        $gallery->text_color = $request->text_color;
 
         if($request->hasFile('image')) {
             // if(File::exists(public_path($gallery->file_path))) {
@@ -95,7 +100,7 @@ class GalleryController extends Controller
 
         $gallery->save();
 
-        return redirect()->route('galleries.edit', ['id' => $gallery->id]);
+        return redirect()->route('galleries.edit', ['id' => $gallery->id])->with('success', 'Successfully Updated Gallery!');
     }
 
     public function delete(Request $request) {

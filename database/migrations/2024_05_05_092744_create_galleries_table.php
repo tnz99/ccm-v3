@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('headline_id')->constrianed();
             $table->string('title');
             $table->boolean('dark_mode')->nullable()->default(false);
-            $table->string('color')->nullable();
+            $table->string('color')->nullable(); # gallery item background color
+            $table->string('text_color')->nullable();
             $table->string('file_path')->nullable();
             $table->string('cnav_background')->nullable();
             $table->string('animation')->nullable();

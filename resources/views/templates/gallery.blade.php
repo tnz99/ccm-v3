@@ -7,13 +7,13 @@
                         <div style="background-image: url('/{{ $gallery_item->file_path }}');" class="image {{ $index == 0 ? 'active' : '' }}" >
                             <div class="label">
                                 <div class="info">
-                                    <p><span class="{{ $gallery->dark_mode ? 'text-white' : 'text-black' }}">{{ $gallery_item->title }}</span><p>
+                                    <p><span style="color: {{ $gallery->text_color }};">{{ $gallery_item->title }}</span><p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="description {{ $index == 0 ? 'active' : '' }}">
-                        <p class="{{ $gallery->dark_mode ? 'text-white' : 'text-black' }}">{{ $gallery_item->description }}</p>
+                        <p style="color: {{ $gallery->text_color }};">{{ $gallery_item->description }}</p>
                     </div>
                 </div>
             @endforeach
