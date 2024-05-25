@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('title_text_color')->nullable();
+            $table->string('sub_title')->nullable();
+            $table->string('sub_title_text_color')->nullable();
             $table->integer('position')->nullable();
             $table->longText('description');
+            $table->string('description_text_color')->nullable();
             $table->longText('file_path')->nullable();
             $table->foreignId('headline_id')->constrianed();
             $table->foreignId('gallery_id')->constrianed()->nullable();

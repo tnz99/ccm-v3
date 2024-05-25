@@ -15,28 +15,32 @@ class TimelineController extends Controller
     public function index(Request $request): View {
         $timelines = Timeline::all();
         $headlines = Headline::all();
-
         return view('timelines.index')->with(['timelines' => $timelines, 'headlines' => $headlines]);
     }
 
     public function create(Request $request): RedirectResponse {
-        $timeline = new Timeline();
-        $timeline->year = $request->year;
-        $timeline->headline_id = $request->headline_id;
-        $timeline->save();
-
-        $story = new Story();
-        $story->timeline_id = $timeline->id;
-        $story->title = $request->title;
-        $story->description = $request->description;
-        $story->headline_id = $request->headline_id;
-        $story->save();
-
-        return redirect()->route('timelines.index');
+        if(Headline::find($request->headline_id)->timeline) {
+            return redirect()->back()->with('error', 'Timeline page already exist for the headline, please edit to add timeline.');
+        } else {
+            $timeline = new Timeline();
+            $timeline->headline_id = $request->headline_id;
+            $timeline->save();
+            
+            return redirect()->route('timelines.edit', $timeline->id)->with('success', 'Timeline page added successfully , please add timelines.');
+        }
     }
 
     public function edit(Request $request): View {
-        return view('timelines.edit');
+        $timeline = Timeline::find($request->id);
+        $stories = $timeline->stories;
+
+        $data = [
+            'timeline' => $timeline,
+            'stories' => $stories,
+            'headlines' => Headline::all()
+        ];
+
+        return view('timelines.edit')->with($data);
     }
 
     public function update(Request $request): View {
@@ -47,6 +51,6 @@ class TimelineController extends Controller
         $timeline = Timeline::find($request->id);
         $timeline->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Timeline deleted!');
     }
 }

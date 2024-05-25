@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('timelines', function (Blueprint $table) {
             $table->id();
-            $table->string('year')->nullable();
             $table->foreignId('headline_id')->constrianed();
+            $table->string('file_path')->nullable();
             $table->timestamps();
         });
     }

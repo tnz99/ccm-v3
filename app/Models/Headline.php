@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Headline extends Model
 {
@@ -30,8 +31,8 @@ class Headline extends Model
         return $this->hasMany(Gallery::class);
     }
 
-    public function timelines(): HasMany
+    public function timeline(): HasOne
     {
-        return $this->hasMany(Timeline::class);
+        return $this->hasOne(Timeline::class);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 use App\Models\Headline;
+use App\Models\Timeline;
 use App\Models\Gallery;
 use App\Models\Story;
 
@@ -42,21 +43,19 @@ class PagesController extends Controller
         
         $main_stories = $headline->stories->where('gallery_id',null)->where('timeline_id', null);
         $galleries = $headline->galleries;
-        $timelines = $headline->timelines;
+        $timeline = $headline->timeline;
 
         $story = $main_stories->first();
 
-        $nav_links = [...$main_stories, ...$galleries, ...$timelines];        
+        $nav_links = [...$main_stories, ...$galleries, $timeline];        
 
         $data = [
             'story' => $story,
             'galleries' => $galleries,
-            'timelines' => $timelines,
             'main_stories' => $main_stories,
             'nav_links' =>  $nav_links
         ];
 
-        // dd($data);
         return view('pages.story')->with($data);
     }
 
@@ -68,15 +67,14 @@ class PagesController extends Controller
         $gallery_items = $gallery->stories;
         $gallery_items = $gallery->stories;
 
-        $main_stories =  $headline->stories->where('gallery_id',null)->where('timeline_id', null);
+        $main_stories = $headline->stories->where('gallery_id',null)->where('timeline_id', null);
         $galleries = $headline->galleries;
-        $timelines = $headline->timelines;
-        $nav_links = [...$main_stories, ...$galleries, ...$timelines];
+        $timeline = $headline->timeline;
+        $nav_links = [...$main_stories, ...$galleries, $timeline];
 
         $data = [
             'gallery' => $gallery,
             'galleries' => $galleries,
-            'timelines' => $timelines,
             'nav_links' =>  $nav_links,
             'gallery_items' => $gallery_items
         ];
@@ -89,16 +87,15 @@ class PagesController extends Controller
 
         $headline = $story->headline;
         $galleries = $headline->galleries;
-        $timelines = $headline->timelines;
+        $timeline = $headline->timeline;
 
         $main_stories =  $headline->stories->where('gallery_id',null)->where('timeline_id', null);
 
-        $nav_links = [...$main_stories, ...$galleries, ...$timelines];        
+        $nav_links = [...$main_stories, ...$galleries, $timeline];        
 
         $data = [
             'story' => $story,
             'galleries' => $galleries,
-            'timelines' => $timelines,
             'main_stories' => $main_stories,
             'nav_links' =>  $nav_links
         ];
@@ -107,20 +104,30 @@ class PagesController extends Controller
     }
 
     public function timeline(Request $request): View {
-        $headline = Headline::find($request->id);
-        $stories = $headline->stories;
-        $story = $stories->first();
+        $timeline = Timeline::find($request->id);
+
+        $headline = $timeline->headline;
+        
         $galleries = $headline->galleries;
-        $timelines = $headline->timelines;
+        $timeline = $headline->timeline;
+        $main_stories =  $headline->stories->where('gallery_id',null)->where('timeline_id', null);
+        $nav_links = [...$main_stories, ...$galleries, $timeline];  
 
-        // $data = [
-        //     'story' => $story,
-        //     'headline' => $headline,
-        //     'stories' => $stories,
-        //     'galleries' => $galleries,
-        //     'timelines' => $timelines
-        // ];
+        $stories = $timeline->stories;
+        $sortedStories = $stories->sortBy(function ($story) {
+            return (int) $story->title;
+        })->values();
 
-        return view('templates.timeline');
+        $story = isset($request->story_id) ? Story::find($request->story_id) : $sortedStories->first();
+        $data = [
+            'story' =>  $story,
+            'stories' => $sortedStories,
+            'timeline' => $timeline,
+            'galleries' => $galleries,
+            'main_stories' => $main_stories,
+            'nav_links' =>  $nav_links
+        ];
+
+        return view('templates.timeline')->with($data);
     }
  }

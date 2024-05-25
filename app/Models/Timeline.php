@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 class Timeline extends Model
@@ -17,8 +17,8 @@ class Timeline extends Model
         return $this->belongsTo(Headline::class);
     }
 
-    public function story(): HasOne
+    public function stories(): HasMany
     {
-        return $this->hasOne(Story::class);
+        return $this->hasMany(Story::class);
     }
 }

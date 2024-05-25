@@ -26,12 +26,14 @@
         <div class="flex justify-between items-center w-full mt-16 xl:mt-0 pb-16">
             <div class="flex justify-start gap-5 w-full">
                 @foreach ($nav_links as $index => $nav_link)
-                    @if (get_class($nav_link) == 'App\Models\Story')
-                        <a href="{{ route('pages.main-story', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
-                    @elseif(get_class($nav_link) == 'App\Models\Gallery')
-                        <a href="{{ route('pages.gallery', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
-                    @elseif(get_class($nav_link) == 'App\Models\Timeline')
-                        <a href="{{ route('pages.timeline', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                    @if (isset($nav_link))
+                        @if (get_class($nav_link) == 'App\Models\Story')
+                            <a href="{{ route('pages.main-story', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                        @elseif(get_class($nav_link) == 'App\Models\Gallery')
+                            <a href="{{ route('pages.gallery', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                        @elseif(get_class($nav_link) == 'App\Models\Timeline')
+                            <a href="{{ route('pages.timeline', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                        @endif
                     @endif
                 @endforeach
             </div>
