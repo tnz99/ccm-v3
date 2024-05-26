@@ -3,11 +3,14 @@
 <x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
     <div class="flex flex-col pt-48 w-full h-full justify-between">
         <div class="flex flex-col gap-2">
-            <h1 class="text-6xl font-extrabold" style="color: {{$story->title_text_color}};">{{ $story->title }}</h1>
+            <div class="flex flex-col">
+                <h1 class="text-6xl font-extrabold lowercase">the</h1>
+                <h1 class="text-6xl font-black uppercase" style="color: {{$story->title_text_color}};">{{ $story->title }}</h1>
+            </div>
             <p class="w-8/12" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
         </div>
         
-        <div class="flex justify-between items-end w-full pb-16">
+        <div class="flex justify-start items-end w-full pb-16 gap-4">
             <div class="flex justify-between gap-4">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (isset($nav_link))
@@ -16,11 +19,14 @@
                         @elseif(get_class($nav_link) == 'App\Models\Gallery')
                             <a href="{{ route('pages.gallery', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
                         @elseif(get_class($nav_link) == 'App\Models\Timeline')
-                            <a href="{{ route('pages.timeline', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                            @if ($nav_link->stories->count() >= 1)
+                                <a href="{{ route('pages.timeline', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                            @endif
                         @endif
                     @endif
                 @endforeach
             </div>
+
             @if ($story->headline_id < 7)
             <div class="flex items-center gap-2 text-xs font-semibold {{ $story->dark_mode ? 'text-white' : 'text-black'}}">
                 Next Story
