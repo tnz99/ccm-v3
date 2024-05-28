@@ -37,7 +37,7 @@ class ClimatePageSeeder extends Seeder
         $story->position = 2;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/summer.png';
-        $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
+        $story->cnav_background = 'linear-gradient(270deg, #C38F33 42%, rgba(188, 219, 240, 0.20) 101.31%)';
         $story->dark_mode = true;
         $story->title_text_color = 'white';
         $story->description_text_color = 'white';
@@ -51,7 +51,7 @@ class ClimatePageSeeder extends Seeder
         $story->file_path = 'images/upload/winter.png';
         $story->dark_mode = false;
         $story->animation = 'snow';
-        $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
+        $story->cnav_background = 'linear-gradient(270deg, #1C64A7 42.11%, rgba(188, 219, 240, 0.20) 101.31%)';
         $story->save();
 
         $story = new Story();
@@ -60,7 +60,7 @@ class ClimatePageSeeder extends Seeder
         $story->position = 4;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/spring.png';
-        $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
+        $story->cnav_background = 'linear-gradient(270deg, #DA8495 42.11%, rgba(188, 219, 240, 0.20) 101.31%)';
         $story->animation = 'sakura';
         $story->dark_mode = false;
         $story->save();
@@ -71,7 +71,7 @@ class ClimatePageSeeder extends Seeder
         $story->position = 5;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/autumn.png';
-        $story->cnav_background = 'linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)';
+        $story->cnav_background = 'linear-gradient(270deg, #1C64A7 42.11%, rgba(188, 219, 240, 0.20) 101.31%)';
         $story->animation = 'fall';
         $story->dark_mode = true;
         $story->title_text_color = 'white';
