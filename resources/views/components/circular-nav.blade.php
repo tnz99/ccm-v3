@@ -14,22 +14,32 @@
             $('#circular_nav').show();
             $('#open_circular_nav_btn').hide();
         });
+
+        $('.c-nav-link').hover(
+            function() {
+                $(this).find('img').show();
+            },
+            function() {
+                $(this).find('img').hide();
+            }
+        );
     });
 </script>
 
-<div class="hidden animate__animated animate__fadeIn animate__faster xl:flex justify-end items-end pb-10 sm:w-2/12 sm:h-full sm:items-center">
+<div class="hidden animate__animated animate__fadeIn animate__faster xl:flex xl:justify-start items-end pb-10 sm:w-2/12 sm:h-full sm:items-center">
     <button id="open_circular_nav_btn" class="bg-yellow-200 h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
 </div>
 
+
 <nav id="circular_nav" class="animate__animated animate__zoomIn animate__faster fixed hidden sm:h-wvh sm:w-wvh rounded-full xl:left-[74%] top-0" style="background: {{ $cnavBackground }};">
     <div class="flex justify-center items-center">
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[15%] left-[22%]"   href="{{ route('pages.story', '1') }}">The Kingdom<x-logos.story-nav /></a>
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[24%] left-[13%]"  href="{{ route('pages.story', '2') }}">The Flora<x-logos.story-nav /></a>
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[34%] left-[5%]"  href="{{ route('pages.story', '3') }}">The Fauna<x-logos.story-nav /></a>
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[46.5%] left-[2%]"    href="{{ route('pages.story', '4') }}">The Climate<x-logos.story-nav /></a>
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[59%] left-[4%]"  href="{{ route('pages.story', '5') }}">The Change<x-logos.story-nav /></a>
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[70%] left-[12%]"  href="{{ route('pages.story', '6') }}">The Laws<x-logos.story-nav /></a>
-        <a class="hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[80%] left-[20%]" href="{{ route('pages.story', '7') }}">The People<x-logos.story-nav /></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[15%] left-[22%]"   href="{{ route('pages.story', '1') }}">The Kingdom<x-logos.story-nav/></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[24%] left-[13%]"  href="{{ route('pages.story', '2') }}">The Flora<x-logos.story-nav /></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[34%] left-[5%]"  href="{{ route('pages.story', '3') }}">The Fauna<x-logos.story-nav /></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[46.5%] left-[2%]"    href="{{ route('pages.story', '4') }}">The Climate<x-logos.story-nav /></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[59%] left-[4%]"  href="{{ route('pages.story', '5') }}">The Change<x-logos.story-nav /></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[70%] left-[12%]"  href="{{ route('pages.story', '6') }}">The Laws<x-logos.story-nav /></a>
+        <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[80%] left-[20%]" href="{{ route('pages.story', '7') }}">The People<x-logos.story-nav /></a>
     </div>
 
     <button id="inner_button" class="hidden border w-hwvh h-hwvh rounded-full text-xl text-left pl-10 font-extrabold absolute top-[25%] md:left-[29%] 2xl:left-[30%] text-yellow-200">

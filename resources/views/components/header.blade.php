@@ -23,9 +23,9 @@
     </nav>
 </section>
 
-<section class="xl:hidden flex-col items-start xl:items-center w-full xl:flex-row px-12">
+<section class="xl:hidden flex-col items-start xl:items-center w-full xl:flex-row px-10">
     <nav>
-        <div class="flex flex-wrap items-start justify-between mx-auto p-4">
+        <div class="flex flex-wrap items-center justify-between mx-auto">
             <a href="/" class="flex items-center">
                 <x-logo :darkMode="$darkMode"></x-logo>
             </a>

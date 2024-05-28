@@ -53,7 +53,7 @@
         @endif
 
 
-        <div class=" justify-start flex flex-col xl:w-10/12 xl:items-start h-screen">
+        <div class=" justify-start flex flex-col xl:w-full xl:items-start h-screen">
             <x-header :darkMode="$darkMode"/>
             
             <div class="w-full p-8 flex grow flex-col justify-between xl:flex-row xl:items-center">

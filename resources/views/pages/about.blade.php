@@ -1,7 +1,9 @@
 <x-page-layout  backgroundImageName="images/about.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #99992a 42.11%, rgba(188, 219, 240, 0.40) 101.31%)">
-    <div class="mt-12 text-center xl:text-left">
-        <h2 class="text-6xl font-[900]">About</h2>
-        <h2 class="text-6xl font-[900]">Us</h2>
+    <div class="mt-12 text-center px-10">
+        <div class="flex text-center gap-4 xl:flex-col xl:text-left">
+            <h2 class="text-6xl font-[900]">About</h2>
+            <h2 class="text-6xl font-[900]">Us</h2>
+        </div>
         <p class="w-10/12 text-justify xl:text-left xl:w-6/12 mt-10">The Climate Change Museum in Bhutan inspires global action by raising awareness and promoting sustainability. Explore exhibits, access educational resources, and join us in the fight against climate change for a sustainable future.</p>
     </div>
 </x-page-layout>

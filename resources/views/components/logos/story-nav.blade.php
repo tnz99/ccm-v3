@@ -1,1 +1,1 @@
-<img src="/images/cnav-icon.png" alt="">
+<img src="/images/cnav-icon.png" {{ $attributes->merge(['class' => 'hidden c-nav-icon']) }}>
