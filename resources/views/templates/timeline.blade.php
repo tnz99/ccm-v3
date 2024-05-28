@@ -1,23 +1,23 @@
 <x-page-layout backgroundImageName="{{ asset($story->file_path) }}" darkMode="{{ $story->dark_mode }}" cnavBackground="{{ $story->cnav_background }}">
-    <div class="flex flex-col pt-16 w-full h-full justify-between">
+    <div class="flex flex-col xl:pt-16 w-full h-full justify-between">
         <div class="flex gap-2 w-full items-start flex-col">
             <div class="w-full">
                 <h2 class="text-5xl font-extrabold" style="color: {{ $story->title_text_color }};">{{ $story->title }}</h2>
             </div>
 
-            <div class="flex w-10/12 gap-4">
-                <p class="font-extrabold mt-4 w-5/12" style="color: {{$story->sub_title_text_color}};">{{ $story->sub_title }}</p>
-                <p class="font-thin text-xs mt-4 w-7/12" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
+            <div class="flex flex-col xl:flex-row w-full xl:w-10/12 gap-4">
+                <p class="font-extrabold mt-4 w-full xl:w-5/12" style="color: {{$story->sub_title_text_color}};">{{ $story->sub_title }}</p>
+                <p class="font-thin text-xs mt-4 w-full xl:w-7/12" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
             </div>
         </div>
 
-        <div class="flex gap-2 w-10/12">
+        <div class="flex gap-2 mt-4 font-extrabold xl:gap-2 w-full xl:w-10/12 overflow-x-scroll xl:overflow-auto flex-wrap">
             @foreach ($stories as $story)
-                <a class="p-2 pb-4" href="{{ route('pages.timeline', ['id' => $timeline->id, 'story_id' => $story->id]) }}">{{ $story->title }}</a>
+                <a class="underline xl:no-underline xl:p-2 xl:pb-4" href="{{ route('pages.timeline', ['id' => $timeline->id, 'story_id' => $story->id]) }}">{{ $story->title }}</a>
             @endforeach
         </div>
 
-        <div class="flex justify-start items-center w-full mt-16 xl:mt-0 pb-16 gap-4">
+        <div class="flex justify-start items-center w-full mt-16 xl:mt-0 xl:pb-16 gap-4">
             <div class="flex justify-start gap-4">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (isset($nav_link))

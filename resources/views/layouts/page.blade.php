@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col items-center bg-center bg-no-repeat xl:bg-cover xl:bg-left-top overflow-hidden">
+    <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col items-center bg-center bg-no-repeat xl:bg-cover xl:bg-left-top overflow-y-scroll xl:overflow-hidden">
         @if (session('success'))
         <div id="toast-success" class="fixed mt-8 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-green-100 rounded-xl: shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-xl: dark:bg-green-800 dark:text-green-200">
@@ -57,7 +57,7 @@
             <x-header :darkMode="$darkMode"/>
             
             <div class="w-full p-8 flex grow flex-col justify-between xl:flex-row xl:items-center">
-                <div class="flex flex-col grow-0 xl:grow items-center justify-between gap-8 xl:mt-0 xl:justify-start xl:items-start xl:w-10/12 xl:h-full">
+                <div class="flex flex-col justify-between gap-8 xl:mt-0 xl:justify-start xl:items-start xl:w-10/12 xl:h-full">
                     {{ $slot }}
                 </div>
 
