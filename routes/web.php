@@ -21,3 +21,12 @@ Route::get('donations/cancel', [DonationsController::class, 'cancel'])->name('do
 
 
 Route::get('news/{id?}', [NewsController::class, 'index'])->name('news.index');
+Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+Route::delete('news/delete', [NewsController::class, 'delete'])->name('news.delete');
+Route::post('news/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('news', [NewsController::class, 'update'])->name('news.update');
+
+
+
+
+

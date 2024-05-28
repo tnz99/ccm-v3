@@ -107,6 +107,10 @@
                         <x-responsive-admin-nav-link :href="route('donations.history')"  :active="request()->routeIs('donations.history')">
                             {{ _('Donations') }}
                         </x-responsive-admin-nav-link>
+
+                        <x-responsive-admin-nav-link :href="route('news.index')"  :active="request()->routeIs('news.index')">
+                            {{ _('News And Events') }}
+                        </x-responsive-admin-nav-link>
                         @endif
                     @endauth
                     </ul>

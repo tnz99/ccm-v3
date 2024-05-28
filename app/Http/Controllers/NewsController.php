@@ -25,4 +25,37 @@ class NewsController extends Controller
             return view('pages.news-and-event')->with(['first_news' => $first_news, 'news' => $news]);
         }
     }
+
+    public function edit(Request $request) {
+        $news = NewsAndEvent::find($request->id);
+        return view('news.edit')->with(['news' => $news]);
+    }
+
+    public function update(Request $request) {
+        $news = NewsAndEvent::find($request->id);
+
+        $news->title = $request->title;
+        $news->description = $request->description;
+
+        $news->save();
+
+        return redirect()->back()->with('success', 'News updated');
+    }
+
+    public function delete(Request $request) {
+        $news = NewsAndEvent::find($request->id);
+        $news->delete();
+        return redirect()->back()->with('success', 'News deleted!');
+    }
+
+    public function create(Request $request) {
+        $news = new NewsAndEvent();
+
+        $news->title = $request->title;
+        $news->description = $request->description;
+
+        $news->save();
+
+        return redirect()->back()->with('success', 'News created');
+    }
 }
