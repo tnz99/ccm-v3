@@ -14,7 +14,8 @@ class PageLayout extends Component
     public function __construct(
         public string $backgroundImageName,
         public bool $darkMode,
-        public string $cnavBackground
+        public string $cnavBackground,
+        public bool $blur
     )
     {}
 

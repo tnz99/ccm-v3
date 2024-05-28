@@ -1,4 +1,4 @@
-<x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
+<x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background" :blur="false">
     <div class="flex flex-col pt-12 w-full h-full justify-between xl:px-10 xl:pt-32">
         <div class="flex flex-col gap-2">
             <div class="flex flex-col">
