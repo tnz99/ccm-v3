@@ -1,16 +1,15 @@
-
-
 <x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
-    <div class="flex flex-col pt-48 w-full h-full justify-between">
+    <div class="flex flex-col pt-12 w-full h-full justify-between xl:pt-40">
         <div class="flex flex-col gap-2">
             <div class="flex flex-col">
-                <h1 class="text-6xl font-extrabold lowercase">the</h1>
-                <h1 class="text-6xl font-black uppercase" style="color: {{$story->title_text_color}};">{{ $story->title }}</h1>
+                <h1 class="text-4xl xl:text-6xl font-extrabold lowercase" style="color: {{$story->title_text_color}};">the</h1>
+                <h1 class="text-4xl xl:text-6xl font-black uppercase" style="color: {{$story->title_text_color}};">{{ $story->title }}</h1>
             </div>
-            <p class="w-8/12" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
+            
+            <p class="w-full text-justify xl:w-8/12 xl:text-left" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
         </div>
         
-        <div class="flex justify-start items-end w-full pb-16 gap-4">
+        <div class="flex items-end w-full gap-4 mt-16 justify-between xl:mt-0 xl:justify-start xl:pb-16">
             <div class="flex justify-between gap-4">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (isset($nav_link))

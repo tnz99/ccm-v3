@@ -13,8 +13,8 @@
             @foreach ($records as $index => $record)
             <tr class="bg-gray-300 hover:border-blue-400 hover:border-solid hover:border-2">
                 <td class="td text-center border-2 border-solid border-black">{{ $index }}</td>
-                <td class="td text-center border-2 border-solid border-black">{{ $record['date'] }}</td>
-                <td class="td text-center border-2 border-solid border-black">{{ $record['amount'] }}</td>
+                <td class="td text-center border-2 border-solid border-black">{{ $record->created_at }}</td>
+                <td class="td text-center border-2 border-solid border-black">{{ $record->amount }}</td>
             </tr>
             @endforeach
         </tbody>

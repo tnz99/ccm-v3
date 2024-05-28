@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-gray-100 bg-cover h-screen relative">
-    @if (session('success'))
+        @if (session('success'))
         <div id="toast-success" class="fixed ml-[50%] mt-8 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-green-100 rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -50,9 +50,10 @@
             </button>
         </div>
         @endif
+
         <div class="flex items-start sm:items-end justify-end h-full">
             <!-- Sidebar Start -->
-            <div class="w-2/12 bg-green-800 px-2 flex flex-col justify-start items-start h-full fixed top-0 left-0">
+            <div class="w-2/12 bg-green-800 px-2 hidden xl:flex flex-col justify-start items-start h-full fixed top-0 left-0">
                 <!-- Logo Start -->
                 <div class="flex items-center">
                     <svg  class="w-20 h-20 p-0 m-0" viewBox="0 0 85 58" xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +99,7 @@
             <!-- Sidebar End -->
 
         
-            <div class="flex flex-col items-center justify-start mt-4 w-10/12 h-full p-4 gap-3">
+            <div class="flex flex-col items-center justify-start mt-4 w-full xl:w-10/12 h-full p-1 xl:p-4 gap-3">
                 <div class="flex justify-end rounded-md w-full p-2 text-black bg-white">
                     @include('layouts.navigation')
                 </div>

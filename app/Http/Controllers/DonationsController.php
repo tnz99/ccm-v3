@@ -8,48 +8,49 @@ use Illuminate\View\View;
 
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
+use App\Models\Donation;
+
 class DonationsController extends Controller
 {
     public function international(Request $request): View | RedirectResponse {
-        $user = auth()->user();
+        if($request->isMethod('post')) {
+            $user = auth()->user();
 
-        $provider = new PayPalClient();
-        $provider->setApiCredentials(config('paypal'));
-        $paypalToken = $provider->getAccessToken();
+            $provider = new PayPalClient();
+            $provider->setApiCredentials(config('paypal'));
+            $paypalToken = $provider->getAccessToken();
 
-        $response = $provider->createOrder([
-            "intent" =>  "CAPTURE",
-            "application_context" => [
-                "return_url" => route('donations.success'),
-                "cancel_url" => route('donations.cancel')
-            ],
-            "purchase_units" => [
-              [
-                "amount" => [
-                  "currency_code" => "USD",
-                  "value" => 10
+            $response = $provider->createOrder([
+                "intent" =>  "CAPTURE",
+                "application_context" => [
+                    "return_url" => route('donations.success'),
+                    "cancel_url" => route('donations.cancel')
+                ],
+                "purchase_units" => [
+                [
+                    "amount" => [
+                    "currency_code" => "USD",
+                    "value" => $request->amount
+                    ]
                 ]
-              ]
-            ]
-        ], true);
+                ]
+            ], true);
 
-        // dd($response);
+            // dd($response);
 
-        if(isset($response['id']) && $response['id'] != null) {
-            foreach($response['links'] as $link) {
-                if($link['rel'] == 'approve') {
-                    // session()->put('product_name', 'Donation');
-                    session()->put('amount', $request->amount);
-                    return redirect()->away($link['href']);
+            if(isset($response['id']) && $response['id'] != null) {
+                foreach($response['links'] as $link) {
+                    if($link['rel'] == 'approve') {
+                        // session()->put('product_name', 'Donation');
+                        session()->put('amount', $request->amount);
+                        return redirect()->away($link['href']);
+                    }
                 }
             }
+        } else {
+            return view('donations.international');
         }
         
-        if($user->isDonar()) {
-            return view('donations.international');
-        } else {
-            return redirect('/');
-        }
     }
 
     public function success(Request $request): View | RedirectResponse {
@@ -61,6 +62,11 @@ class DonationsController extends Controller
 
         if(isset($response['status']) && $response['status'] == 'COMPLETED') {
             $amount = $response['purchase_units'][0]['payments']['captures'][0]['seller_receivable_breakdown']['net_amount']['value'];
+            
+            $donation = new Donation();
+            $donation->amount = $amount;
+            $donation->user_id = auth()->user()->id;
+            $donation->save();
         }
 
         return redirect()->route('pages.home')->with('success', 'Thank you. Donation Successful.');
@@ -83,13 +89,8 @@ class DonationsController extends Controller
     public function history(Request $request): View |  RedirectResponse {
         $user = auth()->user();
 
-        $records = [
-            ['date' => '2024-05-01', 'amount' => 100],
-            ['date' => '2024-05-02', 'amount' => 150],
-            ['date' => '2024-05-03', 'amount' => 200],
-        ];
-
         if($user->isDonar()) {
+            $records = $user->donations;
             return view('donations.history')->with(['records' => $records]);
         } else {
             return redirect('/');

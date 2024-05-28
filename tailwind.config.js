@@ -17,7 +17,10 @@ export default {
             spacing: {
                 'wvh': '100vh',
                 'hwvh': '50vh'
-            }
+            },
+            backgroundImage: {
+                'navitem-hover': 'linear-gradient(270deg, #947f7f 0%, rgba(255, 255, 255, 0) 74.59%)',
+            },
         },
     },
 

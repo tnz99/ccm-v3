@@ -1,6 +1,6 @@
 <x-page-layout backgroundImageName="{{ asset($gallery->file_path) }}" :darkMode="$gallery->dark_mode" :cnavBackground="$gallery->cnav_background">
     <div class="flex flex-col xl:gap-4 w-full h-full justify-between">
-        <div class="options flex gap-2 w-12/12 rounded-md mt-24">
+        <div class="options flex gap-2 w-12/12 rounded-md mt-16 xl:mt-24">
             @foreach($gallery_items as $index => $gallery_item)
                 <div class="option {{ $index == 0 ? 'active' : '' }}" style="background-color: {{ $gallery->color }}">
                     <div class="flex">
@@ -19,7 +19,7 @@
             @endforeach
         </div>
 
-        <div class="text-4xl font-extrabold capitalize {{ $gallery->dark_mode ? 'text-white' : 'text-black'}}">
+        <div class="mt-6 xl:mt-1 text-4xl font-extrabold capitalize {{ $gallery->dark_mode ? 'text-white' : 'text-black'}}">
             {{ $gallery->title }}
         </div>
 
