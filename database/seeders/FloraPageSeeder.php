@@ -17,7 +17,7 @@ class FloraPageSeeder extends Seeder
     {
         // Seed Main Story
         $story = new Story();
-        $story->title = 'the FLORA';
+        $story->title = 'FLORA';
         $story->description = "Bhutan's diverse flora thrives across its elevation gradient, from subtropical valleys to snow-capped peaks. With over 5,500 species of vascular plants, including medicinal herbs, alpine flowers, and rare orchids, the country's rugged terrain preserves numerous endemic species, making Bhutan a unique botanical haven.";
         $story->position = 1;
         $story->headline_id = 2; # refer HeadlineSeeder for ID;

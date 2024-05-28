@@ -16,7 +16,7 @@ class ClimatePageSeeder extends Seeder
     public function run(): void
     {
         $story = new Story();
-        $story->title = 'the Climate';
+        $story->title = 'Climate';
         $story->description = "The Kingdom of Bhutan is a land of remarkable climatic diversity. Despite its relatively small size, this enchanting country encompasses a wide range of climates, from subtropical valleys to high-altitude alpine regions. This climatic diversity adds to the nation's allure, making it a captivating destination for adventurers and nature enthusiasts.";
         $story->position = 1;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
@@ -26,7 +26,7 @@ class ClimatePageSeeder extends Seeder
         $story->save();
 
         $story = new Story();
-        $story->title = 'the Summer';
+        $story->title = 'Summer';
         $story->description = "Bhutan's summer is a canvas of vibrant traditions and lush landscapes. From tending to crops and lively festivals to outdoor adventures against stunning mountains, it's a season of cultural richness. The community thrives with social gatherings, traditional attire, and fresh produce. Bhutan's summer is a celebration of heritage, community, and the breathtaking beauty of this Himalayan kingdom.";
         $story->position = 2;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
@@ -36,7 +36,7 @@ class ClimatePageSeeder extends Seeder
         $story->save();
 
         $story = new Story();
-        $story->title = 'the Winter';
+        $story->title = 'Winter';
         $story->description = "Bhutanese winters are marked by festive gatherings and a cozy lifestyle. Traditional clothing keeps locals warm as they celebrate cultural richness. The serene landscapes blanketed in snow create a tranquil backdrop.";
         $story->position = 3;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
@@ -47,7 +47,7 @@ class ClimatePageSeeder extends Seeder
         $story->save();
 
         $story = new Story();
-        $story->title = 'the Spring';
+        $story->title = 'Spring';
         $story->description = "Spring, brings a burst of color and life to Bhutan. The landscape transforms into a riot of blossoming flowers and vibrant greenery. This season is ideal for trekking and hiking as the weather becomes milder. Rhododendrons, the national flower, paint the hillsides in various hues. Farmers begin planting crops, and festivals celebrating renewal and vitality are common. Spring in Bhutan is a time of natural beauty and cultural vibrancy.";
         $story->position = 4;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;
@@ -58,7 +58,7 @@ class ClimatePageSeeder extends Seeder
         $story->save();
 
         $story = new Story();
-        $story->title = 'the Autumn';
+        $story->title = 'Autumn';
         $story->description = "Bhutan's autumn (September to November) is a masterpiece painted in gold and amber. The air is crisp, and the landscape glows with the warm colors of changing leaves. Harvest activities unfold against the backdrop of clear blue skies, offering a captivating setting for lively festivals. It's a season that beckons explorers to witness the captivating allure of Bhutan's cultural and natural wonders.";
         $story->position = 5;
         $story->headline_id = 4; # refer HeadlineSeeder for ID;

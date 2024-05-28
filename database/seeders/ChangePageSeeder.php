@@ -16,7 +16,7 @@ class ChangePageSeeder extends Seeder
     public function run(): void
     {
         $story = new Story();
-        $story->title = 'the Change';
+        $story->title = 'Change';
         $story->description = "The Kingdom of Bhutan is a land of remarkable climatic diversity. Despite its relatively small size, this enchanting country encompasses a wide range of climates, from subtropical valleys to high-altitude alpine regions. This climatic diversity adds to the nation's allure, making it a captivating destination for adventurers and nature enthusiasts.";
         $story->position = 1;
         $story->headline_id = 5; # refer HeadlineSeeder for ID;

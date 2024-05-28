@@ -36,7 +36,7 @@
                     </div>
 
 
-                    <div class="flex gap-2 mt-3">
+                    <div class="flex flex-col xl:flex-row gap-2 mt-3">
                         <div class="w-full">
                             <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Background Image</label>
                             <input value="test" type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-0 :bg-gray-700"> 

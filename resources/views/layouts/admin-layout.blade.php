@@ -82,15 +82,31 @@
                     @auth
                         @if (auth()->user()->isAdmin() || auth()->user()->isSuperAdmin())
                         <!-- <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Main Story Line</a></li> -->
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('stories.index') }}" class="text-white text-sm p-2">Stories</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('galleries.index') }}" class="text-white text-sm p-2">Galleries</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('timelines.index') }}" class="text-white text-sm p-2">Timelines</a></li>
+                        <x-responsive-admin-nav-link :href="route('stories.index')" :active="request()->routeIs('stories.index')">
+                            {{ _('Stories') }}
+                        </x-responsive-admin-nav-link>
+
+                        <x-responsive-admin-nav-link :href="route('galleries.index')" :active="request()->routeIs('galleries.index')">
+                            {{ _('Galleries') }}
+                        </x-responsive-admin-nav-link>
+
+                        <x-responsive-admin-nav-link :href="route('timelines.index')" :active="request()->routeIs('timelines.index')">
+                            {{ _('Timelines') }}
+                        </x-responsive-admin-nav-link>
                         @endif
 
                         @if (auth()->user()->isSuperAdmin())
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('donars.index') }}" class="text-white text-sm p-2">Donar</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('admins.index') }}" class="text-white text-sm p-2">Admins</a></li>
-                        <li class="hover:bg-green-900 w-full p-2"><a href="" class="text-white text-sm p-2">Donation</a></li>
+                        <x-responsive-admin-nav-link :href="route('donars.index')" :active="request()->routeIs('donars.index')">
+                            {{ _('Donar') }}
+                        </x-responsive-admin-nav-link>
+
+                        <x-responsive-admin-nav-link :href="route('admins.index')"  :active="request()->routeIs('admins.index')">
+                            {{ _('Admins') }}
+                        </x-responsive-admin-nav-link>
+
+                        <x-responsive-admin-nav-link :href="route('donations.history')"  :active="request()->routeIs('donations.history')">
+                            {{ _('Donations') }}
+                        </x-responsive-admin-nav-link>
                         @endif
                     @endauth
                     </ul>
@@ -100,7 +116,7 @@
 
         
             <div class="flex flex-col items-center justify-start mt-4 w-full xl:w-10/12 h-full p-1 xl:p-4 gap-3">
-                <div class="flex justify-end rounded-md w-full p-2 text-black bg-white">
+                <div class="flex xl:justify-end rounded-md w-full p-2 text-black bg-white">
                     @include('layouts.navigation')
                 </div>
 

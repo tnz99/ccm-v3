@@ -16,7 +16,7 @@ class FaunaPageSeeder extends Seeder
     public function run(): void
     {
         $story = new Story();
-        $story->title = 'the Fauna';
+        $story->title = 'Fauna';
         $story->description = "The Kingdom of Bhutan is not only renowned for its breathtaking landscapes but also for its incredible biodiversity. The Kingdom of Bhutan is a sanctuary for a diverse array of wildlife, making it a dream destination for nature enthusiasts and conservationists alike.";
         $story->position = 1;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
@@ -26,7 +26,7 @@ class FaunaPageSeeder extends Seeder
         $story->save();   
 
         $story = new Story();
-        $story->title = 'the Mammals';
+        $story->title = 'Mammals';
         $story->description = "Bhutan is home to 129 mammal species, including 26 globally endangered ones. Notably, the country hosts 11 out of the 36 known global felid species, with a study in Royal Manas National Park documenting six felid species, comprising about 16 percent of the world's total. This highlights Bhutan's significance as a major habitat and hotspot for wild felids.";
         $story->position = 1;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
@@ -91,7 +91,7 @@ class FaunaPageSeeder extends Seeder
         }
 
         $story = new Story();
-        $story->title = 'the Birds';
+        $story->title = 'Birds';
         $story->description = "Bhutan is recognized as a part of several globally important bird areas. Currently, around 736 species are recorded to be found in Bhutan out of which 30 are globally threatened. Of the four critically endangered species found in Bhutan";
         $story->position = 4;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;

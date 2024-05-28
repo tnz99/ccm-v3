@@ -12,12 +12,12 @@
 
             <input type="hidden" name="id" value="{{ $story-> id }}">
             <div class="flex flex-col w-full gap-4">
-                <div class="flex gap-4 w-full">
+                <div class="flex flex-col xl:flex-row gap-4 w-full">
                     <div class="w-full">
                         @if (isset($story->sub_title))
-                        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
+                            <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
                         @else
-                        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                            <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                         @endif
                         <input value="{{ $story->title }}" type="text" name="title" id="title" class="capitalize bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Type Story Title" required="">
                     </div>
@@ -29,7 +29,7 @@
                 </div>
 
                 @if (isset($story->sub_title))
-                <div class="flex gap-4 w-full">
+                <div class="flex gap-4 w-full flex-col xl:flex-row">
                     <div class="w-full">
                         <label for="sub_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub Title</label>
                         <input value="{{ $story->sub_title }}" type="text" name="sub_title" id="sub_title" class="capitalize bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Type Story Title" required="">

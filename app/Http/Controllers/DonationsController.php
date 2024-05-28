@@ -93,7 +93,8 @@ class DonationsController extends Controller
             $records = $user->donations;
             return view('donations.history')->with(['records' => $records]);
         } else {
-            return redirect('/');
+
+            return view('donations.admin-history')->with(['records' => Donation::whereNot('user_id', null)->get()]);
         }
     }
 }

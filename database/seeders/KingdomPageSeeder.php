@@ -18,7 +18,7 @@ class KingdomPageSeeder extends Seeder
     {
         // Seed Main Story
         $story = new Story();
-        $story->title = 'the kingdom';
+        $story->title = 'kingdom';
         $story->description = 'Bhutan excels in environmental sustainability, preserving vast forests for carbon storage and biodiversity. Committed to carbon neutrality, it prioritizes responsible forestry, hydropower, sustainable agriculture, and eco-friendly practices, all while integrating well-being through the unique concept of Gross National Happiness.';
         $story->position = 1;
         $story->headline_id = 1; # refer HeadlineSeeder for ID;

@@ -1,42 +1,27 @@
 <section class="hidden xl:flex flex-col items-start xl:items-center w-full xl:flex-row mt-4">
     <x-logo :darkMode="$darkMode"></x-logo>
-
-    <ul class="w-full hidden xl:flex flex-col justify-center xl:flex-row">
-        <li><a href="{{ route('pages.home') }}" class="font-extrabold uppercase text-sm  hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">home</a></li>
-        <li><a href="{{ route('pages.about') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">about</a></li>
-        <li><a href="{{ route('pages.news-and-event') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">news & event</a></li>
-        <li><a href="{{ route('pages.contact') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">contact</a></li>
+    <nav class="w-full hidden flex-col justify-center gap-2 xl:flex xl:flex-row">
+        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.home')" :active="request()->routeIs('pages.home')">{{ _('Home') }}</x-responsive-home-nav-link>
+        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.about')" :active="request()->routeIs('pages.about')">{{ _('About') }}</x-responsive-home-nav-link>
+        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.news-and-event')" :active="request()->routeIs('pages.news-and-event')">{{ _('News & Events') }}</x-responsive-home-nav-link>
+        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.contact')" :active="request()->routeIs('pages.contact')">{{ _('Contact') }}</x-responsive-home-nav-link>
         @auth
             @if(auth()->user()->isDonar())
-                <li><a href="{{ route('donations.history') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">History</a></li>
-                <li><a href="{{ route('donations.international') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">Donate</a></li>
-                <li><a href="{{ route('donars.profile') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">Profile</a></li>
-
+            <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.history')" :active="request()->routeIs('donations.history')">{{ _('History') }}</x-responsive-home-nav-link>
+            <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international')" :active="request()->routeIs('donations.international')">{{ _('Donate') }}</x-responsive-home-nav-link>
+            <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donars.profile')" :active="request()->routeIs('donars.profile')">{{ _('Profile') }}</x-responsive-home-nav-link>
             @endif
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-
-                <a :href="route('logout')"
-                    class=" uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 pointer-default {{ $darkMode ? 'text-white' : 'text-black'}}"
-                    onclick="
-                        event.preventDefault(); this.closest('form').submit();
-                    "
-                >
-                    {{ __('Log Out') }}
-                </a>
+                <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode">{{ __('Log Out') }}</x-responsive-home-nav-link>
             </form>
         @endauth
 
         @guest
-            <li>
-                <a  class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}" href="{{ route('login') }}">
-                    {{ __('Login') }}
-                </a>
-            </li>
+        <x-responsive-home-nav-link :href="route('login')" :darkMode="$darkMode" :active="request()->routeIs('login')">{{ __('Login') }}</x-responsive-home-nav-link>
         @endguest
-    </ul>
+    </nav>
 </section>
-
 
 <section class="xl:hidden flex-col items-start xl:items-center w-full xl:flex-row">
     <nav>
@@ -53,38 +38,27 @@
             </button>
             
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 gap-6">
-                    <li><a href="{{ route('pages.home') }}" class="font-extrabold uppercase text-sm  hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">home</a></li>
-                    <li><a href="{{ route('pages.about') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">about</a></li>
-                    <li><a href="{{ route('pages.news-and-event') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">news & event</a></li>
-                    <li><a href="{{ route('pages.contact') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">contact</a></li>
+                <nav class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 gap-6">
+                    <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.home')" :active="request()->routeIs('pages.home')">{{ _('Home') }}</x-responsive-home-nav-link>
+                    <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.about')" :active="request()->routeIs('pages.about')">{{ _('About') }}</x-responsive-home-nav-link>
+                    <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.news-and-event')" :active="request()->routeIs('pages.news-and-event')">{{ _('News & Events') }}</x-responsive-home-nav-link>
+                    <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.contact')" :active="request()->routeIs('pages.contact')">{{ _('Contact') }}</x-responsive-home-nav-link>
                     @auth
                         @if(auth()->user()->isDonar())
-                        <li><a href="{{ route('donations.history') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">History</a></li>
-                        <li><a href="{{ route('donations.international') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">Donate</a></li>
-                        <li><a href="{{ route('donars.profile') }}" class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}">Profile</a></li>
+                        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.history')" :active="request()->routeIs('donations.history')">{{ _('History') }}</x-responsive-home-nav-link>
+                        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international')" :active="request()->routeIs('donations.international')">{{ _('Donate') }}</x-responsive-home-nav-link>
+                        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donars.profile')" :active="request()->routeIs('donars.profile')">{{ _('Profile') }}</x-responsive-home-nav-link>
                         @endif
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <a :href="route('logout')"
-                                class=" uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 pointer-default {{ $darkMode ? 'text-white' : 'text-black'}}"
-                                onclick="
-                                    event.preventDefault(); this.closest('form').submit();
-                                "
-                            >
-                                {{ __('Log Out') }}
-                            </a>
+                            <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode">{{ __('Log Out') }}</x-responsive-home-nav-link>
                         </form>
                     @endauth
 
                     @guest
-                    <li>
-                        <a  class="uppercase text-sm font-extrabold hover:bg-yellow-300 p-2 px-5 {{ $darkMode ? 'text-white' : 'text-black'}}" href="{{ route('login') }}">
-                            {{ __('Login') }}
-                        </a>
-                    </li>
+                    <x-responsive-home-nav-link :href="route('login')" :darkMode="$darkMode" :active="request()->routeIs('login')">{{ __('Login') }}</x-responsive-home-nav-link>
                     @endguest
-                </ul>
+                </nav>
             </div>
         </div>
     </nav>

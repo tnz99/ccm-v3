@@ -13,7 +13,7 @@
                 <div class="flex gap-2">
                     <button data-modal-target="create-gallery-modal" data-modal-toggle="create-gallery-modal" class="hover:text-green-800 hover:border hover:border-solid hover:border-green-800 hover:bg-white bg-green-800 text-white uppercase rounded-md focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xs px-3 flex items-center py-1 text-center gap-3" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>    
-                        Gallery Page
+                        <span class="hidden xl:inline">Gallery Page</span>
                     </button>
                 </div>
 

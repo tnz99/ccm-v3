@@ -1,7 +1,7 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 w-full">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-10">
+    <div class="w-full xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-end h-10">
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
@@ -48,22 +48,49 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <!-- Responsive Navigation Menu  -->
+    <div :class="{'block': open, 'hidden': ! open}"  class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            @auth
+                @if (auth()->user()->isAdmin() || auth()->user()->isSuperAdmin())
+                <x-responsive-nav-link :href="route('stories.index')" :active="request()->routeIs('stories.index')">
+                {{ __('Stories') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('galleries.index')" :active="request()->routeIs('galleries.index')">
+                {{ __('Galleries') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('timelines.index')" :active="request()->routeIs('timelines.index')">
+                {{ __('Timelines') }}
+                </x-responsive-nav-link>
+                @endif
+
+                @if (auth()->user()->isSuperAdmin())
+                <x-responsive-nav-link :href="route('donars.index')" :active="request()->routeIs('donars.index')">
+                {{ __('Donars') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('admins.index')" :active="request()->routeIs('admins.index')">
+                {{ __('Admins') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('donations.history')" :active="request()->routeIs('donations.history')">
+                {{ __('Donations') }}
+                </x-responsive-nav-link>
+                @endif
+            @endauth
         </div>
 
+
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+        <div class="pt-4 pb-1 border-t border-gray-200 w-full">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
 
-            <div class="mt-3 space-y-1">
+            <div class="mt-3 space-y-1 w-full">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
