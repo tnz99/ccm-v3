@@ -9,7 +9,7 @@
             <p class="w-full text-justify xl:w-8/12 xl:text-left" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
         </div>
         
-        <div class="flex items-end w-full gap-4 mt-16 justify-between xl:mt-0 xl:justify-start xl:pb-16">
+        <div class="flex items-end w-full gap-4 mt-16 justify-between xl:mt-0 xl:justify-start xl:pb-16 overflow-x-auto">
             <div class="flex justify-between gap-4">
                 @foreach ($nav_links as $index => $nav_link)
                     @if (isset($nav_link))
@@ -29,7 +29,7 @@
             @if ($story->headline_id < 7)
             <div class="flex items-center gap-2 text-xs font-semibold {{ $story->dark_mode ? 'text-white' : 'text-black'}}">
                 Next Story
-                <a href="{{ route('pages.story', $story->headline_id + 1) }}"class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">
+                <a href="{{ route('pages.story', $story->headline_id + 1) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 min-w-10 min-h-10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-last"><path d="m7 18 6-6-6-6"/><path d="M17 6v12"/></svg>
                 </a>
                 
