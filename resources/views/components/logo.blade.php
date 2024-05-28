@@ -11,8 +11,8 @@
     </svg>
     
     <div class="pl-2 w-full flex flex-col items-start justify-center">
-        <p class="uppercase text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}}">bhutan</p>
-        <p class="uppercase text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}}">climate change</p>
-        <p class="uppercase text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}}">museum</p>
+        <p class="uppercase font-bold text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}}">bhutan</p>
+        <p class="uppercase font-bold text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}}">climate change</p>
+        <p class="uppercase font-bold text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}}">museum</p>
     </div>
 </div>
