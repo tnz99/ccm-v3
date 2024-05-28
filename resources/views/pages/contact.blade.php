@@ -1,4 +1,4 @@
-<x-page-layout backgroundImageName="images/contact.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #1f3642 42.11%, rgba(188, 219, 240, 0.40) 101.31%)">
+<x-page-layout backgroundImageName="images/contact.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #1f3642 42.11%, rgba(188, 219, 240, 0.40) 101.31%)" :blur="false">
     <div class="flex flex-col xl:flex-row items-center w-full gap-6 pt-20 xl:px-12 xl:pt-40">
         <p class="text-5xl text-white font-extrabold">we are <br /><span class="uppercase">social</span></p>
         <div class="flex gap-4">
