@@ -1,4 +1,4 @@
-<x-page-layout backgroundImageName="{{ asset($story->file_path) }}" darkMode="{{ $story->dark_mode }}" cnavBackground="{{ $story->cnav_background }}" :blur="false">
+<x-page-layout backgroundImageName="/images/upload/law2.png" darkMode="{{ $story->dark_mode }}" cnavBackground="{{ $story->cnav_background }}" :blur="false">
     <div class="flex flex-col xl:px-10 xl:pt-16 w-full h-full justify-between">
         <div class="flex gap-2 w-full items-start flex-col">
             <div class="w-full">
@@ -7,7 +7,7 @@
 
             <div class="flex flex-col xl:flex-row w-full xl:w-10/12 gap-4">
                 <p class="font-extrabold mt-4 w-full xl:w-5/12" style="color: {{$story->sub_title_text_color}};">{{ $story->sub_title }}</p>
-                <p class="font-thin text-xs mt-4 w-full xl:w-7/12" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
+                <p class="font-thin text-xs mt-4 w-full xl:w-5/12" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
             </div>
         </div>
 
@@ -52,11 +52,15 @@
 <style>
     .prayer-wheel-position {
         position: fixed;
-        right: -350px;
+        right: -500px;
         bottom: -170px;
         z-index: -1000;
-        height: 130%;
+        height: 125%;
+        min-width: 130%;
+       
+
     }
+   
 </style>
 
 <img 
@@ -80,9 +84,16 @@ $(function(){
       '/images/prayer-wheel/2.png',
       '/images/prayer-wheel/3.png',
       '/images/prayer-wheel/4.png',
-      '/images/prayer-wheel/5.png'
+      '/images/prayer-wheel/5.png',
+      '/images/prayer-wheel/6.png',
+      '/images/prayer-wheel/1.png',
+      '/images/prayer-wheel/2.png',
+      '/images/prayer-wheel/3.png',
+      '/images/prayer-wheel/4.png',
+      '/images/prayer-wheel/5.png',
+      '/images/prayer-wheel/6.png'
    ];
-     
+ 
    // let currentFrameIndex = 0;
 
    function spinwheel(index) {
