@@ -1,8 +1,8 @@
 <x-page-layout backgroundImageName="images/home.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)">
     <div class="snow"></div>
     <div class="xl:pl-12 w-full text-center mt-12 xl:mt-32 xl:items-center xl:justify-center xl:text-left xl:w-6/12">
-        <h3 class="text-2xl xl:text-4xl">Bhutan Belive:</h3>
-        <h1 class="text-4xl font-extrabold xl:text-5xl">A climate</h1>
+        <h3 class="text-2xl xl:text-4xl">Bhutan Believe:</h3>
+        <h1 class="text-4xl font-extrabold xl:text-5xl">A Climate</h1>
         <h1 class="text-4xl font-extrabold xl:text-5xl">Change Odyssey</h1>
     </div>
     
