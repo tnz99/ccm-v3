@@ -1,6 +1,6 @@
-<section class="hidden xl:flex flex-col items-start xl:items-center w-full xl:flex-row mt-4">
+<section class="hidden md:flex flex-col items-start md:items-center w-full md:flex-row mt-4">
     <x-logo :darkMode="$darkMode"></x-logo>
-    <nav class="w-full hidden flex-col justify-center gap-2 xl:flex xl:flex-row">
+    <nav class="w-full hidden flex-col justify-center gap-2 md:flex md:flex-row">
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.home')" :active="request()->routeIs('pages.home')">{{ _('Home') }}</x-responsive-home-nav-link>
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.about')" :active="request()->routeIs('pages.about')">{{ _('About') }}</x-responsive-home-nav-link>
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.news-and-event')" :active="request()->routeIs('pages.news-and-event')">{{ _('News & Events') }}</x-responsive-home-nav-link>
@@ -23,9 +23,9 @@
     </nav>
 </section>
 
-<section class="xl:hidden flex-col items-start xl:items-center w-full xl:flex-row">
+<section class="md:hidden flex-col items-start md:items-center w-full md:flex-row">
     <nav>
-        <div class="max-w-screen-xl flex flex-wrap items-start justify-between mx-auto p-4">
+        <div class="flex flex-wrap items-start justify-between mx-auto p-4">
             <a href="/" class="flex items-center">
                 <x-logo :darkMode="$darkMode"></x-logo>
             </a>
