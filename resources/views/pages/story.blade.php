@@ -6,7 +6,7 @@
                 <h1 class="text-4xl xl:text-6xl font-black uppercase" style="color: {{$story->title_text_color}};">{{ $story->title }}</h1>
             </div>
             
-            <p class="w-full text-justify xl:w-8/12 xl:text-left" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
+            <p class="w-full text-justify xl:w-6/12 xl:text-left" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
         </div>
         
         <div class="flex items-end w-full gap-4 mt-16 justify-between xl:mt-0 xl:justify-start xl:pb-16 overflow-x-auto">

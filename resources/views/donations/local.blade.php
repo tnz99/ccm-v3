@@ -1,4 +1,4 @@
-<x-page-layout backgroundImageName="/images/upload/spring.png" :darkMode='false' cnavBackground="linear-gradient(270deg, #DA8495 42.11%, rgba(216, 161, 164, 0.56) 101.31%)">
+<x-page-layout backgroundImageName="/images/upload/donate.png" :darkMode='false' cnavBackground="linear-gradient(270deg, #DA8495 42.11%, rgba(216, 161, 164, 0.56) 101.31%)" :blur="false">
     <div class="flex flex-col mt-8 w-full">
         <div class="flex flex-col">
             <h2 class="text-2xl font-extrabold">Donate to a cleaner</h2>
