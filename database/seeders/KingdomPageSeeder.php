@@ -28,7 +28,6 @@ class KingdomPageSeeder extends Seeder
         $story->title_text_color = 'white';
         $story->description_text_color = 'white';
 
-
         $story->cnav_background = "linear-gradient(270deg, #555050 42.11%, rgba(159, 159, 159, 0.00) 101.31%);";
         $story->save();
 
