@@ -10,4 +10,5 @@
             <a href="{{ route('donations.local') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 text-black bg-yellow-400">local donation</a>
         </div>
     </div>
+    <div><img src="/images/upload/localQR.jpeg" alt="" class="h-auto w-64" ></div>
 </x-page-layout>
