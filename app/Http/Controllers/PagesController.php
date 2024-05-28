@@ -29,8 +29,8 @@ class PagesController extends Controller
         return view('pages.contact');
     }
     
-    public function newsAndEvent(Request $request): View {
-        return view('pages.news-and-event');
+    public function newsAndEvent(Request $request) {
+        return redirect()->route('news.index');
     }
 
     public function dashboard(Request $request): View {

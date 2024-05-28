@@ -89,13 +89,13 @@ class GalleryController extends Controller
         $gallery->text_color = $request->text_color;
 
         if($request->hasFile('image')) {
-            // if(File::exists(public_path($gallery->file_path))) {
-            //     File::delete(public_path($gallery->file_path));
-            // }
+            if(File::exists(public_path($gallery->file_path))) {
+                File::delete(public_path($gallery->file_path));
+            }
 
-                $imageName = time().'.'.$request->image->extension();
-                $request->image->move(public_path('images/upload'), $imageName);
-                $gallery->file_path = 'images/upload/'.$imageName;
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/upload'), $imageName);
+            $gallery->file_path = 'images/upload/'.$imageName;
         }
 
         $gallery->save();
