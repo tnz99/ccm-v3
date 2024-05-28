@@ -1,5 +1,5 @@
 <x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background">
-    <div class="flex flex-col pt-12 w-full h-full justify-between xl:pt-40">
+    <div class="flex flex-col pt-12 w-full h-full justify-between px-10 xl:pt-40">
         <div class="flex flex-col gap-2">
             <div class="flex flex-col">
                 <h1 class="text-4xl xl:text-6xl font-extrabold lowercase" style="color: {{$story->title_text_color}};">the</h1>

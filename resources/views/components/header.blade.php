@@ -1,4 +1,4 @@
-<section class="hidden xl:flex flex-col items-start xl:items-center w-full xl:flex-row mt-4">
+<section class="hidden xl:flex flex-col items-start px-16 xl:items-center w-full xl:flex-row mt-4">
     <x-logo :darkMode="$darkMode"></x-logo>
     <nav class="w-full hidden flex-col justify-center gap-2 xl:flex xl:flex-row">
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.home')" :active="request()->routeIs('pages.home')">{{ _('Home') }}</x-responsive-home-nav-link>
@@ -23,7 +23,7 @@
     </nav>
 </section>
 
-<section class="xl:hidden flex-col items-start xl:items-center w-full xl:flex-row">
+<section class="xl:hidden flex-col items-start xl:items-center w-full xl:flex-row px-12">
     <nav>
         <div class="flex flex-wrap items-start justify-between mx-auto p-4">
             <a href="/" class="flex items-center">

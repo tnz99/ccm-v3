@@ -1,5 +1,5 @@
 <x-page-layout backgroundImageName="{{ asset($story->file_path) }}" darkMode="{{ $story->dark_mode }}" cnavBackground="{{ $story->cnav_background }}">
-    <div class="flex flex-col xl:pt-16 w-full h-full justify-between">
+    <div class="flex flex-col px-10 xl:pt-16 w-full h-full justify-between">
         <div class="flex gap-2 w-full items-start flex-col">
             <div class="w-full">
                 <h2 class="text-5xl font-extrabold" style="color: {{ $story->title_text_color }};">{{ $story->title }}</h2>
@@ -54,10 +54,11 @@
         height: 130%;
     }
 </style>
+
 <img 
     id="prayer-wheel"
     src="/images/prayer-wheel/1.png"
-    class="prayer-wheel-position prayer-wheel"
+    class="prayer-wheel-position prayer-wheel hidden xl:block"
 >
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 <script>
