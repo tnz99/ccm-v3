@@ -1,4 +1,4 @@
-<x-page-layout backgroundImageName="/images/upload/spring.png" :darkMode='false' cnavBackground="linear-gradient(270deg, #DA8495 42.11%, rgba(216, 161, 164, 0.56) 101.31%)">
+<x-page-layout backgroundImageName="/images/upload/spring.png" :darkMode='false' cnavBackground="linear-gradient(270deg, #DA8495 42.11%, rgba(216, 161, 164, 0.56) 101.31%) " :blur="false">
     <h2 class="text-3xl font-extrabold mt-4">Donation History</h2>
 
     <table class="mt-10 w-8/12">
