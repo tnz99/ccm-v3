@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body style="background-image: url('/images/donate.png')" class="w-full h-full flex flex-col bg-center items-center xl:bg-no-repeat xl:bg-cover xl:bg-left-top overflow-hidden">
-        <div class="h-screen w-11/12 xl:w-4/5 flex flex-col items-center xl:items-start">
+        <div class="h-screen w-11/12 flex flex-col items-center xl:items-start">
             <x-header :darkMode='false' />
 
             <div class="flex w-full grow flex-col xl:flex-row xl:items-center">

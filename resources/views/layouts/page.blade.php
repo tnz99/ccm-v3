@@ -53,10 +53,10 @@
         @endif
 
 
-        <div class=" justify-start flex flex-col xl:w-full xl:items-start h-screen">
+        <div class=" justify-start flex flex-col xl:w-full xl:items-start h-screen px-16">
             <x-header :darkMode="$darkMode"/>
             
-            <div class="w-full p-8 flex grow flex-col justify-between xl:flex-row xl:items-center">
+            <div class="w-full flex grow flex-col justify-between xl:flex-row xl:items-center">
                 <div class="flex flex-col items-center justify-between gap-8 xl:mt-0 xl:justify-start xl:items-start xl:w-10/12 xl:h-full">
                     {{ $slot }}
                 </div>

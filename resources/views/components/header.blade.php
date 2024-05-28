@@ -1,17 +1,18 @@
-<section class="hidden xl:flex flex-col items-start px-16 xl:items-center w-full xl:flex-row mt-4">
+<section class="hidden xl:flex flex-col items-start xl:items-center w-full xl:flex-row mt-4">
     <x-logo :darkMode="$darkMode"></x-logo>
     <nav class="w-full hidden flex-col justify-center gap-2 xl:flex xl:flex-row">
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.home')" :active="request()->routeIs('pages.home')">{{ _('Home') }}</x-responsive-home-nav-link>
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.about')" :active="request()->routeIs('pages.about')">{{ _('About') }}</x-responsive-home-nav-link>
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.news-and-event')" :active="request()->routeIs('pages.news-and-event')">{{ _('News & Events') }}</x-responsive-home-nav-link>
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.contact')" :active="request()->routeIs('pages.contact')">{{ _('Contact') }}</x-responsive-home-nav-link>
+        
         @auth
             @if(auth()->user()->isDonar())
             <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.history')" :active="request()->routeIs('donations.history')">{{ _('History') }}</x-responsive-home-nav-link>
             <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international')" :active="request()->routeIs('donations.international')">{{ _('Donate') }}</x-responsive-home-nav-link>
             <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donars.profile')" :active="request()->routeIs('donars.profile')">{{ _('Profile') }}</x-responsive-home-nav-link>
             @endif
-            <form method="POST" action="{{ route('logout') }}">
+            <form method="POST" action="{{ route('logout') }}" class="flex">
                 @csrf
                 <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode">{{ __('Log Out') }}</x-responsive-home-nav-link>
             </form>
