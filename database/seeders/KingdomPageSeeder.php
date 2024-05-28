@@ -24,6 +24,11 @@ class KingdomPageSeeder extends Seeder
         $story->headline_id = 1; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/kingdom.png';
         $story->dark_mode = true;
+
+        $story->title_text_color = 'white';
+        $story->description_text_color = 'white';
+
+
         $story->cnav_background = "linear-gradient(270deg, #555050 42.11%, rgba(159, 159, 159, 0.00) 101.31%);";
         $story->save();
 
