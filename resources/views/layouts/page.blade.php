@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col bg-center bg-no-repeat xl:bg-cover xl:bg-left-top overflow-y-scroll xl:overflow-hidden">
+    <body style="background-image: url('{{ $backgroundImageName }}')" class="w-full h-full flex flex-col bg-center bg-no-repeat xl:bg-cover xl:bg-left-top overflow-y-hidden xl:overflow-hidden">
         @if (session('success'))
         <div id="toast-success" class="fixed mt-8 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-green-100 rounded-xl: shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-xl: dark:bg-green-800 dark:text-green-200">
