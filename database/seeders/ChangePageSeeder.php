@@ -23,6 +23,8 @@ class ChangePageSeeder extends Seeder
         $story->file_path = 'images/upload/change.jpeg';
         $story->cnav_background = "linear-gradient(270deg, #400C00 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";
         $story->dark_mode = true;
+        $story->title_text_color = 'white';
+        $story->description_text_color ='white';
         $story->save();
 
 
