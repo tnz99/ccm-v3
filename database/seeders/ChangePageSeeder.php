@@ -31,8 +31,9 @@ class ChangePageSeeder extends Seeder
         $change_gallery = new Gallery();
         $change_gallery->headline_id = 5; # refer HeadlineSeeder for ID;
         $change_gallery->position = 2;
-        $change_gallery->title = 'The Change';
+        $change_gallery->title = 'Change';
         $change_gallery->color = "#400C00;";
+        $change_gallery->text_color = "white";
         $change_gallery->file_path = '/images/upload/change.jpeg';
         $change_gallery->dark_mode = true;
         $change_gallery->cnav_background = "linear-gradient(270deg, #400C00 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";

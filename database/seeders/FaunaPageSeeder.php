@@ -22,6 +22,9 @@ class FaunaPageSeeder extends Seeder
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/fauna.png';
         $story->dark_mode = true;
+        $story->title_text_color = "white";
+        $story->description_text_color = "white";
+
         $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->save();   
 
@@ -32,16 +35,19 @@ class FaunaPageSeeder extends Seeder
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
         $story->file_path = 'images/upload/mammal.png';
         $story->dark_mode = true;
+        $story->title_text_color = "white";
+        $story->description_text_color = "white";
         $story->cnav_background = "linear-gradient(270deg, #eab676 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";
         $story->save(); 
 
         $mammal_gallery = new Gallery();
         $mammal_gallery->headline_id = 3;
         $mammal_gallery->position = 3;
-        $mammal_gallery->title = 'the mammals';
+        $mammal_gallery->title =  'mammals';
         $mammal_gallery->file_path = '/images/upload/mammal.png';
         $mammal_gallery->color = "#eab676";
         $mammal_gallery->dark_mode = true;
+        $mammal_gallery->text_color = "white";
         $mammal_gallery->cnav_background = "linear-gradient(270deg, #eab676 42.11%, rgba(216, 161, 164, 0.56) 101.31%)";
         $mammal_gallery->save();
 
@@ -98,16 +104,19 @@ class FaunaPageSeeder extends Seeder
         $story->file_path = 'images/upload/winter.png';
         $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->dark_mode = false;
+        $story->title_text_color = "white";
+        $story->description_text_color = "white";
         $story->save();   
 
         $bird_gallery = new Gallery();
         $bird_gallery->headline_id = 3;
         $bird_gallery->position = 4;
-        $bird_gallery->title = 'the birds';
+        $bird_gallery->title = 'birds';
         $bird_gallery->file_path = '/images/upload/winter.png';
         $bird_gallery->color = "#ffffff";
         $bird_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $bird_gallery->dark_mode = false;
+        $bird_gallery->text_color = 'black';
         $bird_gallery->save();
         
         $birds_gallery = [
@@ -172,15 +181,18 @@ class FaunaPageSeeder extends Seeder
             $story->gallery_id = $bird_gallery->id;
             $story->file_path = $gallery['file_path'];
             $story->dark_mode = false;
+            $story->title_text_color = "white";
+            $story->description_text_color = "white";
             $story->save();
         }
 
         $butterfly_gallery = new Gallery();
         $butterfly_gallery->headline_id = 3;
         $butterfly_gallery->position = 6;
-        $butterfly_gallery->title = 'the Butterfiles';
+        $butterfly_gallery->title = 'Butterfiles';
         $butterfly_gallery->file_path = '/images/upload/mammal.png';
         $butterfly_gallery->color = "#ffffff";
+        $butterfly_gallery->text_color = "black";
         $butterfly_gallery->dark_mode = true;
         $butterfly_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $butterfly_gallery->save();
@@ -243,15 +255,18 @@ class FaunaPageSeeder extends Seeder
             $story->gallery_id = $butterfly_gallery->id;
             $story->file_path = $gallery['file_path'];
             $story->dark_mode = false;
+            $story->title_text_color = "white";
+            $story->description_text_color = "white";
             $story->save();
         }
 
         $park_gallery = new Gallery();
         $park_gallery->headline_id = 3;
         $park_gallery->position = 7;
-        $park_gallery->title = 'the Park';
+        $park_gallery->title = 'Park';
         $park_gallery->file_path = '/images/upload/mammal.png';
         $park_gallery->color = "#000000";
+        $park_gallery->text_color = "white";
         $park_gallery->dark_mode = true;
         $park_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $park_gallery->save();

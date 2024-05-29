@@ -13,7 +13,7 @@
     <div class="w-full xl:w-6/12">
         <form action="{{ route('donations.international') }}" method="post" class="">
             @csrf
-            <div class="flex flex-col w-full gap-4 mb-2">
+            <div class="flex flex-col w-full gap-2 mb-2">
                 <label  for="country"  class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>     
                 <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option class="w-6/12" value="Afghanistan">Afghanistan</option>
@@ -263,8 +263,8 @@
                 </select>
             </div>
 
-            <div class="flex flex-col w-full gap-4 mt-2">
-                <label for="amount" class="mb-1 text-sm font-medium text-gray-900 flex items-end align-middle">Amount</label>
+            <div class="flex flex-col w-full gap-2 mt-2">
+                <label for="amount" class="mb-1 text-sm font-medium text-gray-900 flex items-end align-middle">Amount In Dollar</label>
                 <input type="number" name="amount" id="amount" required="" class="w-full h-11 rounded-lg">
             </div>
 

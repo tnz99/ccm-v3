@@ -1,10 +1,16 @@
 <x-guest-layout >
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+   
 
-    <form method="POST" action="{{ route('login') }}" class="w-10/12 mt-14 xl:mt-16 xl:w-6/12">
+    <form method="POST" action="{{ route('login') }}" class="w-10/12 mt-14 xl:mt-1 xl:w-6/12">
         @csrf
 
+        <div class="flex flex-col items-center pb-2 xl:items-start">
+            <h2 class="text-4xl font-extrabold">Donate to a cleaner</h2>
+            <h2 class="text-4xl font-extrabold">and greener Bhutan</h2>
+        </div>
+        
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />

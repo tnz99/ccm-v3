@@ -27,7 +27,7 @@
 </script>
 
 <div class="hidden animate__animated animate__fadeIn animate__faster xl:flex xl:justify-start items-end pb-10 xl:w-2/12 xl:h-full xl:items-center">
-    <button id="open_circular_nav_btn" class="bg-yellow-200 h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
+    <button id="open_circular_nav_btn" class="bg-[#FCFF5C] h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
 </div>
 
 <div data-modal-target="default-modal" data-modal-toggle="default-modal" class="flex self-end justify-self-end animate__animated animate__fadeIn animate__faster xl:hidden items-end pb-10">

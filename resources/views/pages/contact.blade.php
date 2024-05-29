@@ -1,5 +1,5 @@
 <x-page-layout backgroundImageName="images/contact.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #1f3642 42.11%, rgba(188, 219, 240, 0.40) 101.31%)" :blur="false">
-    <div class="flex flex-col xl:flex-row items-center w-full gap-10 pt-20 xl:pt-40">
+    <div class="flex flex-col xl:flex-row items-center w-full gap-10 pt-20 xl:pt-40 mt-36">
         <p class="text-5xl text-white font-extrabold flex flex-col gap-4">we are <br /><span class="uppercase">social</span></p>
         <div class="flex gap-4">
             <div class="p-4 text-black bg-yellow-200 rounded-lg flex justify-center items-center">

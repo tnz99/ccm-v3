@@ -20,8 +20,8 @@
             @endforeach
         </div>
 
-        <div class="mt-6 xl:mt-1 text-4xl font-extrabold capitalize {{ $gallery->dark_mode ? 'text-white' : 'text-black'}}">
-            {{ $gallery->title }}
+        <div class="mt-6 xl:mt-1 text-4xl font-extrabold uppercase {{ $gallery->dark_mode ? 'text-white' : 'text-black'}}">
+            <span class="lowercase"> the </span> {{ $gallery->title }}
         </div>
 
         <div class="flex justify-start items-center mt-16 xl:mt-0 pb-16 gap-4">

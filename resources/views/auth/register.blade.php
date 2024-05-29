@@ -2,6 +2,11 @@
     <form method="POST" action="{{ route('register') }}" class="w-10/12 mt-12 xl:w-6/12 xl:mt-10">
         @csrf
 
+        <div class="flex flex-col items-center pb-2 xl:items-start">
+            <h2 class="text-4xl font-extrabold">Donate to a cleaner</h2>
+            <h2 class="text-4xl font-extrabold">and greener Bhutan</h2>
+        </div>
+
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -44,7 +49,7 @@
                 {{ __('Register') }}
             </x-primary-button>
             
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 mt-3 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+            <a class="underline text-sm text-white dark:text-gray-400 mt-3 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
         </div>

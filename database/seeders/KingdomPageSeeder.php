@@ -84,7 +84,7 @@ class KingdomPageSeeder extends Seeder
         $kingdom_gallery_1 = new Gallery();
         $kingdom_gallery_1->headline_id = 1;
         $kingdom_gallery_1->position = 2;
-        $kingdom_gallery_1->title = 'the KINGDOM';
+        $kingdom_gallery_1->title = 'KINGDOM';
         $kingdom_gallery_1->color = "#FFC000";
         $kingdom_gallery_1->text_color = "white";
         $kingdom_gallery_1->file_path = '/images/upload/kingdom.png';
