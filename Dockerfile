@@ -1,4 +1,21 @@
-FROM richarvey/nginx-php-fpm:latest
+FROM php:8.2-alpine
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    zip \
+    unzip \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libpq-dev \
+    nodejs \
+    npm
+
+RUN apt-get install -y docker-php-ext-install pdo pdo_pgsql gd
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /var/www/html/
@@ -27,5 +44,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 
 # Expose port 80 to the outside world
 EXPOSE 80
+COPY start.sh start.sh
+RUN chmod +x /start.sh
 
 CMD ["/start.sh"]
