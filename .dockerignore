@@ -1,25 +1,11 @@
-# Ignore the .git directory
-.git
-
-# Ignore Laravel's node_modules and vendor directories
-node_modules
-vendor
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-
-# Ignore environment files
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
 .env
-.env.*
-
-# Ignore log and cache files
-storage/logs
-storage/framework/cache
-storage/framework/sessions
-storage/framework/testing
-storage/framework/views
-
-# Ignore local development files
-/.idea
-/.vsc
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
