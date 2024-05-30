@@ -18,7 +18,7 @@ ENV LOG_CHANNEL stderr
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Determine the package manager and install dependencies
-RUN apt-get update && apt-get install -y postgresql-dev netcat && apt-get clean && rm -rf /var/lib/apt/lists/*; 
+RUN apt-get update && apt-get install -y postgresql-dev && apt-get clean && rm -rf /var/lib/apt/lists/*; 
 # Ensure correct permissions
 RUN chown -R nginx:nginx /var/www/html/storage /var/www/html/bootstrap/cache
 
