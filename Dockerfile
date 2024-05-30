@@ -17,8 +17,12 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Install additional dependencies
-RUN apk --no-cache add postgresql-dev netcat
+# Determine the package manager and install dependencies
+RUN if [ -x "$(command -v apt-get)" ]; then \
+    apt-get update && apt-get install -y postgresql-dev netcat && apt-get clean && rm -rf /var/lib/apt/lists/*; \
+    elif [ -x "$(command -v apk)" ]; then \
+    apk --no-cache add postgresql-dev netcat; \
+    fi
 
 # Ensure correct permissions
 RUN chown -R nginx:nginx /var/www/html/storage /var/www/html/bootstrap/cache
