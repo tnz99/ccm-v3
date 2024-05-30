@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     libpq-dev \
+    netcat \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
 
@@ -39,7 +40,3 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 EXPOSE 80
 
 # Set the entrypoint
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-
-# Start Apache
-CMD ["apache2-foreground"]
