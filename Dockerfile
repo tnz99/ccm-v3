@@ -15,9 +15,11 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql gd
 
-RUN apt-get install -y postgresql postgresql-contrib
+# Install PostgreSQL client
+RUN apt-get install -y postgresql-client
 
-RUN apt-get -y install nodejs npm \
+# Install Node.js and npm
+RUN apt-get install -y nodejs npm \
     && rm -rf /var/lib/apt/lists/*
 
 # Enable Apache mod_rewrite
