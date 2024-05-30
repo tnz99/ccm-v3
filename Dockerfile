@@ -17,10 +17,10 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libpq-dev \
     nodejs \
-    npm \
-    && docker-php-ext-install pdo pdo_pgsql gd \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    npm
+RUN docker-php-ext-install pdo pdo_pgsql gd
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
 
 # Install Composer dependencies
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
@@ -45,6 +45,9 @@ ENV LOG_CHANNEL stderr
 
 # Allow Composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
+
+# Copy Nginx site configuration
+COPY ./conf/nginx-site.conf /etc/nginx/sites-available/default
 
 # Set permissions for Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
