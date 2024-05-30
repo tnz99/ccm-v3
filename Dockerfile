@@ -47,7 +47,7 @@ ENV LOG_CHANNEL stderr
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Copy Nginx site configuration
-COPY ./conf/nginx-site.conf /etc/nginx/sites-available/default
+COPY conf/nginx-site.conf /etc/nginx/sites-available/default
 
 # Set permissions for Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
