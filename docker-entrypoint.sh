@@ -2,6 +2,7 @@
 
 # Wait for the PostgreSQL database to be ready
 while ! nc -z db 5432; do
+  echo "Waiting for PostgreSQL..."
   sleep 1
 done
 
