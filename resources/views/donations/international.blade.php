@@ -1,13 +1,13 @@
-<x-page-layout backgroundImageName="/images/upload/donate.png" :darkMode='false' cnavBackground="linear-gradient(270deg, #DA8495 42.11%, rgba(216, 161, 164, 0.56) 101.31%)" :blur="false">
+<x-page-layout backgroundImageName="/images/upload/donate.png" :darkMode='false' cnavBackground="linear-gradient(270deg, #BABC46 42%, rgba(188, 219, 240, 0.40) 101.31%)" :blur="false">
     <div class="flex flex-col mt-2 xl:mt-8 w-full">
         <div class="flex flex-col items-center pb-2 xl:items-start">
-            <h2 class="text-2xl font-extrabold">Donate to a cleaner</h2>
-            <h2 class="text-2xl font-extrabold">and greener Bhutan</h2>
+            <h2 class="text-4xl font-extrabold">Donate to a cleaner</h2>
+            <h2 class="text-4xl font-extrabold">and greener Bhutan</h2>
         </div>
 
         <div class="flex w-full xl:w-6/12 mt-2">
-            <a href="{{ route('donations.international') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-yellow-400 text-black">international donation</a>
-            <a href="{{ route('donations.local') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-black text-yellow-400">local donation</a>
+            <a href="{{ route('donations.international') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-[#FCFF5C] text-black">international donation</a>
+            <a href="{{ route('donations.local') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-black text-[#FCFF5C]">local donation</a>
         </div>
     </div>
     <div class="w-full xl:w-6/12">
@@ -268,7 +268,7 @@
                 <input type="number" name="amount" id="amount" required="" class="w-full h-11 rounded-lg">
             </div>
 
-            <button type="submit" class="w-full items-center px-5 py-3 uppercase mt-4 sm:mt-6 text-xs font-medium text-center text-white bg-yellow-400 rounded-lg">
+            <button type="submit" class="w-full items-center px-5 py-3 uppercase mt-4 sm:mt-6 text-xs font-medium text-center text-blacks bg-[#FCFF5C] hover:bg-yellow-400 rounded-lg">
                 Donate
             </button>
         </form>
