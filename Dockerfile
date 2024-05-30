@@ -29,6 +29,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Copy the Laravel application files to the container
 COPY . .
 
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
+
 # Set Apache DocumentRoot
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
@@ -39,4 +42,4 @@ RUN sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.
 EXPOSE 8000
 
 # Start Apache server
-CMD ["apache2-foreground"]
+CMD ["/docker-entrypoint.sh"]
