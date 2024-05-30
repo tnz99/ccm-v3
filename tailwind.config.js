@@ -19,7 +19,7 @@ export default {
                 'hwvh': '50vh'
             },
             backgroundImage: {
-                'navitem-hover': 'linear-gradient(270deg, #947f7f 0%, rgba(255, 255, 255, 0) 74.59%)',
+                'navitem-hover': 'linear-gradient(270deg, #808080 0%, rgba(10, 12, 14, 0.06) 101.31%)',
             },
         },
     },
