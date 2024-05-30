@@ -1,42 +1,38 @@
-FROM php:8.2-apache
+# Use the official PHP image as a base image
+FROM php:8.1-apache
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /var/www/html
 
-# Install PHP extensions and dependencies
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    zip \
-    unzip \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
-    && docker-php-ext-install pdo pdo_mysql gd
-
-
-RUN apt-get -y install nodejs
-RUN apt-get -y install npm
-RUN apt-get install -y default-mysql-client \
-    && rm -rf /var/lib/apt/lists/*
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    git \
+    curl \
+    libpq-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy the Laravel application files to the container
-COPY . .
+# Copy the existing application directory contents
+COPY . /var/www/html
 
-# Set Apache DocumentRoot
-RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+# Set permissions for Laravel
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Change Apache's default port to 8000
-RUN sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf
+# Expose port 80
+EXPOSE 80
 
-# Expose port 8000 to the outside world
-EXPOSE 8000
-
-# Start Apache server
+# Start Apache in the foreground
 CMD ["apache2-foreground"]
