@@ -7,17 +7,7 @@ WORKDIR /var/www/html/
 COPY . .
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    zip \
-    unzip \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libpq-dev \
-    nodejs \
-    npm
+RUN apt-get update && apt-get install -y
 RUN docker-php-ext-install pdo pdo_pgsql gd
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
