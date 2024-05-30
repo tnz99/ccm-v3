@@ -41,5 +41,8 @@ RUN sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.
 # Expose port 8000 to the outside world
 EXPOSE 8000
 
-# Start Apache server
-CMD ["./docker-entrypoint.sh"]
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+CMD ["/usr/local/bin/docker-entrypoint.sh"]
