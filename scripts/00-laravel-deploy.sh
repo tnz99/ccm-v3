@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 echo "Running composer"
-composer global require hirak/prestissimo
+#composer global require hirak/prestissimo
+composer self-update --2
 composer install --no-dev --working-dir=/var/www/html
 
 echo "Caching config..."
