@@ -3,25 +3,18 @@ FROM php:8.2-apache
 # Set the working directory in the container
 WORKDIR /var/www/html
 
-# Install system dependencies and PHP extensions
+# Install PHP extensions and dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    vim \
-    unzip \
     git \
     curl \
-    libonig-dev \
-    libxml2-dev \
-    libzip-dev \
-    postgresql-client \
-    && docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
+    zip \
+    unzip \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    && docker-php-ext-install pdo gd
 
+RUN apt install postgresql postgresql-contrib
 
 RUN apt-get -y install nodejs
 RUN apt-get -y install npm
