@@ -1,6 +1,6 @@
 FROM richarvey/nginx-php-fpm:latest
 
-COPY . .
+COPY . /var/www/html
 
 # Image config
 ENV SKIP_COMPOSER 1
@@ -17,4 +17,14 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-CMD ["/start.sh"]
+# Install additional dependencies
+RUN apk --no-cache add postgresql-dev netcat
+
+# Ensure correct permissions
+RUN chown -R nginx:nginx /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+CMD ["/usr/local/bin/docker-entrypoint.sh"]

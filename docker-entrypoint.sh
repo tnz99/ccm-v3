@@ -7,8 +7,8 @@ while ! nc -z db 5432; do
 done
 
 # Run migrations and seed the database
-php artisan migrate --force
-php artisan db:seed --force
+php /var/www/html/artisan migrate --force
+php /var/www/html/artisan db:seed --force
 
-# Start Apache
-exec apache2-foreground
+# Start Nginx and PHP-FPM
+/start.sh
