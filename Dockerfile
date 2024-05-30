@@ -1,24 +1,42 @@
-FROM richarvey/nginx-php-fpm:latest
+FROM php:8.2-apache
 
-COPY . /var/www/html
+# Set the working directory in the container
+WORKDIR /var/www/html
 
-# Image config
-ENV SKIP_COMPOSER 1
-ENV WEBROOT /var/www/html/public
-ENV PHP_ERRORS_STDERR 1
-ENV RUN_SCRIPTS 1
-ENV REAL_IP_HEADER 1
+# Install PHP extensions and dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    zip \
+    unzip \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    && docker-php-ext-install pdo pdo_mysql gd
 
-# Laravel config
-ENV APP_ENV production
-ENV APP_DEBUG false
-ENV LOG_CHANNEL stderr
 
-# Allow composer to run as root
-ENV COMPOSER_ALLOW_SUPERUSER 1
+RUN apt-get -y install nodejs
+RUN apt-get -y install npm
+RUN apt-get install -y default-mysql-client \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy entrypoint script
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
 
-CMD ["/usr/local/bin/docker-entrypoint.sh"]
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Copy the Laravel application files to the container
+COPY . .
+
+# Set Apache DocumentRoot
+RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+
+# Change Apache's default port to 8000
+RUN sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf
+
+# Expose port 8000 to the outside world
+EXPOSE 8000
+
+# Start Apache server
+CMD ["apache2-foreground"]
