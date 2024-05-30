@@ -42,4 +42,4 @@ RUN sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.
 EXPOSE 8000
 
 # Start Apache server
-CMD ["/docker-entrypoint.sh"]
+CMD ["docker-entrypoint.sh"]
