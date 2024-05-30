@@ -12,13 +12,12 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
-    && docker-php-ext-install pdo gd
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql gd
 
 RUN apt-get install -y postgresql postgresql-contrib
 
-RUN apt-get -y install nodejs
-RUN apt-get -y install npm
-RUN apt-get install -y default-mysql-client \
+RUN apt-get -y install nodejs npm \
     && rm -rf /var/lib/apt/lists/*
 
 # Enable Apache mod_rewrite
