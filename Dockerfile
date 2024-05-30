@@ -1,46 +1,20 @@
-# Use the official PHP image as a base image
-FROM php:8.1-apache
+FROM richarvey/nginx-php-fpm:latest
 
-# Set the working directory
-WORKDIR /var/www/html
+COPY . .
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    git \
-    curl \
-    libpq-dev \
-    netcat \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo pdo_pgsql mbstring exif pcntl bcmath gd
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Copy the existing application directory contents
-COPY . /var/www/html
-
-# Set permissions for Laravel
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Copy entrypoint script
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
-# Expose port 80
-EXPOSE 80
-
-# Set the entrypoint
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-
-# Start Apache
-CMD ["apache2-foreground"]
+CMD ["/start.sh"]
