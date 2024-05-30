@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     && docker-php-ext-install pdo gd
 
-RUN apt-get install postgresql postgresql-contrib
+RUN apt-get install -y postgresql postgresql-contrib
 
 RUN apt-get -y install nodejs
 RUN apt-get -y install npm
