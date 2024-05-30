@@ -6,12 +6,6 @@ WORKDIR /var/www/html/
 # Copy the Laravel application files to the container
 COPY . .
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y
-RUN docker-php-ext-install pdo pdo_pgsql gd
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/*
-
 # Set environment variables for the image
 ENV SKIP_COMPOSER 1
 ENV WEBROOT /var/www/html/public
