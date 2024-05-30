@@ -1,0 +1,25 @@
+# Ignore the .git directory
+.git
+
+# Ignore Laravel's node_modules and vendor directories
+node_modules
+vendor
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore log and cache files
+storage/logs
+storage/framework/cache
+storage/framework/sessions
+storage/framework/testing
+storage/framework/views
+
+# Ignore local development files
+/.idea
+/.vsc
