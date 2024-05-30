@@ -5,20 +5,22 @@ WORKDIR /var/www/html
 
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
+    build-essential \
     libpng-dev \
-    libjpeg-dev \
+    libjpeg62-turbo-dev \
     libfreetype6-dev \
-    libonig-dev \
-    libxml2-dev \
+    locales \
     zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
     unzip \
     git \
     curl \
-    libpq-dev \
-    netcat \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) pdo pdo_pgsql mbstring exif pcntl bcmath gd \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    postgresql-client \
+    && docker-php-ext-install pdo pdo_pgsql mbstring exif pcntl bcmath gd
 
 
 RUN apt-get -y install nodejs
