@@ -7,9 +7,14 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\NewAdminNotification;
 
 use App\Models\User;
 use App\Models\Role;
+
+
 
 class AdminController extends Controller
 {
@@ -40,6 +45,10 @@ class AdminController extends Controller
 
         event(new Registered($user));
 
+        #editadminnotification
+        // Send email notification to the new admin
+        Mail::to($user->email)->send(new NewAdminNotification($user));
+
         return redirect()->route('admins.index')->with('success', 'User Added Successfully');
     }
 
@@ -59,7 +68,7 @@ class AdminController extends Controller
 
     public function delete(Request $request) {
         $user = User::find($request->id);
-        $user->delete;
+        $user->delete();
 
         return redirect()->back()->with('success', 'User Deleted Successfully');
     }

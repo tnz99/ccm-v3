@@ -1,5 +1,5 @@
 <x-page-layout backgroundImageName="/images/news.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #1f3642 42.11%, rgba(188, 219, 240, 0.40) 101.31%)" :blur="false">
-    <div class="flex flex-col justify-between px-12 h-full">
+    <div class="flex flex-col justify-between px-4 h-full mt-24 ">
         <div class="flex flex-col ">
             @if (isset($first_news) && $first_news != null)   
                 <p class="text-6xl" style="font-weight: 999;">{{ $first_news->title }}<p>
