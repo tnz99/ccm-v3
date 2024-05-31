@@ -31,11 +31,16 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $request->validate(
+            [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class, 'regex:/^[\w\.-]+@[\w\.-]+\.\w{2,4}$/'],
+                'password' => ['required', 'confirmed', Rules\Password::defaults(), 'regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'],
+            ],
+            [
+                'password.regex' => "Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one symbol."
+            ]
+        );
 
         $role = Role::where('name', 'donar')->first();
 
@@ -50,6 +55,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('donations.international', absolute: false));
+        return redirect(route('donations.international.get', absolute: false));
     }
 }

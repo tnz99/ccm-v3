@@ -14,8 +14,8 @@
     <ul>
         <li>Name: {{ $user->name }}</li>
         <li>Email: {{ $user->email }}</li>
-        <li>Role: {{ $user->role_id }}</li> <!-- Display role name -->
-        <li>Password: {{ $user->password }}</li> <!-- Display the password -->
+        <li>Role: {{ $user->role->name }}</li> <!-- Display role name -->
+        <li>Password: {{ $password }}</li> <!-- Display the password -->
         <!-- You can add more information here if needed -->
     </ul>
     

@@ -1,15 +1,15 @@
 <x-guest-layout >
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-   
 
-    <form method="POST" action="{{ route('login') }}" class="w-10/12 mt-14 xl:mt-1 xl:w-6/12">
+    <form method="POST" action="{{ route('login') }}" class="w-full mt-4 xl:mt-1 xl:w-[36%]">
         @csrf
 
-        <div class="flex flex-col items-center pb-2 xl:items-start">
-            <h2 class="text-4xl font-extrabold">Donate to a cleaner</h2>
-            <h2 class="text-4xl font-extrabold">and greener Bhutan</h2>
-            <h2 class="text-1xl font-extrabold">Sign In to Continue</h2>
+        <div class="flex flex-col items-start pb-2">
+            <p class="text-xl xl:text-4xl font-inter font-semibold">
+                Donate to a cleaner</br>and greener Bhutan
+            </p>
+            <p class="text-md xl:text-xl font-inter font-semibold mt-4">Sign In to Continue</p>
         </div>
         
         <!-- Email Address -->
@@ -27,7 +27,6 @@
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 

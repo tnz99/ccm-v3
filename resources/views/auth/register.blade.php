@@ -1,10 +1,12 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" class="w-10/12 mt-12 xl:w-6/12 xl:mt-10">
+    <form method="POST" action="{{ route('register') }}" class="w-full xl:w-[35%]">
         @csrf
 
-        <div class="flex flex-col items-center pb-2 xl:items-start">
-            <h2 class="text-4xl font-extrabold">Donate to a cleaner</h2>
-            <h2 class="text-4xl font-extrabold">and greener Bhutan</h2>
+        <div class="flex flex-col items-start pb-2">
+            <p class="text-xl xl:text-4xl font-inter font-semibold">
+                Donate to a cleaner</br>and greener Bhutan
+            </p>
+            <p class="text-md xl:text-xl font-inter font-semibold mt-4">Sign Up to Continue</p>
         </div>
 
         <!-- Name -->

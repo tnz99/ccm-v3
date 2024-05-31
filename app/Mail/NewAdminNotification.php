@@ -21,9 +21,10 @@ class NewAdminNotification extends Mailable
     public $password;
     public $role; // Add a public property for the role
 
-    public function __construct(User $user)
+    public function __construct(User $user, String $password)
     {
         $this->user = $user;
+        $this->password = $password;
        // Assign role to the public property
     }
     /**

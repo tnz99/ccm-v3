@@ -47,7 +47,7 @@ class AdminController extends Controller
 
         #editadminnotification
         // Send email notification to the new admin
-        Mail::to($user->email)->send(new NewAdminNotification($user));
+        Mail::to($user->email)->send(new NewAdminNotification($user, $request->password));
 
         return redirect()->route('admins.index')->with('success', 'User Added Successfully');
     }
