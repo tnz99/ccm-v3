@@ -27,3 +27,7 @@ class PageLayout extends Component
         return view('layouts.page');
     }
 }
+
+
+
+  
