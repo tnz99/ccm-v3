@@ -6,7 +6,7 @@
         </div>
 
         <div class="flex w-6/12 mt-2">
-            <a href="{{ route('donations.international') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-black text-[#FCFF5C]">international donation</a>
+            <a href="{{ route('donations.international.get') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-black text-[#FCFF5C]">international donation</a>
             <a href="{{ route('donations.local') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 text-black bg-[#FCFF5C]">local donation</a>
         </div>
     </div>

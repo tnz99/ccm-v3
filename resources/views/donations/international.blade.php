@@ -6,12 +6,12 @@
         </div>
 
         <div class="flex w-full xl:w-6/12 mt-2">
-            <a href="{{ route('donations.international') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-[#FCFF5C] text-black">international donation</a>
+            <a href="{{ route('donations.international.get') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-[#FCFF5C] text-black">international donation</a>
             <a href="{{ route('donations.local') }}" class="cursor-default flex justify-center w-full capitalize font-bold p-2 bg-black text-[#FCFF5C]">local donation</a>
         </div>
     </div>
     <div class="w-full xl:w-6/12">
-        <form action="{{ route('donations.international') }}" method="post" class="">
+        <form action="{{ route('donations.international.post') }}" method="post" class="">
             @csrf
             <div class="flex flex-col w-full gap-2 mb-2">
                 <label  for="country"  class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>     

@@ -9,7 +9,7 @@
         @auth
             @if(auth()->user()->isDonar())
             <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.history')" :active="request()->routeIs('donations.history')">{{ _('History') }}</x-responsive-home-nav-link>
-            <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international')" :active="request()->routeIs('donations.international')">{{ _('Donate') }}</x-responsive-home-nav-link>
+            <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international.get')" :active="request()->routeIs('donations.international.get')">{{ _('Donate') }}</x-responsive-home-nav-link>
             <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donars.profile')" :active="request()->routeIs('donars.profile')">{{ _('Profile') }}</x-responsive-home-nav-link>
             @endif
             <form method="POST" action="{{ route('logout') }}" class="flex">
@@ -47,7 +47,7 @@
                     @auth
                         @if(auth()->user()->isDonar())
                         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.history')" :active="request()->routeIs('donations.history')">{{ _('History') }}</x-responsive-home-nav-link>
-                        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international')" :active="request()->routeIs('donations.international')">{{ _('Donate') }}</x-responsive-home-nav-link>
+                        <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donations.international.get')" :active="request()->routeIs('donations.international')">{{ _('Donate') }}</x-responsive-home-nav-link>
                         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('donars.profile')" :active="request()->routeIs('donars.profile')">{{ _('Profile') }}</x-responsive-home-nav-link>
                         @endif
                         <form method="POST" action="{{ route('logout') }}">
