@@ -11,11 +11,15 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body style="background-image: url('{{ $backgroundImageName }}')" class="{{ $blur ? 'backdrop-blur-sm' : '' }} w-full h-full flex flex-col bg-center bg-no-repeat xl:bg-cover xl:bg-left-top overflow-y-hidden xl:overflow-hidden">
+    <body style="background-image: url('{{ $backgroundImageName }}')" class="{{ $blur ? 'backdrop-blur-sm' : '' }} font-inter w-full h-full flex flex-col bg-center bg-no-repeat xl:bg-cover xl:bg-left-top overflow-y-hidden xl:overflow-hidden">
         @if (session('success'))
         <div id="toast-success" class="fixed mt-8 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-green-100 rounded-xl: shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
             <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-xl: dark:bg-green-800 dark:text-green-200">
@@ -53,7 +57,7 @@
         @endif
 
 
-        <div class=" justify-start flex flex-col xl:w-full xl:items-start h-screen px-16">
+        <div class=" justify-start flex flex-col xl:w-full xl:items-start h-screen xl:px-16">
             <x-header :darkMode="$darkMode"/>
             
             <div class="w-full flex grow flex-col justify-between xl:flex-row xl:items-center">

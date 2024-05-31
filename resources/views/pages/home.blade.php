@@ -1,9 +1,9 @@
 <x-page-layout backgroundImageName="images/home.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)" :blur="false">
     <div class="snow"></div>
     <div class="w-full text-center mt-12 xl:mt-48 xl:items-center xl:justify-center xl:text-left xl:w-6/12">
-        <h3 class="text-2xl xl:text-4xl">Bhutan Believe:</h3>
-        <h1 class="text-4xl font-extrabold xl:text-6xl">A Climate</h1>
-        <h1 class="text-4xl font-extrabold xl:text-6xl">Change Odyssey</h1>
+        <p class="text-2xl xl:text-4xl font-inter">Bhutan Believe:</p>
+        <p class="text-4xl font-[1000] xl:text-6xl font-inter">A Climate</p>
+        <p class="text-4xl font-[1000] xl:text-6xl font-inter">Change Odyssey</p>
     </div>
     
     <a href="{{ route('donations.international.get') }}" class="w-36 p-2 rounded-sm cursor-default flex justify-center gap-5 items-center bg-[#FCFF5C] hover:bg-yellow-300 xl:w-44">
