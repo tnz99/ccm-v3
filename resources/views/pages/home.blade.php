@@ -1,6 +1,6 @@
 <x-page-layout backgroundImageName="images/home.png" :darkMode="false" cnavBackground="linear-gradient(270deg, #151A21 42.11%, rgba(23, 28, 36, 0.06) 101.31%)" :blur="false">
     <div class="snow"></div>
-    <div class="w-full text-center mt-14 xl:mt-48 xl:items-start xl:justify-center xl:text-left xl:w-6/12 flex flex-col gap-3">
+    <div class="w-full text-center mt-14 xl:mt-48 xl:items-start xl:justify-center xl:text-left xl:w-10/12 flex flex-col gap-3">
         <p class="text-2xl xl:text-4xl font-inter font-light">Bhutan Believe:</p>
         <p class="text-4xl font-bold xl:text-6xl font-inter">A Climate</p>
         <p class="text-4xl font-bold xl:text-6xl font-inter">Change Odyssey</p>

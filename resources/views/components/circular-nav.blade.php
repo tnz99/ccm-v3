@@ -27,11 +27,7 @@
 </script>
 
 <div class="hidden animate__animated animate__fadeIn animate__faster xl:flex xl:justify-start items-end pb-10 xl:w-2/12 xl:h-full xl:items-center">
-    <button id="open_circular_nav_btn" class="bg-[#FCFF5C] h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
-</div>
-
-<div data-modal-target="default-modal" data-modal-toggle="default-modal" class="flex self-end justify-self-end animate__animated animate__fadeIn animate__faster xl:hidden items-end pb-10">
-    <button class="bg-yellow-200 h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
+    <button id="open_circular_nav_btn" class="bg-[#FCFF5C] h-36 w-36 rounded-full capitalize text-2xl font-semibold">Our Story</button>
 </div>
 
 <nav id="circular_nav" class="animate__animated animate__zoomIn animate__faster fixed hidden xl:h-wvh xl:w-wvh rounded-full xl:left-[74%] top-0" style="background: {{ $cnavBackground }};">
@@ -51,7 +47,11 @@
 </nav>
 
 
-<!-- Main modal -->
+<!-- Mobile -->
+<div data-modal-target="default-modal" data-modal-toggle="default-modal" class="flex self-end justify-self-end animate__animated animate__fadeIn animate__faster xl:hidden items-end pb-10">
+    <button class="bg-yellow-200 h-24 w-24 rounded-full capitalize text-xs font-bold">Our Story</button>
+</div>
+
 <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-2xl max-h-full">
         <div class="flex justify-end items-center flex-col p-6 bg-yellow-200 rounded-xl">

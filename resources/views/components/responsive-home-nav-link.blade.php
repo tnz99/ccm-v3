@@ -3,7 +3,7 @@
 @php
 $classes = ($active ?? false)
             ? 'font-semibold uppercase text-xs bg-yellow-300 p-2 px-5'
-            : 'hover:font-semibold uppercase text-xs  hover:bg-[#fcff5c] p-2 px-5';
+            : 'hover:font-semibold uppercase text-xs  hover:bg-yellow-300 p-2 px-5';
 
 $darkMode = ($darkMode?? false) ? ' text-white' : ' text-black';
 
