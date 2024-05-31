@@ -1,5 +1,5 @@
-<div {{ $attributes->merge(["class" => "flex w-full xl:items-center xl:w-4/12"]) }}>
-    <svg  class="p-0 m-0 pt-4 flex items-end justify-center w-24 h-24" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+<div {{ $attributes->merge(["class" => "flex w-full xl:items-center xl:w-3/12"]) }}>
+    <svg  class="p-0 m-0 pt-4 flex items-end justify-center w-[66px] h-16w-[66px]" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1_94)">
             <path fill="{{ $darkMode ? 'white' : 'black'}}" d="M29.2282 7.70825C28.2489 10.4646 27.2717 13.2209 26.2924 15.9752C24.2354 17.3409 22.1848 18.7149 20.1174 20.0618C14.6413 23.6813 9.88708 29.8216 6.34445 34.8088C3.87319 38.2887 1.36427 50.0438 9.52716 49.5163C12.689 49.2411 15.8466 48.9221 19.0063 48.6093C19.3578 51.5408 19.8077 54.4014 20.7075 57.2266C17.7382 57.2557 14.7689 57.2912 11.7996 57.2808C7.84269 56.991 4.457 53.5945 2.42936 50.4379C-0.93959 45.192 -0.857982 39.3166 3.01317 34.8276C9.34511 27.4864 17.2046 20.0096 24.3317 12.6497C25.9639 11.0025 27.596 9.35539 29.2303 7.70825H29.2282Z" fill="white"/>
             <path fill="{{ $darkMode ? 'white' : 'black'}}" d="M43.336 0.0125276C43.359 3.2088 43.382 6.40508 43.4072 9.60136C40.848 9.68267 38.7722 9.95163 36.278 10.5333C30.5612 12.4286 28.9918 24.7633 28.1276 29.2752C27.3199 33.4911 25.7631 47.8774 33.9197 47.3645C37.138 47.2332 40.35 47.1623 43.5704 47.1519C43.562 50.4649 43.5432 53.7779 43.516 57.091C40.5592 57.091 37.6025 57.0993 34.6458 57.1097C22.5343 57.2995 22.3795 37.6402 24.2795 30.3719C26.0079 23.7646 28.5336 16.9905 31.2476 10.5104C32.5324 7.4434 34.0201 2.71675 37.274 1.13425C39.061 0.346125 41.3837 -0.0833815 43.336 0.0125276Z" fill="white"/>
@@ -10,9 +10,9 @@
         </defs>
     </svg>
     
-    <div class="pl-2 w-full flex flex-col items-start justify-center">
-        <p class="font-bold font-inter text-[4px] {{ $darkMode ? 'text-white' : 'text-black'}} leading-tight">BHUTAN</p>
-        <p class="font-bold font-inter text-[4px] {{ $darkMode ? 'text-white' : 'text-black'}} leading-tight">CLIMATE CHANGE</p>
-        <p class="font-bold font-inter text-[4px] {{ $darkMode ? 'text-white' : 'text-black'}} leading-tight">MUSEUM</p>
+    <div class="pl-2 w-full flex flex-col items-start justify-end pt-3">
+        <p class="font-semibold font-inter text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}} leading-tight">BHUTAN</p>
+        <p class="font-semibold font-inter text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}} leading-tight">CLIMATE CHANGE</p>
+        <p class="font-semibold font-inter text-[10px] {{ $darkMode ? 'text-white' : 'text-black'}} leading-tight">MUSEUM</p>
     </div>
 </div>

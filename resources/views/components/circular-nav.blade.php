@@ -45,7 +45,7 @@
         <a class="c-nav-link hover:bg-navitem-hover flex gap-4 text-white capitalize text-sm py-2 px-6 w-auto text-left {{ $darkMode ? 'text-white' : 'text-black'}} rounded-xl font-medium absolute top-[80%] left-[20%]" href="{{ route('pages.story', '7') }}">The People<x-logos.story-nav /></a>
     </div>
 
-    <button id="inner_button" class="hidden border w-hwvh h-hwvh rounded-full text-xl text-left pl-10 font-extrabold absolute top-[25%] md:left-[29%] 2xl:left-[30%] text-yellow-200">
+    <button id="inner_button" class="hidden border w-hwvh h-hwvh rounded-full text-xl text-left pl-8 font-extrabold absolute top-[25%] md:left-[29%] 2xl:left-[30%] text-yellow-200">
         Our Story
     </button>
 </nav>

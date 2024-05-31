@@ -1,4 +1,4 @@
-<section class="hidden xl:flex flex-col xl:flex-row  xl:items-center justify-start w-full mt-4">
+<section class="hidden xl:flex flex-col xl:flex-row  xl:items-center justify-start w-full mt-8">
     <x-logo :darkMode="$darkMode"></x-logo>
     <nav class="w-full hidden flex-col justify-start gap-2 xl:flex xl:flex-row">
         <x-responsive-home-nav-link :darkMode="$darkMode" :href="route('pages.home')" :active="request()->routeIs('pages.home')">{{ _('Home') }}</x-responsive-home-nav-link>
