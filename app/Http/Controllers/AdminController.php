@@ -20,9 +20,9 @@ class AdminController extends Controller
 {
     public function index(Request $request) {
         $roleIds = Role::where('name', '!=', 'donar')->pluck('id');
-        $users = User::whereIn('role_id', $roleIds)->get();
+        $users = User::whereIn('role_id', $roleIds)->where('id', '!=', auth()->user()->id)->get();
 
-        $roles = Role::all();
+        $roles = Role::where('name', '!=', 'donar')->get();
 
         return view('admins.index')->with(['users' => $users, 'roles' => $roles]);
     }

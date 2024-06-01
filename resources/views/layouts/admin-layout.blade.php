@@ -11,6 +11,10 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -53,7 +57,7 @@
 
         <div class="flex items-start sm:items-end justify-end h-full">
             <!-- Sidebar Start -->
-            <div class="w-2/12 bg-green-800 px-2 hidden xl:flex flex-col justify-start items-start h-full fixed top-0 left-0">
+            <div class="w-2/12 bg-green-800 px-2 hidden xl:flex flex-col justify-start items-center h-full fixed top-0 left-0">
                 <!-- Logo Start -->
                 <div class="flex items-center">
                     <svg  class="w-20 h-20 p-0 m-0" viewBox="0 0 85 58" xmlns="http://www.w3.org/2000/svg">
@@ -77,8 +81,8 @@
                 </div>
                 <!-- Logo End -->
 
-                <div class="w-full">
-                    <ul class="flex flex-col gap-2">
+                <div class="w-full mt-8 pl-3">
+                    <ul class="flex flex-col gap-4">
                     @auth
                         @if (auth()->user()->isAdmin() || auth()->user()->isSuperAdmin())
                         <!-- <li class="hover:bg-green-900 w-full p-2"><a href="{{ route('headlines.index') }}" class="text-white text-sm p-2">Main Story Line</a></li> -->
@@ -96,21 +100,22 @@
                         @endif
 
                         @if (auth()->user()->isSuperAdmin())
-                        <x-responsive-admin-nav-link :href="route('donars.index')" :active="request()->routeIs('donars.index')">
-                            {{ _('Donar') }}
-                        </x-responsive-admin-nav-link>
-
-                        <x-responsive-admin-nav-link :href="route('admins.index')"  :active="request()->routeIs('admins.index')">
-                            {{ _('Admins') }}
+                        <x-responsive-admin-nav-link :href="route('news.index')"  :active="request()->routeIs('news.index')">
+                            {{ _('News And Events') }}
                         </x-responsive-admin-nav-link>
 
                         <x-responsive-admin-nav-link :href="route('donations.history')"  :active="request()->routeIs('donations.history')">
                             {{ _('Donations') }}
                         </x-responsive-admin-nav-link>
 
-                        <x-responsive-admin-nav-link :href="route('news.index')"  :active="request()->routeIs('news.index')">
-                            {{ _('News And Events') }}
+                        <x-responsive-admin-nav-link :href="route('donars.index')" :active="request()->routeIs('donars.index')">
+                            {{ _('Users') }}
                         </x-responsive-admin-nav-link>
+
+                        <x-responsive-admin-nav-link :href="route('admins.index')"  :active="request()->routeIs('admins.index')">
+                            {{ _('Admins') }}
+                        </x-responsive-admin-nav-link>
+
                         @endif
                     @endauth
                     </ul>
