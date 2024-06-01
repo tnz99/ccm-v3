@@ -88,8 +88,9 @@
 
                         <div class="sm:col-span-2 flex gap-4">
                             <div class="w-full">
-                                <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
-                                <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Type Year Here" required="">
+                                <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
+                                <input type="text" name="year" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-primary-600 focus:border-primary-600 block w-full p-2" placeholder="Type Year Here" required="">
+                                <x-input-error :messages="$errors->get('year')" class="mt-2" />
                             </div>
 
                             <div class="w-full">

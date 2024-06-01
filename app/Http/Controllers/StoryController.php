@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 use App\Models\Story;
 use App\Models\Headline;
@@ -31,7 +32,22 @@ class StoryController extends Controller
     public function create(Request $request): RedirectResponse {
         $story = new Story();
 
-        $story->title = $request->title;
+        if(isset($request->title)) {
+            $story->title = $request->title;
+        }
+
+        if(isset($request->year)) {
+            $validator = Validator::make($request->all(), [
+                'year' => 'required|integer|max:' . date('Y'),
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->with('error', 'Faild to add!')->withErrors($validator)->withInput();
+            }
+            
+            $story->title = $request->year;
+        }
+
         $story->sub_title = $request->subtitle;
         $story->description = $request->description;
         $story->position = 1;

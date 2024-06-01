@@ -11,9 +11,9 @@
             </div>
         </div>
 
-        <div class="flex gap-2 mt-4 font-extrabold xl:gap-2 w-full xl:w-10/12 overflow-x-scroll xl:overflow-auto flex-wrap">
+        <div class="flex gap-2 mt-4 font-extrabold w-full xl:w-8/12 overflow-x-scroll flex-wrap xl:flex-nowrap">
             @foreach ($stories as $story)
-                <a class="underline xl:no-underline xl:p-2 xl:pb-4" href="{{ route('pages.timeline', ['id' => $timeline->id, 'story_id' => $story->id]) }}">{{ $story->title }}</a>
+                <a class="underline xl:no-underline xl:pb-4" href="{{ route('pages.timeline', ['id' => $timeline->id, 'story_id' => $story->id]) }}">{{ $story->title }}</a>
             @endforeach
         </div>
 

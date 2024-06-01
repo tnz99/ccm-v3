@@ -1,12 +1,12 @@
 <x-page-layout  backgroundImageName="{{ asset($story->file_path) }}" :darkMode="$story->dark_mode" :cnavBackground="$story->cnav_background" :blur="false">
-    <div class="flex flex-col pt-12 w-full h-full justify-between xl:pt-32">
-        <div class="flex flex-col gap-2">
+    <div class="flex flex-col w-full h-full justify-end">
+        <div class="flex flex-col gap-2 justify-end xl:pb-16 mt-8 xl:mt-0">
             <div class="flex flex-col">
-                <h1 class="text-4xl xl:text-6xl font-extrabold lowercase" style="color: {{$story->title_text_color}};">the</h1>
-                <h1 class="text-4xl xl:text-6xl font-black uppercase" style="color: {{$story->title_text_color}};">{{ $story->title }}</h1>
+                <h1 class="font-inter text-2xl xl:text-6xl font-bold lowercase" style="color: {{$story->title_text_color}};">the</h1>
+                <h1 class="font-inter text-3xl xl:text-6xl font-bold uppercase tracking-wider" style="color: {{ $story->title_text_color }};">{{ $story->title }}</h1>
             </div>
             
-            <p class="w-full text-justify xl:w-6/12 xl:text-left" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
+            <p class="w-full text-justify mt-3 xl:w-[35%] xl:text-left" style="color: {{$story->description_text_color}};">{{ $story->description }}</p>
         </div>
         
         <div class="flex items-end w-full gap-4 mt-16 justify-between xl:mt-0 xl:justify-start xl:pb-16 overflow-x-auto">
@@ -14,7 +14,10 @@
                 @foreach ($nav_links as $index => $nav_link)
                     @if (isset($nav_link))
                         @if (get_class($nav_link) == 'App\Models\Story')
-                            <a href="{{ route('pages.main-story', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
+                            @php
+                                $class = "flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10";
+                            @endphp
+                            <a href="{{ route('pages.main-story', $nav_link->id) }}" class="{{ $class }}">{{ $index + 1 }}</a>
                         @elseif(get_class($nav_link) == 'App\Models\Gallery')
                             <a href="{{ route('pages.gallery', $nav_link->id) }}" class="flex items-center justify-center text-center text-xs font-semibold rounded-full bg-yellow-200 hover:bg-yellow-300 w-10 h-10">{{ $index + 1 }}</a>
                         @elseif(get_class($nav_link) == 'App\Models\Timeline')
