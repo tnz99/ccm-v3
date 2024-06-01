@@ -61,7 +61,7 @@
                                     </div>
 
                                     <button type="submit" class="uppercase text-xs inline-flex items-center justify-center px-5 py-2.5 mt-4 sm:mt-6 font-thin text-center text-white bg-green-800 rounded-sm focus:ring-4 focus:ring-primary-200 hover:bg-primary-800">
-                                        save and continue to add gallery items
+                                        Next
                                     </button>
                                 </form>
                             </div>

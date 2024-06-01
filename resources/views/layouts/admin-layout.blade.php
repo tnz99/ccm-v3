@@ -115,7 +115,6 @@
                         <x-responsive-admin-nav-link :href="route('admins.index')"  :active="request()->routeIs('admins.index')">
                             {{ _('Admins') }}
                         </x-responsive-admin-nav-link>
-
                         @endif
                     @endauth
                     </ul>

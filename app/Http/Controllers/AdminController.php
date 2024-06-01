@@ -59,7 +59,10 @@ class AdminController extends Controller
     }
 
     public function edit(Request $request) {
+        $user = User::find($request->id);
+        $roles = Role::where('name', '!=', 'donar')->get();
 
+        return view('admins.edit')->with(['user' => $user, 'roles' => $roles]);
     }
 
     public function update(Request $request) {
