@@ -15,7 +15,7 @@
             @csrf
             <div class="flex flex-col w-full gap-2 mb-2">
                 <label  for="country"  class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>     
-                <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option class="w-6/12" value="Afghanistan">Afghanistan</option>
                     <option value="Åland Islands">Åland Islands</option>
                     <option value="Albania">Albania</option>
@@ -264,11 +264,11 @@
             </div>
 
             <div class="flex flex-col w-full gap-2 mt-2">
-                <label for="amount" class="mb-1 text-sm font-medium text-gray-900 flex items-end align-middle">Amount In Dollar</label>
-                <input type="number" name="amount" id="amount" required="" class="w-full h-11 rounded-lg">
+                <label for="amount" class="mb-1 text-sm font-medium text-gray-900 flex items-end align-middle">Amount In USD</label>
+                <input type="number" name="amount" id="amount" required="" class="w-full h-11 rounded-sm">
             </div>
 
-            <button type="submit" class="w-full items-center px-5 py-3 uppercase mt-4 sm:mt-6 text-xs font-medium text-center text-blacks bg-[#FCFF5C] hover:bg-yellow-400 rounded-lg">
+            <button type="submit" class="w-full items-center px-5 py-3 uppercase mt-4 sm:mt-6 text-xs font-medium text-center text-blacks bg-[#FCFF5C] hover:bg-yellow-400 rounded-sm">
                 Donate
             </button>
         </form>

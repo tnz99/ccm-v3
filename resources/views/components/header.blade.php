@@ -14,7 +14,7 @@
             @endif
             <form method="POST" action="{{ route('logout') }}" class="flex">
                 @csrf
-                <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode">{{ __('Log Out') }}</x-responsive-home-nav-link>
+                <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode" :active="false">{{ __('Log Out') }}</x-responsive-home-nav-link>
             </form>
         @endauth
 
@@ -82,7 +82,7 @@
                         @endif
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode">{{ __('Log Out') }}</x-responsive-home-nav-link>
+                            <x-responsive-home-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" :darkMode="$darkMode" :active="false">{{ __('Log Out') }}</x-responsive-home-nav-link>
                         </form>
                     @endauth
 
