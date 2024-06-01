@@ -101,7 +101,7 @@ class FaunaPageSeeder extends Seeder
         $story->description = "Bhutan is recognized as a part of several globally important bird areas. Currently, around 736 species are recorded to be found in Bhutan out of which 30 are globally threatened. Of the four critically endangered species found in Bhutan";
         $story->position = 4;
         $story->headline_id = 3; # refer HeadlineSeeder for ID;
-        $story->file_path = 'images/upload/winter.png';
+        $story->file_path = 'images/upload/birds.png';
         $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->dark_mode = false;
         $story->title_text_color = "white";
@@ -112,7 +112,7 @@ class FaunaPageSeeder extends Seeder
         $bird_gallery->headline_id = 3;
         $bird_gallery->position = 4;
         $bird_gallery->title = 'birds';
-        $bird_gallery->file_path = '/images/upload/winter.png';
+        $bird_gallery->file_path = '/images/upload/birds.png';
         $bird_gallery->color = "#ffffff";
         $bird_gallery->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $bird_gallery->dark_mode = false;
@@ -190,7 +190,7 @@ class FaunaPageSeeder extends Seeder
         $butterfly_gallery->headline_id = 3;
         $butterfly_gallery->position = 6;
         $butterfly_gallery->title = 'Butterfiles';
-        $butterfly_gallery->file_path = '/images/upload/mammal.png';
+        $butterfly_gallery->file_path = '/images/upload/butterfly.png';
         $butterfly_gallery->color = "#ffffff";
         $butterfly_gallery->text_color = "black";
         $butterfly_gallery->dark_mode = true;

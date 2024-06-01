@@ -37,6 +37,16 @@ class NewsController extends Controller
         $news->title = $request->title;
         $news->description = $request->description;
 
+        if($request->hasFile('image')) {
+            if(File::exists(public_path($news->file_path))) {
+                File::delete(public_path($news->file_path));
+            }
+
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/upload'), $imageName);
+            $news->file_path = 'images/upload/'.$imageName;
+        }
+
         $news->save();
 
         return redirect()->back()->with('success', 'News updated');
@@ -44,6 +54,8 @@ class NewsController extends Controller
 
     public function delete(Request $request) {
         $news = NewsAndEvent::find($request->id);
+        $imagePath = public_path($news->file_path);
+        if (File::exists($imagePath)) { File::delete($imagePath); }
         $news->delete();
         return redirect()->back()->with('success', 'News deleted!');
     }
@@ -53,6 +65,13 @@ class NewsController extends Controller
 
         $news->title = $request->title;
         $news->description = $request->description;
+        
+        if($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/upload'), $imageName);
+            $news->file_path = 'images/upload/'.$imageName;
+        }
+
 
         $news->save();
 

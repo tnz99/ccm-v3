@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
         } elseif($current_user->isSuperAdmin()) { # SuperAdmin
             return redirect()->intended(route('stories.index')); 
         } elseif($current_user->isDonar()) { # Donar
-            return redirect()->intended(route('donations.international', absolute: false));
+            return redirect()->intended(route('donations.international.get', absolute: false));
         }
     }
 

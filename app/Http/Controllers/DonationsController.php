@@ -77,13 +77,25 @@ class DonationsController extends Controller
     }
 
     public function local(Request $request): View | RedirectResponse {
+        // $user = auth()->user();
+
+        // if($user->isDonar()) {
+            return view('donations.local');
+        // } else {
+            // return redirect('/');
+        // }
+    }
+
+    public function saveLocal(Request $request) {
         $user = auth()->user();
 
-        if($user->isDonar()) {
-            return view('donations.local');
-        } else {
-            return redirect('/');
-        }
+        $donation = new Donation();
+        $donation->amount = $request->amount;
+        $donation->journal_number = $request->journal_number;
+        $donation->user_id = auth()->user()->id;
+        $donation->save();
+
+        return redirect()->back()->with('success', 'Thanks for donating');
     }
 
     public function history(Request $request): View |  RedirectResponse {

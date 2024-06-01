@@ -1,6 +1,6 @@
 <x-admin-layout>
     <div>
-    <div class="flex bg-green-800">
+        <div class="flex bg-green-800">
             <div type="button" class="flex items-center justify-between w-full p-3 px-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-sm focus:ring-4 focus:ring-gray-200 gap-3">
                 <span class="text-xl font-extrabold text-white">Edit {{ $gallery->title }} Gallery</span>
                 <button type="button" onClick="history.back()" class="flex gap-1 items-center text-white">
@@ -179,8 +179,9 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="inline-flex items-center px-3 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-950 rounded-sm focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                            Save Changes
+                        <button type="submit" class="inline-flex items-center px-3 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-950 rounded-md dhover:bg-primary-800 gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>    
+                        Save Changes
                         </button>
                     </form>
                 </div>

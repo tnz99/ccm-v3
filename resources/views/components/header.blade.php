@@ -21,6 +21,8 @@
         @guest
         <x-responsive-home-nav-link :href="route('login')" :darkMode="$darkMode" :active="request()->routeIs('login')">{{ __('Login') }}</x-responsive-home-nav-link>
         @endguest
+
+        <audio src=""></audio>
     </nav>
 </section>
 

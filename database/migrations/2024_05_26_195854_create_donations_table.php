@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->integer('amount');
+            $table->string('journal_number')->nullable();
             $table->foreignId('user_id')->nullable()->index();
             $table->timestamps();
         });

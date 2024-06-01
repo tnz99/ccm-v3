@@ -92,12 +92,14 @@
                             </div> -->
                         </div>
 
-                        <!-- <div class="sm:col-span-2 flex gap-1  w-full">
+                        <div class="sm:col-span-2 flex gap-1  w-full">
                             <div class="w-full">
                                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
                                 <input type="file" name="image" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full" required="" min=1 max=15 required=""> 
                             </div>
-                        </div> -->
+                        </div>
+
+                        
                     </div>
 
                     <button type="submit" class="inline-flex items-center px-5 py-2 mt-4 sm:mt-6 text-xs font-medium text-center text-white bg-green-950 rounded-sm focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
