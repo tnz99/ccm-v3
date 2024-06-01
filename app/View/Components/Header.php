@@ -13,7 +13,7 @@ class header extends Component
      */
     public function __construct(public bool $darkMode)
     {
-        //
+        //x
     }
 
     /**
