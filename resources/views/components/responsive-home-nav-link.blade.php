@@ -13,7 +13,6 @@ if($darkMode && $active) {
     $classes = $classes.$darkMode;
 }
 
-
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
