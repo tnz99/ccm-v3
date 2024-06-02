@@ -21,18 +21,20 @@
                     <th class="p-2">Donor Name</th>
                     <th class="p-2">Donation Date</th>
                     <th class="p-2">Donation Amount</th>
-                    <th class="p-2">Donation Type</th>
+                    <!-- <th class="p-2">Donation Type</th> -->
                 </tr>
             </thead>
             <tbody class="bg-gray-200">
                 @foreach ($records as $index => $record)
+                @if(isset($record->journal_number) && $record->journal_number != null)
                 <tr class="bg-gray-300 hover:border-blue-400 hover:border-solid hover:border-2">
                     <td class="">{{ $index }}</td>
                     <td class="">{{ $record->user->name }}</td>
                     <td class="">{{ $record->created_at->format('F d, Y') }}</td>
                     <td class="">{{ $record->amount }}</td>
-                    <td class="">{{ isset($record->journal_number) && $record->journal_number != null ? 'Local' : 'International' }}</td>
+                    <!-- <td class="">{{ isset($record->journal_number) && $record->journal_number != null ? 'Local' : 'International' }}</td> -->
                 </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>
@@ -48,20 +50,20 @@
                         <th class="p-2">Donor Name</th>
                         <th class="p-2">Donation Date</th>
                         <th class="p-2">Donation Amount</th>
-                        <th class="p-2">Donation Type</th>
+                        <!-- <th class="p-2">Donation Type</th> -->
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($records as $index => $record)
-                        @if(!(isset($record->journal_number) && $record->journal_number != null))
-                            <tr class="bg-gray-300 hover:border-blue-400 hover:border-solid hover:border-2">
-                                <td class="text-center">{{ $index }}</td>
-                                <td class="text-center">{{ $record->user->name }}</td>
-                                <td class="text-center">{{ $record->created_at->format('F d, Y') }}</td>
-                                <td class="text-center">{{ $record->amount }}</td>
-                                <td class="text-center">{{ isset($record->journal_number) && $record->journal_number != null ? 'Local' : 'International' }}</td>
-                            </tr>
-                        @endif
+                    @if(!(isset($record->journal_number) && $record->journal_number != null))
+                        <tr class="bg-gray-300 hover:border-blue-400 hover:border-solid hover:border-2">
+                            <td class="text-center">{{ $index }}</td>
+                            <td class="text-center">{{ $record->user->name }}</td>
+                            <td class="text-center">{{ $record->created_at->format('F d, Y') }}</td>
+                            <td class="text-center">{{ $record->amount }}</td>
+                            <td class="text-center">{{ isset($record->journal_number) && $record->journal_number != null ? 'Local' : 'International' }}</td>
+                        </tr>
+                    @endif
                     @endforeach
                 </tbody>
             </table>
