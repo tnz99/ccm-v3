@@ -104,8 +104,8 @@ class FaunaPageSeeder extends Seeder
         $story->file_path = 'images/upload/birds.png';
         $story->cnav_background = "linear-gradient(270deg, #4B5E25 42.11%, rgba(174, 177, 127, 0.50) 101.31%)";
         $story->dark_mode = false;
-        $story->title_text_color = "white";
-        $story->description_text_color = "white";
+        $story->title_text_color = "black";
+        $story->description_text_color = "black";
         $story->save();   
 
         $bird_gallery = new Gallery();
