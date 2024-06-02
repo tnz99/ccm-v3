@@ -97,19 +97,20 @@
                         <x-responsive-admin-nav-link :href="route('timelines.index')" :active="request()->routeIs('timelines.index')">
                             {{ _('Timelines') }}
                         </x-responsive-admin-nav-link>
-                        @endif
 
-                        @if (auth()->user()->isSuperAdmin())
                         <x-responsive-admin-nav-link :href="route('news.index')"  :active="request()->routeIs('news.index')">
                             {{ _('News And Events') }}
                         </x-responsive-admin-nav-link>
 
-                        <x-responsive-admin-nav-link :href="route('donations.history')"  :active="request()->routeIs('donations.history')">
-                            {{ _('Donations') }}
-                        </x-responsive-admin-nav-link>
-
                         <x-responsive-admin-nav-link :href="route('donars.index')" :active="request()->routeIs('donars.index')">
                             {{ _('Users') }}
+                        </x-responsive-admin-nav-link>
+                        @endif
+
+                        @if (auth()->user()->isSuperAdmin())
+
+                        <x-responsive-admin-nav-link :href="route('donations.history')"  :active="request()->routeIs('donations.history')">
+                            {{ _('Donations') }}
                         </x-responsive-admin-nav-link>
 
                         <x-responsive-admin-nav-link :href="route('admins.index')"  :active="request()->routeIs('admins.index')">
