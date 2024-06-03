@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 use App\Models\NewsAndEvent;
 
 class NewsController extends Controller
